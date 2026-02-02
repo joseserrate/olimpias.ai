@@ -36,7 +36,8 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
   }, []);
 
   const bgClass = background === 'subtle' ? 'bg-slate-50/40' : 'bg-white';
-  const classes = `relative ${bgClass} py-28 sm:py-32 lg:py-36 ${className}`.trim();
+  // PREMIUM vertical spacing: massive padding for clear section separation
+  const classes = `relative ${bgClass} py-32 sm:py-40 lg:py-48 ${className}`.trim();
 
   return (
     <>

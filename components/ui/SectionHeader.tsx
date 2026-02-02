@@ -16,7 +16,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const alignClass = alignment === 'center' ? 'text-center' : 'text-left';
 
   return (
-    <div className={`${alignClass} mb-14 w-full`}>
+    <div className={`${alignClass} mb-16 sm:mb-20 w-full`}>
       {eyebrow && (
         <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
           {eyebrow}
