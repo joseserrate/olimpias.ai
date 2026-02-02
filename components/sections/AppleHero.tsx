@@ -3,45 +3,101 @@ import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="relative min-h-[95vh] flex items-center bg-white overflow-hidden">
-      {/* Subtle background gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] via-white to-white opacity-60"></div>
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-orange-50/20">
+      {/* Vibrant Stripe-inspired gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-orange-500/5 pointer-events-none"></div>
+      
+      {/* Additional color wash for depth */}
+      <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-purple-500/10 via-pink-500/5 to-transparent pointer-events-none"></div>
       
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-28 pb-24 md:pt-36 md:pb-32 lg:pt-40 lg:pb-36 z-10">
         <div className="max-w-[980px] mx-auto text-center">
-          {/* Main Headline - Apple refined size */}
-          <h1 className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-semibold text-[#0B0B0D] mb-5 leading-[1.07] tracking-[-0.015em]">
-            El Centro de IA Empresarial
-            <br className="hidden sm:block" />
-            de Bolivia
+          {/* Main Headline with Stripe-style gradient text effects */}
+          <h1 className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[72px] font-semibold mb-5 leading-[1.05] tracking-[-0.02em]">
+            <span className="block">
+              <span className="text-[#0B0B0D]">El Centro de </span>
+              <span className="relative inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700">
+                  IA Empresarial
+                </span>
+                {/* Subtle glow effect */}
+                <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700 blur-sm opacity-30">
+                  IA Empresarial
+                </span>
+              </span>
+            </span>
+            <span className="block mt-1">
+              <span className="text-[#0B0B0D]">de </span>
+              <span className="relative inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600">
+                  Bolivia
+                </span>
+                {/* Subtle glow effect */}
+                <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 blur-sm opacity-30">
+                  Bolivia
+                </span>
+              </span>
+            </span>
           </h1>
           
-          {/* Subheadline - Apple size */}
-          <p className="text-[19px] md:text-[21px] lg:text-[24px] text-[#86868B] mb-8 max-w-[800px] mx-auto leading-[1.38] font-normal">
-            Diseñamos y gobernamos operaciones agénticas que entregan rendimiento empresarial medible
+          {/* Subheadline with transparency overlay effect */}
+          <p className="text-[19px] md:text-[21px] lg:text-[26px] mb-8 max-w-[820px] mx-auto leading-[1.35] font-normal">
+            <span className="text-[#1D1D1F]/70">Diseñamos y gobernamos </span>
+            <span className="text-[#1D1D1F] font-medium">operaciones agénticas</span>
+            <span className="text-[#1D1D1F]/70"> que entregan </span>
+            <span className="relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700 font-medium">
+                rendimiento empresarial medible
+              </span>
+            </span>
           </p>
           
-          {/* CTA Buttons - Apple style */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14">
-            <AppleButton variant="primary" href="/contact" className="text-[14px] px-5 py-2.5">
-              Agendar Consulta
-            </AppleButton>
-            <AppleButton variant="link" href="#methodology" className="text-[14px]">
-              Conocer Metodología →
-            </AppleButton>
+          {/* CTA Buttons - Enhanced Stripe style */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <button className="group relative px-6 py-3 text-[15px] font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/25">
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 transition-transform duration-300 group-hover:scale-105"></div>
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <span className="relative flex items-center gap-2">
+                Agendar Consulta
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </button>
+            <a 
+              href="#methodology" 
+              className="text-[15px] font-medium text-[#1D1D1F] hover:text-purple-700 transition-colors flex items-center gap-2 group"
+            >
+              <span>Conocer Metodología</span>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
           
-          {/* Supporting Line */}
-          <p className="text-[17px] text-[#86868B] max-w-[640px] mx-auto leading-[1.47] mb-16 font-normal">
-            Donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
-          </p>
+          {/* Supporting Line with gradient accent */}
+          <div className="relative inline-block mb-16">
+            <p className="text-[17px] md:text-[19px] max-w-[680px] mx-auto leading-[1.45] font-normal">
+              <span className="text-[#1D1D1F]/60">Donde Bolivia </span>
+              <span className="text-[#1D1D1F]">diseña y gobierna agentes</span>
+              <span className="text-[#1D1D1F]/60"> de inteligencia artificial para </span>
+              <span className="relative inline-block">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium">
+                  rendimiento empresarial
+                </span>
+              </span>
+              <span className="text-[#1D1D1F]/60">.</span>
+            </p>
+          </div>
           
-          {/* Trust Line */}
-          <div className="pt-10 border-t border-[#D2D2D7] max-w-[740px] mx-auto">
-            <p className="text-[12px] text-[#86868B] tracking-[0.04em] leading-[1.67]">
+          {/* Trust Line with modern styling */}
+          <div className="pt-8 border-t border-[#1D1D1F]/10 max-w-[740px] mx-auto">
+            <p className="text-[13px] text-[#1D1D1F]/50 tracking-[0.02em] leading-[1.6]">
               Fundado en experiencia global · Apple Business Solutions · MSTC, UT Austin · Harvard Agentic AI
             </p>
           </div>

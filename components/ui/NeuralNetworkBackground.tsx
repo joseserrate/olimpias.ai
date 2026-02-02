@@ -140,8 +140,8 @@ export const NeuralNetworkBackground: React.FC = () => {
       const centerY = height * 0.5;
       const nodes = nodesRef.current;
 
-      // Clear canvas
-      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+      // Clear canvas with subtle gradient base
+      ctx.fillStyle = 'rgba(255, 255, 255, 0)'; // Transparent to show background
       ctx.fillRect(0, 0, width, height);
 
       // Update rotation
@@ -197,8 +197,8 @@ export const NeuralNetworkBackground: React.FC = () => {
             // Only draw if target is also visible
             if (target.projectedZ < 0 && i < j) {
               const avgActivation = (node.activation + target.activation) / 2;
-              const baseOpacity = 0.08;
-              const activeOpacity = 0.4;
+              const baseOpacity = 0.12; // More visible for Stripe aesthetic
+              const activeOpacity = 0.5; // Brighter when active
               const opacity = baseOpacity + avgActivation * activeOpacity;
 
               // Calculate line width based on activation
