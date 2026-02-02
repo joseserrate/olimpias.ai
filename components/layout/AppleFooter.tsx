@@ -46,17 +46,18 @@ export const AppleFooter: React.FC = () => {
         {/* Main Grid - cleaner, more spacious */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
           {/* Brand - 5 columns */}
-          <div className="lg:col-span-5">
-            <div className="mb-5 flex items-start">
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <div className="mb-5">
               <Image
                 src="/olimpias-ai-logo.png"
                 alt="Olimpias AI"
-                width={220}
-                height={44}
-                className="h-[40px] w-auto"
+                width={280}
+                height={56}
+                className="h-[52px] w-auto block"
+                style={{ margin: 0, padding: 0 }}
               />
             </div>
-            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs text-left">
+            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ margin: 0, padding: 0, textAlign: 'left' }}>
               El Centro de IA Empresarial de Bolivia
             </p>
           </div>
