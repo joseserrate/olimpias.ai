@@ -2,7 +2,7 @@ import React from 'react';
 
 export const AppleCredibility: React.FC = () => {
   return (
-    <section className="relative bg-[#F5F5F7] py-32 md:py-40 lg:py-48">
+    <section className="relative bg-white py-32 md:py-40 lg:py-48">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         {/* Header - Match hero sizing */}
         <div className="text-center mb-24 md:mb-28 lg:mb-32">

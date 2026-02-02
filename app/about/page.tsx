@@ -24,7 +24,7 @@ export default function AppleAboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="relative bg-[#F5F5F7] py-24 md:py-28 lg:py-32">
+      <section className="relative bg-white py-24 md:py-28 lg:py-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="max-w-[1100px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -147,7 +147,7 @@ export default function AppleAboutPage() {
                   NUESTROS COMPROMISOS
                 </h3>
                 <div className="space-y-6">
-                  <div className="p-8 bg-[#F5F5F7] rounded-[18px]">
+                  <div className="p-8 bg-white border border-[#D2D2D7] rounded-[18px]">
                     <h4 className="text-[19px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em]">
                       Resultados Medibles
                     </h4>
@@ -155,7 +155,7 @@ export default function AppleAboutPage() {
                       Cada sistema se diseña con métricas de éxito claras y monitoreo continuo de rendimiento.
                     </p>
                   </div>
-                  <div className="p-8 bg-[#F5F5F7] rounded-[18px]">
+                  <div className="p-8 bg-white border border-[#D2D2D7] rounded-[18px]">
                     <h4 className="text-[19px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em]">
                       Arquitectura Disciplinada
                     </h4>
@@ -163,7 +163,7 @@ export default function AppleAboutPage() {
                       Principios rigurosos de diseño de sistemas que aseguran escalabilidad, mantenibilidad y excelencia operacional.
                     </p>
                   </div>
-                  <div className="p-8 bg-[#F5F5F7] rounded-[18px]">
+                  <div className="p-8 bg-white border border-[#D2D2D7] rounded-[18px]">
                     <h4 className="text-[19px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em]">
                       Gobernanza Responsable
                     </h4>
@@ -179,7 +179,7 @@ export default function AppleAboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-[#F5F5F7] py-20 md:py-24">
+      <section className="relative bg-white py-20 md:py-24 border-t border-[#D2D2D7]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-[28px] md:text-[32px] font-semibold text-[#1D1D1F] mb-5 tracking-[-0.01em]">
             ¿Listo para Transformar sus Operaciones?

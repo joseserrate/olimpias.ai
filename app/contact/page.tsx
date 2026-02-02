@@ -24,7 +24,7 @@ export default function AppleContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative bg-[#F5F5F7] py-24 md:py-28 lg:py-32">
+      <section className="relative bg-white py-24 md:py-28 lg:py-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
@@ -82,7 +82,7 @@ export default function AppleContactPage() {
                   <div className="space-y-3">
                     <a
                       href="mailto:contact@olimpiasai.com"
-                      className="block w-full px-6 py-3 text-[14px] font-medium text-[#1D1D1F] bg-[#F5F5F7] rounded-full text-center hover:bg-[#E8E8ED] transition-colors"
+                      className="block w-full px-6 py-3 text-[14px] font-medium text-[#1D1D1F] bg-white border border-[#D2D2D7] rounded-full text-center hover:bg-[#F5F5F7] transition-colors"
                     >
                       Enviar Email
                     </a>
@@ -90,7 +90,7 @@ export default function AppleContactPage() {
                       href="https://wa.me/59100000000"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full px-6 py-3 text-[14px] font-medium text-[#1D1D1F] bg-[#F5F5F7] rounded-full text-center hover:bg-[#E8E8ED] transition-colors"
+                      className="block w-full px-6 py-3 text-[14px] font-medium text-[#1D1D1F] bg-white border border-[#D2D2D7] rounded-full text-center hover:bg-[#F5F5F7] transition-colors"
                     >
                       WhatsApp
                     </a>

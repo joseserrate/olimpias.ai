@@ -95,7 +95,7 @@ export const Framework: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="relative bg-[#F5F5F7] py-40 md:py-48 lg:py-56">
+    <section id="methodology" className="relative bg-white py-40 md:py-48 lg:py-56">
       {/* Container */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         {/* Header - Stripe-style: massive and bold */}
