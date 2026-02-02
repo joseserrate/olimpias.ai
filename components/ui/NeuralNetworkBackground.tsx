@@ -46,8 +46,8 @@ export const NeuralNetworkBackground: React.FC = () => {
     const initializeSphere = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
-      const radius = Math.min(width, height) * 0.35;
-      const nodeCount = 80;
+      const radius = Math.min(width, height) * 1.2; // Much larger sphere
+      const nodeCount = 180; // More nodes for denser network
       const nodes: Node3D[] = [];
 
       // Fibonacci sphere distribution for even spacing
@@ -83,7 +83,7 @@ export const NeuralNetworkBackground: React.FC = () => {
           const dz = node.z - otherNode.z;
           const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-          if (distance < radius * 0.6) {
+          if (distance < radius * 0.45) { // Tighter connections for denser network
             node.connections.push(j);
             otherNode.connections.push(i);
           }
@@ -136,7 +136,7 @@ export const NeuralNetworkBackground: React.FC = () => {
       
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
-      const centerX = width * 0.5;
+      const centerX = width * 1.2; // Shift sphere to the right - only left edge visible
       const centerY = height * 0.5;
       const nodes = nodesRef.current;
 
@@ -164,11 +164,11 @@ export const NeuralNetworkBackground: React.FC = () => {
         // Calculate activation based on wave passing through
         // Wave moves from left to right across the sphere
         const wavePosition = Math.sin(wavePhaseRef.current);
-        const normalizedX = rotated.x / (Math.min(width, height) * 0.35);
+        const normalizedX = rotated.x / (Math.min(width, height) * 1.2);
         
         // Create wave that sweeps across
         const distanceFromWave = Math.abs(normalizedX - wavePosition);
-        const waveWidth = 0.3;
+        const waveWidth = 0.25; // Slightly tighter wave for better definition
         
         if (distanceFromWave < waveWidth) {
           const intensity = 1 - (distanceFromWave / waveWidth);
