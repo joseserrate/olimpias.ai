@@ -197,8 +197,8 @@ export const NeuralNetworkBackground: React.FC = () => {
             // Only draw if target is also visible
             if (target.projectedZ < 0 && i < j) {
               const avgActivation = (node.activation + target.activation) / 2;
-              const baseOpacity = 0.12; // More visible for Stripe aesthetic
-              const activeOpacity = 0.5; // Brighter when active
+              const baseOpacity = 0.096; // Reduced 20% for subtlety
+              const activeOpacity = 0.4; // Reduced 20% for subtlety
               const opacity = baseOpacity + avgActivation * activeOpacity;
 
               // Calculate line width based on activation
@@ -229,7 +229,7 @@ export const NeuralNetworkBackground: React.FC = () => {
           if (node.activation > 0.3) {
             ctx.beginPath();
             ctx.arc(node.projectedX, node.projectedY, size * 3, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(91, 61, 245, ${node.activation * 0.2})`;
+            ctx.fillStyle = `rgba(91, 61, 245, ${node.activation * 0.16})`;
             ctx.fill();
           }
 
@@ -238,14 +238,14 @@ export const NeuralNetworkBackground: React.FC = () => {
           ctx.arc(node.projectedX, node.projectedY, size, 0, Math.PI * 2);
           
           const brightness = 0.4 + node.activation * 0.6;
-          ctx.fillStyle = `rgba(${147 * brightness}, ${51 * brightness}, ${234 * brightness}, ${0.7 + node.activation * 0.3})`;
+          ctx.fillStyle = `rgba(${147 * brightness}, ${51 * brightness}, ${234 * brightness}, ${0.56 + node.activation * 0.24})`;
           ctx.fill();
 
           // Bright center when highly activated
           if (node.activation > 0.6) {
             ctx.beginPath();
             ctx.arc(node.projectedX, node.projectedY, size * 0.5, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${node.activation * 0.8})`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${node.activation * 0.64})`;
             ctx.fill();
           }
         }

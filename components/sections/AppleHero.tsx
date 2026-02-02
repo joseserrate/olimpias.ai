@@ -13,7 +13,7 @@ export const AppleHero: React.FC = () => {
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
             <span className="block">
               <span className="text-[#0B0B0D]">Centro de </span>
-              <span className="relative inline-block opacity-75 backdrop-blur-sm">
+              <span className="relative inline-block opacity-95 backdrop-blur-sm">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5]">
                   IA Empresarial
                 </span>
