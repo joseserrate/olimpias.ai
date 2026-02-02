@@ -69,7 +69,7 @@ export const AppleCredibility: React.FC = () => {
           >
             <h4 
               className="text-xs font-medium tracking-widest text-slate-500 uppercase"
-              style={{ marginTop: '10px', marginBottom: '16px' }}
+              style={{ marginTop: '5px', marginBottom: '16px' }}
             >
               Formación
             </h4>
@@ -83,7 +83,7 @@ export const AppleCredibility: React.FC = () => {
           >
             <h4 
               className="text-xs font-medium tracking-widest text-slate-500 uppercase"
-              style={{ marginTop: '10px', marginBottom: '16px' }}
+              style={{ marginTop: '5px', marginBottom: '16px' }}
             >
               Compromisos
             </h4>
