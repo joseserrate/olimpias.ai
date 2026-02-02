@@ -1,113 +1,165 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export const AppleFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [horizontalPadding, setHorizontalPadding] = useState('24px');
+  const [verticalPadding, setVerticalPadding] = useState('48px');
+  
+  useEffect(() => {
+    const updatePadding = () => {
+      const width = window.innerWidth;
+      
+      // Horizontal padding - match section
+      if (width >= 1536) setHorizontalPadding('80px');
+      else if (width >= 1280) setHorizontalPadding('64px');
+      else if (width >= 1024) setHorizontalPadding('56px');
+      else if (width >= 768) setHorizontalPadding('40px');
+      else if (width >= 640) setHorizontalPadding('32px');
+      else setHorizontalPadding('24px');
+      
+      // Vertical padding - more subtle for footer
+      if (width >= 1024) setVerticalPadding('72px');
+      else if (width >= 640) setVerticalPadding('56px');
+      else setVerticalPadding('48px');
+    };
+    
+    updatePadding();
+    window.addEventListener('resize', updatePadding);
+    return () => window.removeEventListener('resize', updatePadding);
+  }, []);
 
   return (
-    <footer className="relative bg-white border-t border-slate-200/60">
-      {/* Match Section spacing */}
-      <div className="py-28 sm:py-32 lg:py-36">
-        {/* Match Section container: 1040px with generous gutters */}
-        <div className="max-w-[1040px] mx-auto px-6 sm:px-8 md:px-10 lg:px-14 xl:px-16 2xl:px-20 w-full">
-          {/* 3-column grid on desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12">
-            {/* Brand - 6 columns */}
-            <div className="md:col-span-6">
-              <div className="mb-4">
-                <Image
-                  src="/olimpias-ai-logo.png"
-                  alt="Olimpias AI"
-                  width={200}
-                  height={40}
-                  className="h-[36px] w-auto"
-                />
-              </div>
-              <p className="text-slate-600 leading-relaxed max-w-md">
-                El Centro de IA Empresarial de Bolivia
-              </p>
+    <footer className="relative bg-white border-t border-slate-200/40">
+      <div 
+        className="max-w-[1040px] mx-auto w-full"
+        style={{
+          paddingTop: verticalPadding,
+          paddingBottom: verticalPadding,
+          paddingLeft: horizontalPadding,
+          paddingRight: horizontalPadding
+        }}
+      >
+        {/* Main Grid - cleaner, more spacious */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
+          {/* Brand - 5 columns */}
+          <div className="lg:col-span-5">
+            <div className="mb-5">
+              <Image
+                src="/olimpias-ai-logo.png"
+                alt="Olimpias AI"
+                width={160}
+                height={32}
+                className="h-[28px] w-auto opacity-90"
+              />
             </div>
-
-            {/* Navigation - 3 columns */}
-            <div className="md:col-span-3">
-              <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Navegación
-              </h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/#methodology" className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block">
-                    Valores
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#use-cases" className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block">
-                    Casos de Uso
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block">
-                    El Centro
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block">
-                    Contacto
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact + Legal - 3 columns */}
-            <div className="md:col-span-3">
-              <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Contacto
-              </h4>
-              <ul className="space-y-2 mb-8">
-                <li>
-                  <a
-                    href="mailto:contact@olimpiasai.com"
-                    className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block"
-                  >
-                    Email
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://wa.me/59100000000"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block"
-                  >
-                    WhatsApp
-                  </a>
-                </li>
-              </ul>
-
-              <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Legal
-              </h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/privacy" className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block">
-                    Privacidad
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-slate-700 hover:text-[#5B3DF5] transition-colors inline-block">
-                    Términos
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="pt-8 border-t border-slate-200/60">
-            <p className="text-sm text-slate-500 text-center md:text-left">
-              © {currentYear} Olimpias AI. Todos los derechos reservados.
+            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs">
+              El Centro de IA Empresarial de Bolivia
             </p>
           </div>
+
+          {/* Navigation - 3 columns */}
+          <div className="lg:col-span-2">
+            <h4 className="text-[11px] font-medium tracking-[0.1em] text-slate-400 uppercase mb-4">
+              Navegación
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link 
+                  href="/#methodology" 
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  Valores
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/#use-cases" 
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  Casos de Uso
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/about" 
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  El Centro
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  Contacto
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact - 2 columns */}
+          <div className="lg:col-span-2">
+            <h4 className="text-[11px] font-medium tracking-[0.1em] text-slate-400 uppercase mb-4">
+              Contacto
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:contact@olimpiasai.com"
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  Email
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/59100000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  WhatsApp
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal - 3 columns */}
+          <div className="lg:col-span-3">
+            <h4 className="text-[11px] font-medium tracking-[0.1em] text-slate-400 uppercase mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link 
+                  href="/privacy" 
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  Privacidad
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/terms" 
+                  className="text-[14px] text-slate-600 hover:text-slate-900 transition-colors inline-block"
+                >
+                  Términos
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar - more subtle */}
+        <div className="pt-8 border-t border-slate-200/40">
+          <p className="text-[13px] text-slate-400 text-center lg:text-left">
+            © {currentYear} Olimpias AI. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
