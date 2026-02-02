@@ -58,8 +58,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       
       {subheadline && (
         <p 
-          className="text-base sm:text-lg text-slate-600 leading-[1.7] mt-5 max-w-xl"
-          style={{ textAlign: 'center', margin: '20px auto 0', width: '100%' }}
+          className="text-base sm:text-lg text-slate-600 leading-[1.7] max-w-xl"
+          style={{ textAlign: 'center', margin: '10px auto 0', width: '100%' }}
         >
           {subheadline}
         </p>
