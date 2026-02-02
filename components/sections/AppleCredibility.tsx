@@ -41,13 +41,13 @@ export const AppleCredibility: React.FC = () => {
               </h4>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Sistemas de escala global en Apple Business Solutions
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Arquitectura empresarial y diseño de sistemas
                   </span>
@@ -61,19 +61,19 @@ export const AppleCredibility: React.FC = () => {
               </h4>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Maestría en Comercialización de Tecnología (MSTC), UT Austin
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Programa Intensivo en IA Agéntica, Harvard
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Finanzas y Medios Digitales
                   </span>
@@ -87,19 +87,19 @@ export const AppleCredibility: React.FC = () => {
               </h4>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Resultados medibles
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Arquitectura disciplinada
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="mt-[11px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Gobernanza responsable
                   </span>
