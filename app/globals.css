@@ -43,6 +43,10 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
+  
+  /* Override any Tailwind primary colors with grayscale */
+  --color-primary: var(--apple-text-primary);
+  --color-primary-dark: var(--apple-text-secondary);
 }
 
 * {
