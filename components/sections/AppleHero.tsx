@@ -25,8 +25,8 @@ export const AppleHero: React.FC = () => {
             </span>
           </h1>
           
-          {/* Subheadline - Generous spacing before CTA */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-16 md:mb-20 lg:mb-24 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
+          {/* Subheadline - HUGE spacing before CTA */}
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-20 md:mb-28 lg:mb-36 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
