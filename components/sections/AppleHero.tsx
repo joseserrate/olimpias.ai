@@ -12,19 +12,21 @@ export const AppleHero: React.FC = () => {
           {/* Main Headline - Premium spacing */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-10 md:mb-14 lg:mb-16 leading-[1.05] tracking-[-0.025em]">
             <span className="block">
-              <span className="text-[#0B0B0D]">El Centro de </span>
+              <span className="text-[#0B0B0D]">Centro de </span>
+            </span>
+            <span className="block mt-3 md:mt-4">
               <span className="relative inline-block opacity-75 backdrop-blur-sm">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5]">
-                  IA Empresarial
+                  Inteligencia Artificial
                 </span>
                 {/* Subtle glow effect */}
                 <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5] blur-sm opacity-30">
-                  IA Empresarial
+                  Inteligencia Artificial
                 </span>
               </span>
             </span>
             <span className="block mt-3 md:mt-4">
-              <span className="text-[#0B0B0D]">de Bolivia</span>
+              <span className="text-[#0B0B0D]">Empresarial</span>
             </span>
           </h1>
           
