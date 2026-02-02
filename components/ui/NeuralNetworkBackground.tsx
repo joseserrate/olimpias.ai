@@ -266,13 +266,11 @@ export const NeuralNetworkBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full flex items-center justify-end pointer-events-none">
-      <div className="w-full md:w-[50%] h-full flex items-center justify-center">
-        <canvas
-          ref={canvasRef}
-          className="w-full h-full"
-        />
-      </div>
+    <div className="absolute right-0 top-0 bottom-0 w-full md:w-[50%] flex items-center justify-center pointer-events-none">
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full"
+      />
     </div>
   );
 };
