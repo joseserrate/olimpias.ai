@@ -3,23 +3,26 @@ import { AppleButton } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="min-h-[90vh] flex items-center bg-white">
-      <div className="apple-container w-full">
-        <div className="max-w-4xl mx-auto text-center pt-8">
-          {/* Main Headline */}
-          <h1 className="text-[44px] md:text-[64px] font-semibold text-[#0B0B0D] mb-6 leading-[1.05] tracking-tight">
+    <section className="relative min-h-[95vh] flex items-center bg-white overflow-hidden">
+      {/* Subtle background gradient for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] via-white to-white opacity-60"></div>
+      
+      <div className="relative apple-container w-full px-6 md:px-8 py-20 md:py-24">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Main Headline with generous spacing */}
+          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[80px] font-semibold text-[#0B0B0D] mb-8 leading-[1.05] tracking-tight">
             Enterprise AI Architecture
             <br />
             for measurable performance
           </h1>
           
-          {/* Subheadline */}
-          <p className="text-[20px] md:text-[24px] text-[#4A4A50] mb-10 max-w-3xl mx-auto leading-[1.4]">
+          {/* Subheadline with breathing room */}
+          <p className="text-[21px] md:text-[26px] text-[#4A4A50] mb-14 max-w-3xl mx-auto leading-[1.4]">
             We design and govern AI systems that turn complexity into capability
           </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          {/* CTA Buttons with generous spacing */}
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16">
             <AppleButton variant="primary" href="/contact">
               Book a Call
             </AppleButton>
@@ -28,14 +31,14 @@ export const AppleHero: React.FC = () => {
             </AppleButton>
           </div>
           
-          {/* Supporting Line */}
-          <p className="text-[15px] text-[#7A7A82] max-w-2xl mx-auto leading-[1.6] mb-16">
+          {/* Supporting Line with breathing room */}
+          <p className="text-[16px] md:text-[17px] text-[#7A7A82] max-w-2xl mx-auto leading-[1.65] mb-20">
             Enterprise AI as infrastructure: architecture, governance, measurable performance.
           </p>
           
-          {/* Trust Line */}
-          <div className="pt-12 border-t border-[#E6E6EA] max-w-3xl mx-auto">
-            <p className="text-[13px] text-[#7A7A82] tracking-wide">
+          {/* Trust Line with enhanced spacing */}
+          <div className="pt-16 border-t border-[#E6E6EA] max-w-3xl mx-auto">
+            <p className="text-[13px] md:text-[14px] text-[#7A7A82] tracking-wide leading-[1.8]">
               Built on Apple Business Solutions experience · MSTC at UT Austin · Harvard Agentic AI Intensive
             </p>
           </div>
