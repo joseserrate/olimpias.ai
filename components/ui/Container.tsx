@@ -9,8 +9,8 @@ export const Container: React.FC<ContainerProps> = ({
   className = '', 
   children
 }) => {
-  // Match Section container: max-w-5xl with generous gutters including xl breakpoint
-  const classes = `max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 w-full ${className}`.trim();
+  // Match Section: max-w-[1040px] with extreme gutters at wide screens
+  const classes = `max-w-[1040px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 w-full ${className}`.trim();
 
   return (
     <div className={classes}>

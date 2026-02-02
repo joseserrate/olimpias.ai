@@ -17,15 +17,15 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const marginClass = alignment === 'center' ? 'mx-auto' : '';
 
   return (
-    <div className={`${alignClass} mb-16 sm:mb-20`}>
+    <div className={`${alignClass} mb-14`}>
       {eyebrow && (
         <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
           {eyebrow}
         </div>
       )}
       
-      {/* H2: Reduced from text-4xl→5xl→6xl to text-3xl→4xl→5xl for better balance */}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.15]">
+      {/* H2: Balanced size, tight tracking, max-w-3xl for line length control */}
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight leading-[1.15] max-w-3xl mx-auto">
         {headline}
       </h2>
       

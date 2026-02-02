@@ -13,14 +13,14 @@ export const Section: React.FC<SectionProps> = ({
   children, 
   background = 'white'
 }) => {
-  // Generous vertical rhythm: py-20→24→28
+  // Generous vertical rhythm with visible separation
   const bgClass = background === 'subtle' ? 'bg-slate-50/50' : 'bg-white';
-  const classes = `relative ${bgClass} py-20 sm:py-24 lg:py-28 ${className}`.trim();
+  const classes = `relative ${bgClass} py-24 sm:py-28 lg:py-32 ${className}`.trim();
 
   return (
     <section id={id} className={classes}>
-      {/* Container: max-w-5xl (tighter for premium feel) with generous gutters including xl breakpoint */}
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 w-full">
+      {/* Container: max-w-[1040px] (tight, centered) with extreme gutters at wide screens */}
+      <div className="max-w-[1040px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 w-full">
         {children}
       </div>
     </section>

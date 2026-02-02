@@ -7,10 +7,10 @@ export const AppleFooter: React.FC = () => {
 
   return (
     <footer className="relative bg-white border-t border-slate-200/60">
-      {/* Match Section spacing: py-20→24→28 */}
-      <div className="py-20 sm:py-24 lg:py-28">
-        {/* Match Section container: max-w-5xl with consistent padding including xl */}
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 w-full">
+      {/* Match Section spacing */}
+      <div className="py-24 sm:py-28 lg:py-32">
+        {/* Match Section container: max-w-[1040px] with generous gutters */}
+        <div className="max-w-[1040px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 w-full">
           {/* 3-column grid on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12">
             {/* Brand - 6 columns */}

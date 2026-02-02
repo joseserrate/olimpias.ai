@@ -20,12 +20,12 @@ export const ValueCard: React.FC<ValueCardProps> = ({
   return (
     <Card className="h-full flex flex-col">
       {/* Number eyebrow */}
-      <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-6">
+      <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-5">
         {number}
       </div>
       
-      {/* Title - Reduced size for better balance */}
-      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4 tracking-tight leading-tight">
+      {/* Title */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-3 tracking-tight leading-tight">
         {title}
       </h3>
       
@@ -34,14 +34,14 @@ export const ValueCard: React.FC<ValueCardProps> = ({
         {keywords.join(' · ')}
       </p>
       
-      {/* Bullets - increased space-y from 3 to 4 */}
+      {/* Bullets - generous spacing */}
       <div className="mb-8 flex-grow">
         <BulletList items={bullets} />
       </div>
       
-      {/* Deliverable - more spacing above */}
+      {/* Deliverable - clear separation */}
       <div className="pt-6 border-t border-slate-200/60 mt-auto">
-        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-3">
+        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-2">
           Entregable
         </div>
         <p className="text-sm text-slate-900 font-medium leading-relaxed">
