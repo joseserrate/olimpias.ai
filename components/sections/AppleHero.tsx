@@ -3,14 +3,14 @@ import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-white py-20">
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-[200px] pb-[160px] md:pt-[240px] md:pb-[200px] lg:pt-[280px] lg:pb-[240px] z-10">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10">
         <div className="max-w-[1120px] mx-auto text-center">
-          {/* Main Headline - EXTREME breathing room */}
-          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-[80px] md:mb-[100px] lg:mb-[120px] leading-[1.05] tracking-[-0.025em]">
+          {/* Main Headline - Premium breathing room */}
+          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-12 md:mb-16 lg:mb-20 leading-[1.05] tracking-[-0.025em]">
             <span className="block">
               <span className="text-[#0B0B0D]">Centro de </span>
               <span className="relative inline-block opacity-75 backdrop-blur-sm">
@@ -25,8 +25,8 @@ export const AppleHero: React.FC = () => {
             </span>
           </h1>
           
-          {/* Subheadline - MASSIVE spacing before CTA */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-[100px] md:mb-[140px] lg:mb-[160px] max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
+          {/* Subheadline - Generous spacing before CTA */}
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-16 md:mb-20 lg:mb-24 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
