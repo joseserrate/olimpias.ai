@@ -37,40 +37,17 @@ export const AppleHero: React.FC = () => {
             <span className="text-[#1D1D1F]/70">.</span>
           </p>
           
-          {/* CTA Buttons - Larger, more prominent */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">
-            <button className="group relative px-8 py-4 text-[16px] font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#5B3DF5]/25">
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-[#5B3DF5] transition-transform duration-300 group-hover:scale-105"></div>
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-              <span className="relative flex items-center gap-2">
-                Agendar Consulta
-                <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
+          {/* CTA Buttons - Stripe-style */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
+            <button className="px-7 py-3.5 text-[16px] font-semibold text-white bg-[#5B3DF5] rounded-full hover:bg-[#4A2FD5] transition-colors shadow-sm hover:shadow-md">
+              Agendar Consulta
             </button>
             <a 
               href="#methodology" 
-              className="text-[16px] font-medium text-[#1D1D1F] hover:text-[#5B3DF5] transition-colors flex items-center gap-2 group"
+              className="px-7 py-3.5 text-[16px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-full hover:border-[#5B3DF5] transition-colors"
             >
-              <span>Conocer Metodología</span>
-              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              Conocer Metodología
             </a>
-          </div>
-          
-          {/* Supporting Line */}
-          <div className="relative inline-block mb-20">
-            <p className="text-[19px] md:text-[21px] max-w-[720px] mx-auto leading-[1.4] font-normal">
-              <span className="text-[#1D1D1F]/60">Diseñamos y gobernamos </span>
-              <span className="font-medium text-[#1D1D1F]">operaciones agénticas</span>
-              <span className="text-[#1D1D1F]/60"> que entregan </span>
-              <span className="font-medium text-[#1D1D1F]">rendimiento empresarial medible</span>
-              <span className="text-[#1D1D1F]/60">.</span>
-            </p>
           </div>
           
           {/* Trust Line - More prominent */}
