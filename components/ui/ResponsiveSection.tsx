@@ -56,11 +56,13 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
         className={classes}
         style={{
           paddingTop: verticalPadding,
-          paddingBottom: verticalPadding
+          paddingBottom: verticalPadding,
+          display: 'flex',
+          justifyContent: 'center'
         }}
       >
         <div 
-          className="max-w-[1040px] mx-auto w-full"
+          className="max-w-[1040px] w-full"
           style={{
             paddingLeft: horizontalPadding,
             paddingRight: horizontalPadding
