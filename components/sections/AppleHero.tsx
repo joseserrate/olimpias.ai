@@ -7,10 +7,10 @@ export const AppleHero: React.FC = () => {
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-32 pb-28 md:pt-44 md:pb-40 lg:pt-48 lg:pb-44 z-10">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-40 pb-32 md:pt-52 md:pb-44 lg:pt-60 lg:pb-52 z-10">
         <div className="max-w-[1120px] mx-auto text-center">
-          {/* Main Headline - Premium spacing */}
-          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-10 md:mb-14 lg:mb-16 leading-[1.05] tracking-[-0.025em]">
+          {/* Main Headline - MAXIMUM breathing room */}
+          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-14 md:mb-20 lg:mb-24 leading-[1.05] tracking-[-0.025em]">
             <span className="block">
               <span className="text-[#0B0B0D]">Centro de </span>
               <span className="relative inline-block opacity-75 backdrop-blur-sm">
@@ -25,8 +25,8 @@ export const AppleHero: React.FC = () => {
             </span>
           </h1>
           
-          {/* Subheadline - Premium spacing and breathing room */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-16 md:mb-20 lg:mb-24 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
+          {/* Subheadline - ULTIMATE spacing for breathing room */}
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-20 md:mb-28 lg:mb-32 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
