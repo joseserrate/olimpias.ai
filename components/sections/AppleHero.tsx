@@ -10,7 +10,7 @@ export const AppleHero: React.FC = () => {
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10 py-20">
         <div className="max-w-[1120px] mx-auto text-center flex flex-col justify-center min-h-[80vh]">
           {/* Main Headline */}
-          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-12 leading-[1.05] tracking-[-0.025em]">
+          <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
             <span className="block">
               <span className="text-[#0B0B0D]">Centro de </span>
               <span className="relative inline-block opacity-75 backdrop-blur-sm">
@@ -25,13 +25,16 @@ export const AppleHero: React.FC = () => {
             </span>
           </h1>
           
+          {/* SPACER 1 - GREEN - After headline */}
+          <div className="h-12 bg-green-500"></div>
+          
           {/* Subheadline */}
           <p className="text-[21px] md:text-[24px] lg:text-[28px] max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
-          {/* Spacer - EXACTLY equal to mb-12 above */}
-          <div className="h-12"></div>
+          {/* SPACER 2 - RED - After subheadline */}
+          <div className="h-12 bg-red-500"></div>
           
           {/* CTA Buttons - EXPLICIT STRIPE HEIGHT */}
           <div className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center items-center">
