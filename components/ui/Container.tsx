@@ -9,8 +9,8 @@ export const Container: React.FC<ContainerProps> = ({
   className = '', 
   children
 }) => {
-  // Stripe-grade standard: max-w-6xl with consistent padding
-  const classes = `max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 ${className}`.trim();
+  // Match Section container: max-w-5xl with generous gutters including xl breakpoint
+  const classes = `max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 w-full ${className}`.trim();
 
   return (
     <div className={classes}>

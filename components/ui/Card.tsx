@@ -15,7 +15,8 @@ export const Card: React.FC<CardProps> = ({
     ? 'transition-all duration-200 hover:border-slate-300/70 hover:-translate-y-[1px]' 
     : '';
     
-  const classes = `bg-white border border-slate-200/60 rounded-2xl p-6 sm:p-8 shadow-[0_1px_2px_rgba(16,24,40,0.06)] ${hoverClass} ${className}`.trim();
+  // Increased padding from p-6→8 to consistent p-8 for more breathing room
+  const classes = `bg-white border border-slate-200/60 rounded-2xl p-8 shadow-[0_1px_2px_rgba(16,24,40,0.06)] ${hoverClass} ${className}`.trim();
 
   return (
     <div className={classes}>

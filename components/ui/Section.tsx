@@ -13,24 +13,14 @@ export const Section: React.FC<SectionProps> = ({
   children, 
   background = 'white'
 }) => {
-  // Stripe-grade vertical rhythm: py-16→20→28
+  // Generous vertical rhythm: py-20→24→28
   const bgClass = background === 'subtle' ? 'bg-slate-50/50' : 'bg-white';
-  const classes = `relative ${bgClass} py-16 sm:py-20 lg:py-28 ${className}`.trim();
+  const classes = `relative ${bgClass} py-20 sm:py-24 lg:py-28 ${className}`.trim();
 
   return (
-    <section 
-      id={id} 
-      className={classes}
-      data-debug="SECTION_WRAPPER"
-      style={{ outline: '3px solid red' }}
-    >
-      {/* DEBUG MARKER */}
-      <div className="text-xs font-bold text-red-600 bg-red-100 p-2 mb-4">
-        🔴 DEBUG: SECTION WRAPPER IS RENDERING
-      </div>
-      
-      {/* Container: max-w-6xl centered with consistent horizontal padding */}
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id={id} className={classes}>
+      {/* Container: max-w-5xl (tighter for premium feel) with generous gutters including xl breakpoint */}
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 w-full">
         {children}
       </div>
     </section>

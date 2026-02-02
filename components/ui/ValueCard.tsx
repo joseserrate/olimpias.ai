@@ -24,24 +24,24 @@ export const ValueCard: React.FC<ValueCardProps> = ({
         {number}
       </div>
       
-      {/* Title - Stripe typography */}
-      <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-3 tracking-tight leading-tight">
+      {/* Title - Reduced size for better balance */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4 tracking-tight leading-tight">
         {title}
       </h3>
       
       {/* Keywords */}
-      <p className="text-sm text-slate-500 mb-8 font-normal">
+      <p className="text-sm text-slate-500 mb-6 font-normal">
         {keywords.join(' · ')}
       </p>
       
-      {/* Bullets - using unified BulletList */}
+      {/* Bullets - increased space-y from 3 to 4 */}
       <div className="mb-8 flex-grow">
         <BulletList items={bullets} />
       </div>
       
-      {/* Deliverable - subtle divider */}
+      {/* Deliverable - more spacing above */}
       <div className="pt-6 border-t border-slate-200/60 mt-auto">
-        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-2">
+        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-3">
           Entregable
         </div>
         <p className="text-sm text-slate-900 font-medium leading-relaxed">
