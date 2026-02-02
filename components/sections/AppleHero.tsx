@@ -7,8 +7,8 @@ export const AppleHero: React.FC = () => {
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10 py-20">
-        <div className="max-w-[1120px] mx-auto text-center flex flex-col justify-center min-h-[80vh]">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10">
+        <div className="max-w-[1120px] mx-auto text-center flex flex-col justify-center min-h-screen py-20">
           {/* Main Headline */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
             <span className="block">
