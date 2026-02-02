@@ -28,44 +28,48 @@ export const AppleHeader: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-xl border-b border-[#E6E6EA] shadow-[0_1px_8px_rgba(0,0,0,0.04)]' 
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-2xl border-b border-[#E6E6EA]' 
+          : 'bg-white/95 backdrop-blur-2xl'
       }`}
     >
-      <div className="apple-container px-6 md:px-8">
-        <nav className="flex items-center justify-between h-18 md:h-20">
-          {/* Wordmark with breathing room */}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+        <nav className="flex items-center justify-between h-[52px]">
+          {/* Wordmark - Apple size */}
           <Link
             href="/"
-            className="text-[17px] md:text-[18px] font-semibold text-[#0B0B0D] tracking-tight hover:opacity-70 transition-opacity duration-200"
+            className="text-[21px] font-semibold text-[#0B0B0D] tracking-tight hover:opacity-70 transition-opacity flex-shrink-0"
           >
             Olimpias AI
           </Link>
 
-          {/* Desktop Navigation with generous spacing */}
-          <div className="hidden md:flex items-center gap-10">
+          {/* Desktop Navigation - Apple spacing */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[15px] text-[#4A4A50] hover:text-[#0B0B0D] transition-colors duration-200"
+                className="text-[14px] text-[#0B0B0D] hover:opacity-70 transition-opacity whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
-            <AppleButton variant="primary" href="/contact">
+          </div>
+
+          {/* CTA Button - Always visible on desktop */}
+          <div className="hidden lg:block flex-shrink-0">
+            <AppleButton variant="primary" href="/contact" className="text-[14px] px-4 py-2">
               Agendar Consulta
             </AppleButton>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2.5 text-[#0B0B0D] hover:opacity-70 transition-opacity duration-200"
+            className="lg:hidden p-2 text-[#0B0B0D] hover:opacity-70 transition-opacity"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -82,15 +86,15 @@ export const AppleHeader: React.FC = () => {
           </button>
         </nav>
 
-        {/* Mobile Menu with enhanced spacing */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-8 border-t border-[#E6E6EA] animate-in fade-in duration-200">
-            <div className="flex flex-col gap-6">
+          <div className="lg:hidden py-6 border-t border-[#E6E6EA]">
+            <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[17px] text-[#4A4A50] hover:text-[#0B0B0D] transition-colors duration-200 py-1"
+                  className="text-[17px] text-[#0B0B0D] hover:opacity-70 transition-opacity py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -99,7 +103,7 @@ export const AppleHeader: React.FC = () => {
               <AppleButton
                 variant="primary"
                 href="/contact"
-                className="w-full mt-4"
+                className="w-full mt-2"
               >
                 Agendar Consulta
               </AppleButton>

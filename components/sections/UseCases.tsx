@@ -9,19 +9,19 @@ interface UseCaseProps {
 
 const UseCaseCard: React.FC<UseCaseProps> = ({ lane, title, outcome }) => {
   return (
-    <div className="group relative bg-white p-10 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)] shadow-[0_8px_24px_rgba(0,0,0,0.04)] border border-[#E6E6EA]">
+    <div className="group relative bg-white rounded-[18px] p-8 transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
       {/* Lane label */}
-      <div className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-6">
+      <div className="text-[12px] font-medium tracking-[0.04em] text-[#86868B] mb-4">
         {lane}
       </div>
       
       {/* Title */}
-      <h3 className="text-[24px] font-semibold text-[#0B0B0D] mb-5 tracking-tight leading-[1.3]">
+      <h3 className="text-[21px] md:text-[24px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em] leading-[1.19]">
         {title}
       </h3>
       
       {/* Outcome */}
-      <p className="text-[17px] text-[#4A4A50] leading-[1.7]">
+      <p className="text-[14px] text-[#86868B] leading-[1.57] font-normal">
         {outcome}
       </p>
     </div>
@@ -78,33 +78,33 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <section id="use-cases" className="relative bg-[#FAFAFA] py-32 md:py-40">
-      {/* Breathing room container */}
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
-        {/* Header with generous spacing */}
-        <div className="text-center mb-24 md:mb-32">
-          <h2 className="text-[48px] md:text-[64px] font-semibold text-[#0B0B0D] mb-6 tracking-tight leading-[1.05]">
+    <section id="use-cases" className="relative bg-white py-20 md:py-24 lg:py-28">
+      {/* Container */}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-semibold text-[#0B0B0D] mb-4 tracking-[-0.015em] leading-[1.07]">
             Casos de Uso Empresariales
           </h2>
-          <p className="text-[21px] md:text-[24px] text-[#4A4A50] max-w-3xl mx-auto leading-[1.5]">
+          <p className="text-[19px] md:text-[21px] text-[#4A4A50] max-w-[600px] mx-auto leading-[1.38] font-normal">
             Flujos reales, resultados medibles, impacto operacional
           </p>
         </div>
 
-        {/* Grid with HUGE gaps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-16 mb-28">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 max-w-[1200px] mx-auto">
           {useCases.map((useCase, index) => (
             <UseCaseCard key={index} {...useCase} />
           ))}
         </div>
 
-        {/* CTA with breathing room */}
-        <div className="text-center pt-12 border-t border-[#E6E6EA]">
-          <p className="text-[18px] text-[#4A4A50] mb-10 leading-[1.65]">
+        {/* CTA */}
+        <div className="text-center pt-12 border-t border-[#D2D2D7] max-w-[800px] mx-auto">
+          <p className="text-[17px] text-[#86868B] mb-6 leading-[1.47] font-normal">
             ¿No ve su caso? Cada empresa tiene flujos únicos.
           </p>
-          <AppleButton variant="primary" href="/contact">
-            Agendar Consulta
+          <AppleButton variant="link" href="/contact" className="text-[14px]">
+            Agendar Consulta →
           </AppleButton>
         </div>
       </div>

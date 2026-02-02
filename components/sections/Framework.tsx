@@ -16,31 +16,31 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
   deliverable,
 }) => {
   return (
-    <div className="group relative bg-white p-12 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] shadow-[0_8px_24px_rgba(0,0,0,0.04)] border border-[#E6E6EA]">
+    <div className="group relative bg-white rounded-[18px] p-10 transition-all duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
       {/* Eyebrow number */}
-      <div className="text-[11px] font-mono tracking-[0.2em] text-[#7A7A82] mb-8">
+      <div className="text-[12px] font-medium tracking-[0.08em] text-[#86868B] mb-6">
         {number}
       </div>
       
       {/* Title */}
-      <h3 className="text-[32px] font-semibold text-[#0B0B0D] mb-5 tracking-tight leading-[1.1]">
+      <h3 className="text-[28px] md:text-[32px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em] leading-[1.12]">
         {title}
       </h3>
       
       {/* Definition */}
-      <p className="text-[18px] text-[#4A4A50] leading-[1.65] mb-10">
+      <p className="text-[14px] text-[#86868B] leading-[1.57] mb-8 font-normal">
         {definition}
       </p>
       
       {/* Examples */}
-      <div className="mb-10 pt-8 border-t border-[#E6E6EA]">
-        <div className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-6">
-          Examples
+      <div className="mb-8 pt-6 border-t border-[#D2D2D7]">
+        <div className="text-[12px] font-medium tracking-[0.04em] text-[#86868B] mb-4">
+          EJEMPLOS
         </div>
-        <ul className="space-y-4">
+        <ul className="space-y-3">
           {examples.map((example, index) => (
-            <li key={index} className="flex items-start text-[16px] text-[#4A4A50] leading-[1.7]">
-              <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
+            <li key={index} className="flex items-start text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
+              <span className="mr-3 mt-1.5 w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
               <span>{example}</span>
             </li>
           ))}
@@ -48,11 +48,11 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
       </div>
       
       {/* Deliverable */}
-      <div className="pt-8 border-t border-[#E6E6EA]">
-        <div className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-4">
-          Deliverable
+      <div className="pt-6 border-t border-[#D2D2D7]">
+        <div className="text-[12px] font-medium tracking-[0.04em] text-[#86868B] mb-3">
+          ENTREGABLE
         </div>
-        <p className="text-[16px] text-[#0B0B0D] font-medium leading-[1.6]">
+        <p className="text-[14px] text-[#1D1D1F] font-medium leading-[1.57]">
           {deliverable}
         </p>
       </div>
@@ -95,29 +95,29 @@ export const Framework: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="relative bg-white py-32 md:py-40">
-      {/* Breathing room container */}
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
-        {/* Header with generous spacing */}
-        <div className="text-center mb-24 md:mb-32">
-          <h2 className="text-[48px] md:text-[64px] font-semibold text-[#0B0B0D] mb-6 tracking-tight leading-[1.05]">
+    <section id="methodology" className="relative bg-[#F5F5F7] py-20 md:py-24 lg:py-28">
+      {/* Container */}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-semibold text-[#0B0B0D] mb-4 tracking-[-0.015em] leading-[1.07]">
             Valores Fundamentales
           </h2>
-          <p className="text-[21px] md:text-[24px] text-[#4A4A50] max-w-2xl mx-auto leading-[1.5]">
+          <p className="text-[19px] md:text-[21px] text-[#4A4A50] max-w-[600px] mx-auto leading-[1.38] font-normal">
             Mandamientos, no eslóganes
           </p>
         </div>
 
-        {/* Cards Grid with HUGE gaps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 lg:gap-16 mb-28">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16 max-w-[1200px] mx-auto">
           {frameworks.map((framework, index) => (
             <FrameworkCard key={index} {...framework} />
           ))}
         </div>
 
-        {/* Doctrine Footer with breathing room */}
-        <div className="text-center pt-12 border-t border-[#E6E6EA]">
-          <p className="text-[15px] text-[#7A7A82] tracking-wide leading-[1.8] max-w-3xl mx-auto">
+        {/* Doctrine Footer */}
+        <div className="text-center pt-12 border-t border-[#D2D2D7] max-w-[800px] mx-auto">
+          <p className="text-[14px] text-[#86868B] leading-[1.57] font-normal">
             Diseñar con precisión. Gobernar con responsabilidad. Elevar el rendimiento.
           </p>
         </div>
