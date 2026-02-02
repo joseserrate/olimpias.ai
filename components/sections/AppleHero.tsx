@@ -25,16 +25,16 @@ export const AppleHero: React.FC = () => {
             </span>
           </h1>
           
-          {/* SPACER 1 - GREEN - After headline */}
-          <div className="h-12 bg-green-500"></div>
+          {/* Spacer after headline - 24px */}
+          <div className="h-6"></div>
           
           {/* Subheadline */}
           <p className="text-[21px] md:text-[24px] lg:text-[28px] max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
-          {/* SPACER 2 - RED - After subheadline */}
-          <div className="h-12 bg-red-500"></div>
+          {/* Spacer after subheadline - 24px */}
+          <div className="h-6"></div>
           
           {/* CTA Buttons - EXPLICIT STRIPE HEIGHT */}
           <div className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center items-center">
