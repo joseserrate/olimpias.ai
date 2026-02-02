@@ -2,25 +2,23 @@
 
 import React, { useEffect, useRef } from 'react';
 
-interface Node {
-  x: number;
+interface Node3D {
+  x: number; // 3D coordinates
   y: number;
-  activation: number; // 0-1, how "lit up" the node is
-  connections: number[]; // indices of connected nodes
-}
-
-interface Pulse {
-  fromNode: number;
-  toNode: number;
-  progress: number; // 0-1
-  speed: number;
+  z: number;
+  projectedX: number; // 2D screen coordinates
+  projectedY: number;
+  projectedZ: number; // depth for z-ordering
+  activation: number; // 0-1
+  connections: number[];
 }
 
 export const NeuralNetworkBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const nodesRef = useRef<Node[]>([]);
-  const pulsesRef = useRef<Pulse[]>([]);
+  const nodesRef = useRef<Node3D[]>([]);
   const animationFrameRef = useRef<number | undefined>(undefined);
+  const rotationRef = useRef(0);
+  const wavePhaseRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,46 +39,51 @@ export const NeuralNetworkBackground: React.FC = () => {
       canvas.style.width = `${rect.width}px`;
       canvas.style.height = `${rect.height}px`;
       
-      // Reinitialize nodes when size changes
-      initializeNetwork();
+      initializeSphere();
     };
 
-    // Initialize network structure
-    const initializeNetwork = () => {
+    // Create sphere with nodes
+    const initializeSphere = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
-      const nodeCount = 30;
-      const nodes: Node[] = [];
+      const radius = Math.min(width, height) * 0.35;
+      const nodeCount = 80;
+      const nodes: Node3D[] = [];
 
-      // Create nodes in a grid-like pattern with some randomness
-      const cols = 5;
-      const rows = Math.ceil(nodeCount / cols);
-      const xSpacing = width / (cols + 1);
-      const ySpacing = height / (rows + 1);
+      // Fibonacci sphere distribution for even spacing
+      const goldenRatio = (1 + Math.sqrt(5)) / 2;
+      const angleIncrement = Math.PI * 2 * goldenRatio;
 
       for (let i = 0; i < nodeCount; i++) {
-        const col = i % cols;
-        const row = Math.floor(i / cols);
-        
+        const t = i / nodeCount;
+        const inclination = Math.acos(1 - 2 * t);
+        const azimuth = angleIncrement * i;
+
+        const x = radius * Math.sin(inclination) * Math.cos(azimuth);
+        const y = radius * Math.sin(inclination) * Math.sin(azimuth);
+        const z = radius * Math.cos(inclination);
+
         nodes.push({
-          x: xSpacing * (col + 1) + (Math.random() - 0.5) * xSpacing * 0.4,
-          y: ySpacing * (row + 1) + (Math.random() - 0.5) * ySpacing * 0.4,
-          activation: Math.random() * 0.3, // Start with low activation
+          x, y, z,
+          projectedX: 0,
+          projectedY: 0,
+          projectedZ: 0,
+          activation: 0,
           connections: []
         });
       }
 
-      // Create connections between nearby nodes
+      // Create connections between nearby nodes on sphere
       nodes.forEach((node, i) => {
         nodes.forEach((otherNode, j) => {
           if (i >= j) return;
-          
+
           const dx = node.x - otherNode.x;
           const dy = node.y - otherNode.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          const dz = node.z - otherNode.z;
+          const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-          // Connect nodes that are close enough
-          if (distance < width * 0.25) {
+          if (distance < radius * 0.6) {
             node.connections.push(j);
             otherNode.connections.push(i);
           }
@@ -88,41 +91,44 @@ export const NeuralNetworkBackground: React.FC = () => {
       });
 
       nodesRef.current = nodes;
-      pulsesRef.current = [];
     };
 
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
-    // Create pulses periodically
-    const createPulse = () => {
-      const nodes = nodesRef.current;
-      if (nodes.length === 0) return;
-
-      // Pick a random starting node
-      const startNode = Math.floor(Math.random() * nodes.length);
-      const connections = nodes[startNode].connections;
+    // 3D projection function
+    const project = (x: number, y: number, z: number, centerX: number, centerY: number) => {
+      const perspective = 800;
+      const scale = perspective / (perspective + z);
       
-      if (connections.length > 0) {
-        const targetNode = connections[Math.floor(Math.random() * connections.length)];
-        
-        pulsesRef.current.push({
-          fromNode: startNode,
-          toNode: targetNode,
-          progress: 0,
-          speed: 0.01 + Math.random() * 0.02 // Varying speeds
-        });
-
-        // Activate the starting node
-        nodes[startNode].activation = 1;
-      }
+      return {
+        x: x * scale + centerX,
+        y: y * scale + centerY,
+        z: z,
+        scale
+      };
     };
 
-    // Create initial pulses and set interval for new ones
-    const pulseInterval = setInterval(createPulse, 200);
-    for (let i = 0; i < 5; i++) {
-      setTimeout(createPulse, i * 100);
-    }
+    // Rotation matrix
+    const rotateY = (x: number, y: number, z: number, angle: number) => {
+      const cos = Math.cos(angle);
+      const sin = Math.sin(angle);
+      return {
+        x: x * cos + z * sin,
+        y: y,
+        z: -x * sin + z * cos
+      };
+    };
+
+    const rotateX = (x: number, y: number, z: number, angle: number) => {
+      const cos = Math.cos(angle);
+      const sin = Math.sin(angle);
+      return {
+        x: x,
+        y: y * cos - z * sin,
+        z: y * sin + z * cos
+      };
+    };
 
     // Animation loop
     const animate = () => {
@@ -130,103 +136,119 @@ export const NeuralNetworkBackground: React.FC = () => {
       
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
+      const centerX = width * 0.5;
+      const centerY = height * 0.5;
       const nodes = nodesRef.current;
-      const pulses = pulsesRef.current;
 
       // Clear canvas
       ctx.fillStyle = 'rgba(255, 255, 255, 1)';
       ctx.fillRect(0, 0, width, height);
 
-      // Decay all node activations
-      nodes.forEach(node => {
-        node.activation *= 0.95;
+      // Update rotation
+      rotationRef.current += 0.003;
+      wavePhaseRef.current += 0.02;
+
+      // Rotate and project all nodes
+      nodes.forEach((node) => {
+        // Rotate around Y axis (horizontal spin)
+        let rotated = rotateY(node.x, node.y, node.z, rotationRef.current);
+        // Slight tilt on X axis for better view
+        rotated = rotateX(rotated.x, rotated.y, rotated.z, 0.3);
+        
+        // Project to 2D
+        const projected = project(rotated.x, rotated.y, rotated.z, centerX, centerY);
+        node.projectedX = projected.x;
+        node.projectedY = projected.y;
+        node.projectedZ = projected.z;
+
+        // Calculate activation based on wave passing through
+        // Wave moves from left to right across the sphere
+        const wavePosition = Math.sin(wavePhaseRef.current);
+        const normalizedX = rotated.x / (Math.min(width, height) * 0.35);
+        
+        // Create wave that sweeps across
+        const distanceFromWave = Math.abs(normalizedX - wavePosition);
+        const waveWidth = 0.3;
+        
+        if (distanceFromWave < waveWidth) {
+          const intensity = 1 - (distanceFromWave / waveWidth);
+          node.activation = Math.max(node.activation, intensity * intensity);
+        }
+
+        // Decay activation
+        node.activation *= 0.92;
       });
 
-      // Draw connections (inactive state)
-      nodes.forEach((node, i) => {
-        node.connections.forEach(targetIdx => {
-          if (i < targetIdx) { // Draw each connection only once
-            const target = nodes[targetIdx];
+      // Sort nodes by depth for proper rendering
+      const sortedIndices = nodes
+        .map((node, index) => ({ index, z: node.projectedZ }))
+        .sort((a, b) => a.z - b.z)
+        .map(item => item.index);
+
+      // Draw connections (back to front)
+      sortedIndices.forEach(i => {
+        const node = nodes[i];
+        
+        // Only draw connections for nodes facing us
+        if (node.projectedZ < 0) {
+          node.connections.forEach(j => {
+            const target = nodes[j];
             
-            ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(target.x, target.y);
-            ctx.strokeStyle = 'rgba(147, 51, 234, 0.1)';
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        });
+            // Only draw if target is also visible
+            if (target.projectedZ < 0 && i < j) {
+              const avgActivation = (node.activation + target.activation) / 2;
+              const baseOpacity = 0.08;
+              const activeOpacity = 0.4;
+              const opacity = baseOpacity + avgActivation * activeOpacity;
+
+              // Calculate line width based on activation
+              const lineWidth = 0.5 + avgActivation * 1.5;
+
+              ctx.beginPath();
+              ctx.moveTo(node.projectedX, node.projectedY);
+              ctx.lineTo(target.projectedX, target.projectedY);
+              ctx.strokeStyle = `rgba(147, 51, 234, ${opacity})`;
+              ctx.lineWidth = lineWidth;
+              ctx.stroke();
+            }
+          });
+        }
       });
 
-      // Update and draw pulses
-      for (let i = pulses.length - 1; i >= 0; i--) {
-        const pulse = pulses[i];
-        pulse.progress += pulse.speed;
+      // Draw nodes (back to front)
+      sortedIndices.forEach(i => {
+        const node = nodes[i];
+        
+        // Only draw nodes facing us
+        if (node.projectedZ < 0) {
+          const baseSize = 2;
+          const activeSize = 4;
+          const size = baseSize + node.activation * activeSize;
 
-        if (pulse.progress >= 1) {
-          // Pulse reached destination
-          nodes[pulse.toNode].activation = 1;
-          pulses.splice(i, 1);
-          
-          // Chain reaction: create new pulses from this node
-          if (Math.random() > 0.3) {
-            const connections = nodes[pulse.toNode].connections;
-            if (connections.length > 0) {
-              const nextTarget = connections[Math.floor(Math.random() * connections.length)];
-              pulses.push({
-                fromNode: pulse.toNode,
-                toNode: nextTarget,
-                progress: 0,
-                speed: 0.01 + Math.random() * 0.02
-              });
-            }
+          // Glow effect when activated
+          if (node.activation > 0.3) {
+            ctx.beginPath();
+            ctx.arc(node.projectedX, node.projectedY, size * 3, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(147, 51, 234, ${node.activation * 0.2})`;
+            ctx.fill();
           }
-        } else {
-          // Draw active connection with pulse
-          const from = nodes[pulse.fromNode];
-          const to = nodes[pulse.toNode];
-          
-          // Draw lit-up connection
-          ctx.beginPath();
-          ctx.moveTo(from.x, from.y);
-          ctx.lineTo(to.x, to.y);
-          ctx.strokeStyle = `rgba(147, 51, 234, ${0.6 * (1 - pulse.progress * 0.5)})`;
-          ctx.lineWidth = 2;
-          ctx.stroke();
 
-          // Draw pulse point
-          const pulseX = from.x + (to.x - from.x) * pulse.progress;
-          const pulseY = from.y + (to.y - from.y) * pulse.progress;
-          
+          // Node core
           ctx.beginPath();
-          ctx.arc(pulseX, pulseY, 3, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(147, 51, 234, 1)';
-          ctx.fill();
+          ctx.arc(node.projectedX, node.projectedY, size, 0, Math.PI * 2);
           
-          // Glow effect
-          ctx.beginPath();
-          ctx.arc(pulseX, pulseY, 8, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(147, 51, 234, 0.3)';
+          const brightness = 0.4 + node.activation * 0.6;
+          ctx.fillStyle = `rgba(${147 * brightness}, ${51 * brightness}, ${234 * brightness}, ${0.7 + node.activation * 0.3})`;
           ctx.fill();
+
+          // Bright center when highly activated
+          if (node.activation > 0.6) {
+            ctx.beginPath();
+            ctx.arc(node.projectedX, node.projectedY, size * 0.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${node.activation * 0.8})`;
+            ctx.fill();
+          }
         }
-      }
-
-      // Draw nodes with activation
-      nodes.forEach(node => {
-        // Node glow when activated
-        if (node.activation > 0.1) {
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, 8 * node.activation, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(147, 51, 234, ${0.2 * node.activation})`;
-          ctx.fill();
-        }
-
-        // Node core
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, 2 + node.activation * 2, 0, Math.PI * 2);
-        const brightness = 0.3 + node.activation * 0.7;
-        ctx.fillStyle = `rgba(${147 * brightness}, ${51 * brightness}, ${234 * brightness}, ${0.6 + node.activation * 0.4})`;
-        ctx.fill();
       });
 
       animationFrameRef.current = requestAnimationFrame(animate);
@@ -237,7 +259,6 @@ export const NeuralNetworkBackground: React.FC = () => {
     // Cleanup
     return () => {
       window.removeEventListener('resize', updateCanvasSize);
-      clearInterval(pulseInterval);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -245,7 +266,7 @@ export const NeuralNetworkBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute right-0 top-0 bottom-0 w-[50%] md:w-[40%] overflow-hidden pointer-events-none">
+    <div className="absolute right-0 top-0 bottom-0 w-full md:w-[50%] flex items-center justify-center pointer-events-none">
       <canvas
         ref={canvasRef}
         className="w-full h-full"
