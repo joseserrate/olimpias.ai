@@ -25,15 +25,7 @@ export const AppleHero: React.FC = () => {
             </span>
             <span className="block mt-1">
               <span className="text-[#0B0B0D]">de </span>
-              <span className="relative inline-block">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600">
-                  Bolivia
-                </span>
-                {/* Subtle glow effect */}
-                <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 blur-sm opacity-30">
-                  Bolivia
-                </span>
-              </span>
+              <span className="text-[#0B0B0D]">Bolivia</span>
             </span>
           </h1>
           
@@ -42,11 +34,7 @@ export const AppleHero: React.FC = () => {
             <span className="text-[#1D1D1F]/70">Diseñamos y gobernamos </span>
             <span className="text-[#1D1D1F] font-medium">operaciones agénticas</span>
             <span className="text-[#1D1D1F]/70"> que entregan </span>
-            <span className="relative inline-block">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700 font-medium">
-                rendimiento empresarial medible
-              </span>
-            </span>
+            <span className="text-[#1D1D1F] font-medium">rendimiento empresarial medible</span>
           </p>
           
           {/* CTA Buttons - Enhanced Stripe style */}
@@ -74,17 +62,13 @@ export const AppleHero: React.FC = () => {
             </a>
           </div>
           
-          {/* Supporting Line with gradient accent */}
+          {/* Supporting Line */}
           <div className="relative inline-block mb-16">
             <p className="text-[17px] md:text-[19px] max-w-[680px] mx-auto leading-[1.45] font-normal">
               <span className="text-[#1D1D1F]/60">Donde Bolivia </span>
               <span className="text-[#1D1D1F]">diseña y gobierna agentes</span>
               <span className="text-[#1D1D1F]/60"> de inteligencia artificial para </span>
-              <span className="relative inline-block">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium">
-                  rendimiento empresarial
-                </span>
-              </span>
+              <span className="text-[#1D1D1F] font-medium">rendimiento empresarial</span>
               <span className="text-[#1D1D1F]/60">.</span>
             </p>
           </div>
