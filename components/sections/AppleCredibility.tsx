@@ -59,7 +59,7 @@ export const AppleCredibility: React.FC = () => {
 
           {/* Education */}
           <div className="mb-10 pt-10 border-t border-slate-200/60">
-            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
+            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4 mt-10">
               Formación
             </h4>
             <BulletList items={education} />
@@ -67,7 +67,7 @@ export const AppleCredibility: React.FC = () => {
 
           {/* Commitments */}
           <div className="pt-10 border-t border-slate-200/60">
-            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
+            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4 mt-10">
               Compromisos
             </h4>
             <BulletList items={commitments} />
