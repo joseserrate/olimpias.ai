@@ -32,8 +32,8 @@ export const AppleCredibility: React.FC = () => {
         subheadline="Experiencia global aplicada a empresa boliviana."
       />
 
-      {/* Two-column layout with generous gap */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      {/* Two-column layout with DRAMATIC gap for breathing room */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         {/* Left Column - Narrative */}
         <div className="flex flex-col justify-center">
           <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-4 tracking-tight leading-tight">

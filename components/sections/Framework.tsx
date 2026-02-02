@@ -42,8 +42,8 @@ export const Framework: React.FC = () => {
         subheadline="Mandamientos, no eslóganes. Así diseñamos, gobernamos y elevamos sistemas de IA empresarial."
       />
 
-      {/* 3-up grid with generous gaps */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      {/* 3-up grid with DRAMATIC gaps for breathing room */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
         {valores.map((valor, index) => (
           <ValueCard key={index} {...valor} />
         ))}

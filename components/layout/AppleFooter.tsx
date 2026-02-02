@@ -8,9 +8,9 @@ export const AppleFooter: React.FC = () => {
   return (
     <footer className="relative bg-white border-t border-slate-200/60">
       {/* Match Section spacing */}
-      <div className="py-24 sm:py-28 lg:py-32">
-        {/* Match Section container: max-w-[1040px] with generous gutters */}
-        <div className="max-w-[1040px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 w-full">
+      <div className="py-32 sm:py-36 lg:py-40">
+        {/* Match Section container: 960px with EXTREME gutters */}
+        <div className="max-w-[960px] mx-auto px-8 sm:px-10 md:px-12 lg:px-16 xl:px-20 2xl:px-24 w-full">
           {/* 3-column grid on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-12">
             {/* Brand - 6 columns */}
