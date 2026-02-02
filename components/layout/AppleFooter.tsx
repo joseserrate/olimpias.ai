@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const AppleFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,15 @@ export const AppleFooter: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-[21px] font-semibold text-[#0B0B0D] mb-4 tracking-tight">
-              Olimpias AI
-            </h3>
+            <div className="mb-4">
+              <Image
+                src="/olimpias-ai-logo.png"
+                alt="Olimpias AI"
+                width={200}
+                height={40}
+                className="h-[40px] w-auto"
+              />
+            </div>
             <p className="text-[14px] text-[#86868B] leading-[1.57] max-w-md font-normal">
               El Centro de IA Empresarial de Bolivia. Diseñamos y gobernamos operaciones agénticas que entregan rendimiento empresarial medible.
             </p>

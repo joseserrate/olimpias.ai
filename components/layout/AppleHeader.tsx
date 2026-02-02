@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AppleButton } from '@/components/ui';
 
 export const AppleHeader: React.FC = () => {
@@ -34,12 +35,19 @@ export const AppleHeader: React.FC = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <nav className="flex items-center justify-between h-[52px]">
-          {/* Wordmark - Apple size */}
+          {/* Logo */}
           <Link
             href="/"
-            className="text-[21px] font-semibold text-[#0B0B0D] tracking-tight hover:opacity-70 transition-opacity flex-shrink-0"
+            className="hover:opacity-70 transition-opacity flex-shrink-0"
           >
-            Olimpias AI
+            <Image
+              src="/olimpias-ai-logo.png"
+              alt="Olimpias AI"
+              width={180}
+              height={36}
+              priority
+              className="h-[36px] w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation - Apple spacing */}
