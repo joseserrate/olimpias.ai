@@ -59,7 +59,7 @@ export const AppleFooter: React.FC = () => {
               />
             </div>
             {/* Tagline - aligned with Valores link */}
-            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ marginTop: '-24px', marginLeft: 0, padding: 0, textAlign: 'left' }}>
+            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ marginTop: '-8px', marginLeft: 0, padding: 0, textAlign: 'left' }}>
               El Centro de IA Empresarial de Bolivia
             </p>
           </div>
