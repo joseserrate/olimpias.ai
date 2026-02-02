@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from './Card';
 
 interface UseCaseCardProps {
   category: string;
@@ -14,14 +15,14 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
   description 
 }) => {
   return (
-    <div className="group relative bg-white border border-[#E0E0E6] rounded-xl p-8 transition-all duration-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:border-[#D2D2D7] h-full flex flex-col">
+    <Card className="h-full flex flex-col">
       {/* Category label */}
       <div className="text-[11px] font-medium tracking-[0.08em] text-[#86868B] uppercase mb-4">
         {category}
       </div>
       
       {/* Title */}
-      <h3 className="text-[20px] md:text-[22px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em] leading-[1.2]">
+      <h3 className="text-[19px] md:text-[21px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em] leading-[1.25]">
         {title}
       </h3>
       
@@ -36,6 +37,6 @@ export const UseCaseCard: React.FC<UseCaseCardProps> = ({
           {description}
         </p>
       )}
-    </div>
+    </Card>
   );
 };

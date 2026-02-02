@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeader, ValueCard } from '@/components/ui';
+import { Section, Container, SectionHeader, ValueCard } from '@/components/ui';
 
 export const Framework: React.FC = () => {
   const valores = [
@@ -36,22 +36,20 @@ export const Framework: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="relative bg-white py-24 md:py-32 lg:py-40">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        <div className="max-w-[1120px] mx-auto">
-          <SectionHeader 
-            headline="Valores Fundamentales"
-            subheadline="Mandamientos, no eslóganes. Así diseñamos, gobernamos y elevamos sistemas de IA empresarial."
-          />
+    <Section id="methodology" spacing="large">
+      <Container size="narrow">
+        <SectionHeader 
+          headline="Valores Fundamentales"
+          subheadline="Mandamientos, no eslóganes. Así diseñamos, gobernamos y elevamos sistemas de IA empresarial."
+        />
 
-          {/* 3-Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {valores.map((valor, index) => (
-              <ValueCard key={index} {...valor} />
-            ))}
-          </div>
+        {/* 3-Card Grid - Mobile: 1col, Tablet: 2col, Desktop: 3col */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {valores.map((valor, index) => (
+            <ValueCard key={index} {...valor} />
+          ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };

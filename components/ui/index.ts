@@ -11,6 +11,8 @@ export type { SectionProps } from './Section';
 export { Container } from './Container';
 export type { ContainerProps } from './Container';
 
+export { Card } from './Card';
+export { BulletList } from './BulletList';
 export { SectionHeader } from './SectionHeader';
 export { ValueCard } from './ValueCard';
 export { UseCaseCard } from './UseCaseCard';

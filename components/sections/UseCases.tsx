@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeader, UseCaseCard } from '@/components/ui';
+import { Section, Container, SectionHeader, UseCaseCard } from '@/components/ui';
 
 export const UseCases: React.FC = () => {
   const useCases = [
@@ -46,22 +46,20 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <section id="use-cases" className="relative bg-white py-24 md:py-32 lg:py-40">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        <div className="max-w-[1120px] mx-auto">
-          <SectionHeader 
-            headline="Casos de Uso Empresariales"
-            subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
-          />
+    <Section id="use-cases" spacing="large">
+      <Container size="narrow">
+        <SectionHeader 
+          headline="Casos de Uso Empresariales"
+          subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
+        />
 
-          {/* 2-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {useCases.map((useCase, index) => (
-              <UseCaseCard key={index} {...useCase} />
-            ))}
-          </div>
+        {/* 2-Column Grid - Mobile: 1col, Desktop: 2col */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {useCases.map((useCase, index) => (
+            <UseCaseCard key={index} {...useCase} />
+          ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
