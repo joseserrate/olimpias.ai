@@ -8,6 +8,9 @@ export type { AppleButtonProps } from './AppleButton';
 export { Section } from './Section';
 export type { SectionProps } from './Section';
 
+export { Container } from './Container';
+export type { ContainerProps } from './Container';
+
 export { Card } from './Card';
 export { BulletList } from './BulletList';
 export { SectionHeader } from './SectionHeader';
