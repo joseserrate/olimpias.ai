@@ -7,8 +7,8 @@ export const AppleHero: React.FC = () => {
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10">
-        <div className="max-w-[1120px] mx-auto text-center flex flex-col justify-center min-h-screen py-20">
+      <div className="relative max-w-[1040px] mx-auto px-6 lg:px-8 z-10">
+        <div className="mx-auto text-center flex flex-col justify-center min-h-screen py-20">
           {/* Main Headline */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-[1.05] tracking-[-0.025em]">
             <span className="block">
@@ -29,7 +29,7 @@ export const AppleHero: React.FC = () => {
           <div className="h-3"></div>
           
           {/* Subheadline */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] max-w-[800px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
