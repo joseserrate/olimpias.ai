@@ -33,22 +33,34 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 
   return (
     <div 
-      className={`${alignClass} w-full`}
-      style={{ marginBottom }}
+      className={`${alignClass}`}
+      style={{ 
+        marginBottom,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
     >
       {eyebrow && (
-        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
+        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4" style={{ textAlign: 'center' }}>
           {eyebrow}
         </div>
       )}
       
       {/* H2: Controlled line length for readability, centered */}
-      <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-slate-900 tracking-tight leading-[1.15] max-w-2xl mx-auto">
+      <h2 
+        className="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-slate-900 tracking-tight leading-[1.15] max-w-2xl"
+        style={{ textAlign: 'center', margin: '0 auto', width: '100%' }}
+      >
         {headline}
       </h2>
       
       {subheadline && (
-        <p className="text-base sm:text-lg text-slate-600 leading-[1.7] mt-5 max-w-xl mx-auto">
+        <p 
+          className="text-base sm:text-lg text-slate-600 leading-[1.7] mt-5 max-w-xl"
+          style={{ textAlign: 'center', margin: '20px auto 0', width: '100%' }}
+        >
           {subheadline}
         </p>
       )}
