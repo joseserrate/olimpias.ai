@@ -37,24 +37,20 @@ export const AppleHero: React.FC = () => {
             <span className="text-[#1D1D1F]/70">.</span>
           </p>
           
-          {/* CTA Buttons - Stripe-style */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-            <button className="px-7 py-3.5 text-[16px] font-semibold text-white bg-[#5B3DF5] rounded-full hover:bg-[#4A2FD5] transition-colors shadow-sm hover:shadow-md">
+          {/* CTA Buttons - Stripe-style: larger, square, spaced */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button className="px-10 py-4 text-[17px] font-semibold text-white bg-[#5B3DF5] rounded-lg hover:bg-[#4A2FD5] transition-colors shadow-sm hover:shadow-md flex items-center gap-2 min-w-[200px] justify-center">
               Agendar Consulta
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
             </button>
             <a 
               href="#methodology" 
-              className="px-7 py-3.5 text-[16px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-full hover:border-[#5B3DF5] transition-colors"
+              className="px-10 py-4 text-[17px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-lg hover:border-[#5B3DF5] transition-colors min-w-[240px] text-center"
             >
               Conocer Metodología
             </a>
-          </div>
-          
-          {/* Trust Line - More prominent */}
-          <div className="pt-10 border-t border-[#1D1D1F]/10 max-w-[800px] mx-auto">
-            <p className="text-[14px] text-[#1D1D1F]/50 tracking-[0.02em] leading-[1.6]">
-              Fundado en experiencia global · Apple Business Solutions · MSTC, UT Austin · Harvard Agentic AI
-            </p>
           </div>
         </div>
       </div>
