@@ -45,16 +45,12 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
       )}
       <section id={id} className={classes}>
         <div 
-          className="max-w-[1040px] mx-auto w-full outline outline-4 outline-red-500 bg-red-50/10"
+          className="max-w-[1040px] mx-auto w-full"
           style={{
             paddingLeft: padding,
             paddingRight: padding
           }}
         >
-          {/* DEBUG: Show applied padding */}
-          <div className="bg-yellow-300 text-black text-xs font-mono p-2 mb-4 sticky top-0 z-50">
-            JS PADDING: {padding} | Viewport: {typeof window !== 'undefined' ? window.innerWidth : '?'}px
-          </div>
           {children}
         </div>
       </section>
