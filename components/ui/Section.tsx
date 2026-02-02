@@ -4,31 +4,25 @@ export interface SectionProps {
   id?: string;
   className?: string;
   children: React.ReactNode;
-  spacing?: 'normal' | 'large' | 'none';
-  background?: 'white' | 'gray';
+  background?: 'white' | 'subtle';
 }
 
 export const Section: React.FC<SectionProps> = ({ 
   id, 
   className = '', 
   children, 
-  spacing = 'normal',
   background = 'white'
 }) => {
-  // Vertical rhythm: py-20 mobile, py-28 or py-32 desktop
-  const spacingClass = spacing === 'large' 
-    ? 'py-24 md:py-32 lg:py-40' 
-    : spacing === 'normal'
-    ? 'py-20 md:py-28'
-    : '';
-    
-  const bgClass = background === 'gray' ? 'bg-gray-50' : 'bg-white';
-  
-  const classes = `relative ${bgClass} ${spacingClass} ${className}`.trim();
+  // Stripe-grade vertical rhythm: py-16→20→28
+  const bgClass = background === 'subtle' ? 'bg-slate-50/50' : 'bg-white';
+  const classes = `relative ${bgClass} py-16 sm:py-20 lg:py-28 ${className}`.trim();
 
   return (
     <section id={id} className={classes}>
-      {children}
+      {/* Container: max-w-6xl centered with consistent horizontal padding */}
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        {children}
+      </div>
     </section>
   );
 };

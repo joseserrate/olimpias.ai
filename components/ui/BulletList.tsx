@@ -2,26 +2,21 @@ import React from 'react';
 
 interface BulletListProps {
   items: string[];
-  variant?: 'primary' | 'neutral';
-  size?: 'sm' | 'md';
+  className?: string;
 }
 
 export const BulletList: React.FC<BulletListProps> = ({ 
-  items, 
-  variant = 'neutral',
-  size = 'md'
+  items,
+  className = ''
 }) => {
-  const bulletColor = variant === 'primary' ? 'bg-[#5B3DF5]' : 'bg-[#1D1D1F]';
-  const textSize = size === 'sm' ? 'text-[14px]' : 'text-[15px]';
-
   return (
-    <ul className="space-y-3">
+    <ul className={`space-y-3 ${className}`}>
       {items.map((item, index) => (
         <li key={index} className="flex gap-3 items-start">
-          {/* Bullet dot - perfectly aligned with first line */}
-          <span className={`inline-block w-1.5 h-1.5 rounded-full ${bulletColor} flex-shrink-0 mt-[0.6em]`}></span>
+          {/* Bullet dot - aligned to first line with mt-[0.45em] */}
+          <span className="inline-block w-2 h-2 rounded-full bg-[#5B3DF5] flex-shrink-0 mt-[0.45em]"></span>
           {/* Text */}
-          <span className={`${textSize} text-[#1D1D1F] leading-[1.5] font-normal flex-1`}>
+          <span className="text-slate-700 leading-relaxed flex-1">
             {item}
           </span>
         </li>

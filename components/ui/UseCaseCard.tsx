@@ -5,38 +5,29 @@ interface UseCaseCardProps {
   category: string;
   title: string;
   outcome: string;
-  description?: string;
 }
 
 export const UseCaseCard: React.FC<UseCaseCardProps> = ({ 
   category, 
   title, 
-  outcome,
-  description 
+  outcome
 }) => {
   return (
     <Card className="h-full flex flex-col">
-      {/* Category label */}
-      <div className="text-[11px] font-medium tracking-[0.08em] text-[#86868B] uppercase mb-4">
+      {/* Category label - micro typography */}
+      <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
         {category}
       </div>
       
       {/* Title */}
-      <h3 className="text-[19px] md:text-[21px] font-semibold text-[#1D1D1F] mb-3 tracking-[-0.01em] leading-[1.25]">
+      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-3 tracking-tight leading-tight">
         {title}
       </h3>
       
-      {/* Outcome - highlighted */}
-      <p className="text-[15px] text-[#5B3DF5] font-medium mb-3 leading-[1.4]">
+      {/* Outcome - brand accent */}
+      <p className="text-sm font-medium text-[#5B3DF5] leading-relaxed">
         {outcome}
       </p>
-      
-      {/* Description if provided */}
-      {description && (
-        <p className="text-[14px] text-[#86868B] leading-[1.5] font-normal">
-          {description}
-        </p>
-      )}
     </Card>
   );
 };

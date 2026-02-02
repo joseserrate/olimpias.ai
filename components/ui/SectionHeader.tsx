@@ -17,22 +17,22 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const marginClass = alignment === 'center' ? 'mx-auto' : '';
 
   return (
-    <div className={`${alignClass} mb-16 md:mb-20`}>
+    <div className={`${alignClass} mb-12 sm:mb-16`}>
       {eyebrow && (
-        <div className="text-[12px] font-medium tracking-[0.08em] text-[#86868B] uppercase mb-3">
+        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
           {eyebrow}
         </div>
       )}
-      <h2 className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-semibold text-[#1D1D1F] tracking-[-0.02em] leading-[1.05]">
+      
+      {/* H2: text-4xl→5xl→6xl, tracking-tight, font-semibold, slate-900 */}
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 tracking-tight leading-tight">
         {headline}
       </h2>
+      
       {subheadline && (
-        <>
-          <div className="h-3"></div>
-          <p className={`text-[19px] md:text-[21px] text-[#1D1D1F]/70 leading-[1.45] font-normal max-w-[680px] ${marginClass}`}>
-            {subheadline}
-          </p>
-        </>
+        <p className={`text-lg md:text-xl text-slate-600 leading-relaxed mt-4 max-w-2xl ${marginClass}`}>
+          {subheadline}
+        </p>
       )}
     </div>
   );

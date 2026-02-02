@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, Container, SectionHeader, UseCaseCard } from '@/components/ui';
+import { Section, SectionHeader, UseCaseCard } from '@/components/ui';
 
 export const UseCases: React.FC = () => {
   const useCases = [
@@ -46,20 +46,18 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <Section id="use-cases" spacing="large">
-      <Container size="narrow">
-        <SectionHeader 
-          headline="Casos de Uso Empresariales"
-          subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
-        />
+    <Section id="use-cases" background="subtle">
+      <SectionHeader 
+        headline="Casos de Uso Empresariales"
+        subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
+      />
 
-        {/* 2-Column Grid - Mobile: 1col, Desktop: 2col */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {useCases.map((useCase, index) => (
-            <UseCaseCard key={index} {...useCase} />
-          ))}
-        </div>
-      </Container>
+      {/* 2-up grid on md+ with consistent card heights */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {useCases.map((useCase, index) => (
+          <UseCaseCard key={index} {...useCase} />
+        ))}
+      </div>
     </Section>
   );
 };
