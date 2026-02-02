@@ -13,30 +13,21 @@ export const AppleHero: React.FC = () => {
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-10 md:mb-14 lg:mb-16 leading-[1.05] tracking-[-0.025em]">
             <span className="block">
               <span className="text-[#0B0B0D]">Centro de </span>
-            </span>
-            <span className="block mt-3 md:mt-4">
               <span className="relative inline-block opacity-75 backdrop-blur-sm">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5]">
-                  Inteligencia Artificial
+                  IA Empresarial
                 </span>
                 {/* Subtle glow effect */}
                 <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5] blur-sm opacity-30">
-                  Inteligencia Artificial
+                  IA Empresarial
                 </span>
               </span>
-            </span>
-            <span className="block mt-3 md:mt-4">
-              <span className="text-[#0B0B0D]">Empresarial</span>
             </span>
           </h1>
           
           {/* Subheadline - Premium spacing and breathing room */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-14 md:mb-16 lg:mb-20 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]">
-            <span className="text-[#1D1D1F]/70">Olimpias AI es el centro donde Bolivia </span>
-            <span className="font-medium text-[#1D1D1F]">diseña y gobierna agentes</span>
-            <span className="text-[#1D1D1F]/70"> de inteligencia artificial para </span>
-            <span className="font-medium text-[#1D1D1F]">rendimiento empresarial</span>
-            <span className="text-[#1D1D1F]/70">.</span>
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-14 md:mb-16 lg:mb-20 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
+            Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
           {/* CTA Buttons - Premium spacing */}
