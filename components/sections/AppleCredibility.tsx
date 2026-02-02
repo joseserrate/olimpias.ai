@@ -50,7 +50,7 @@ export const AppleCredibility: React.FC = () => {
         {/* Right Column - Credentials Card */}
         <Card hover={false}>
           {/* Experience */}
-          <div className="mb-8">
+          <div className="mb-10">
             <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
               Experiencia
             </h4>
@@ -58,7 +58,7 @@ export const AppleCredibility: React.FC = () => {
           </div>
 
           {/* Education */}
-          <div className="mb-8 pt-8 border-t border-slate-200/60">
+          <div className="mb-10 pt-10 border-t border-slate-200/60">
             <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
               Formación
             </h4>
@@ -66,7 +66,7 @@ export const AppleCredibility: React.FC = () => {
           </div>
 
           {/* Commitments */}
-          <div className="pt-8 border-t border-slate-200/60">
+          <div className="pt-10 border-t border-slate-200/60">
             <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
               Compromisos
             </h4>
