@@ -3,13 +3,7 @@ import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-orange-50/20">
-      {/* Vibrant Stripe-inspired gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-orange-500/5 pointer-events-none"></div>
-      
-      {/* Additional color wash for depth */}
-      <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-purple-500/10 via-pink-500/5 to-transparent pointer-events-none"></div>
-      
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-white">
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
