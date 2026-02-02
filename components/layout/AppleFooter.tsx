@@ -47,7 +47,7 @@ export const AppleFooter: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
           {/* Brand - 5 columns */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="mb-5" style={{ marginLeft: 0, paddingLeft: 0 }}>
+            <div className="mb-5" style={{ marginLeft: '-6px', paddingLeft: 0 }}>
               <Image
                 src="/olimpias-ai-logo.png"
                 alt="Olimpias AI"
@@ -57,7 +57,7 @@ export const AppleFooter: React.FC = () => {
                 style={{ margin: 0, padding: 0, display: 'block' }}
               />
             </div>
-            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ marginLeft: '-2px', padding: 0, textAlign: 'left' }}>
+            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ margin: 0, padding: 0, textAlign: 'left' }}>
               El Centro de IA Empresarial de Bolivia
             </p>
           </div>
