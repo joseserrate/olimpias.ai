@@ -37,11 +37,11 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
         <div className="text-[12px] font-medium tracking-[0.04em] text-[#86868B] mb-4">
           EJEMPLOS
         </div>
-        <ul className="space-y-2.5">
+        <ul className="space-y-2">
           {examples.map((example, index) => (
-            <li key={index} className="flex items-start gap-2.5">
-              <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-              <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">{example}</span>
+            <li key={index} className="flex items-start gap-3">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+              <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">{example}</span>
             </li>
           ))}
         </ul>

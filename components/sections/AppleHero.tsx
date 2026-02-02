@@ -32,12 +32,12 @@ export const AppleHero: React.FC = () => {
           </div>
           
           {/* Supporting Line */}
-          <p className="text-[17px] text-[#86868B] max-w-[600px] mx-auto leading-[1.47] mb-20 font-normal">
+          <p className="text-[17px] text-[#86868B] max-w-[640px] mx-auto leading-[1.47] mb-16 font-normal">
             Donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
           {/* Trust Line */}
-          <div className="pt-12 border-t border-[#D2D2D7] max-w-[700px] mx-auto">
+          <div className="pt-10 border-t border-[#D2D2D7] max-w-[740px] mx-auto">
             <p className="text-[12px] text-[#86868B] tracking-[0.04em] leading-[1.67]">
               Fundado en experiencia global · Apple Business Solutions · MSTC, UT Austin · Harvard Agentic AI
             </p>

@@ -39,16 +39,16 @@ export const AppleCredibility: React.FC = () => {
               <h4 className="text-[12px] font-semibold tracking-[0.04em] text-[#86868B] mb-4">
                 EXPERIENCIA
               </h4>
-              <ul className="space-y-2.5">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Sistemas de escala global en Apple Business Solutions
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Arquitectura empresarial y diseño de sistemas
                   </span>
                 </li>
@@ -59,22 +59,22 @@ export const AppleCredibility: React.FC = () => {
               <h4 className="text-[12px] font-semibold tracking-[0.04em] text-[#86868B] mb-4">
                 FORMACIÓN
               </h4>
-              <ul className="space-y-2.5">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Maestría en Comercialización de Tecnología (MSTC), UT Austin
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Programa Intensivo en IA Agéntica, Harvard
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Finanzas y Medios Digitales
                   </span>
                 </li>
@@ -85,22 +85,22 @@ export const AppleCredibility: React.FC = () => {
               <h4 className="text-[12px] font-semibold tracking-[0.04em] text-[#86868B] mb-4">
                 COMPROMISOS
               </h4>
-              <ul className="space-y-2.5">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+              <ul className="space-y-2">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Resultados medibles
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Arquitectura disciplinada
                   </span>
                 </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                  <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Gobernanza responsable
                   </span>
                 </li>
