@@ -140,8 +140,8 @@ export const NeuralNetworkBackground: React.FC = () => {
       const centerY = height * 0.5;
       const nodes = nodesRef.current;
 
-      // Clear canvas with subtle gradient base
-      ctx.fillStyle = 'rgba(255, 255, 255, 0)'; // Transparent to show background
+      // Clear canvas completely each frame
+      ctx.fillStyle = 'rgba(255, 255, 255, 1)'; // Solid white - no trails
       ctx.fillRect(0, 0, width, height);
 
       // Update rotation
