@@ -37,11 +37,11 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
         <div className="text-[12px] font-medium tracking-[0.04em] text-[#86868B] mb-4">
           EJEMPLOS
         </div>
-        <ul className="space-y-3">
+        <ul className="space-y-2.5">
           {examples.map((example, index) => (
-            <li key={index} className="flex items-start text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
-              <span className="mr-3 mt-1.5 w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
-              <span>{example}</span>
+            <li key={index} className="flex items-start gap-2.5">
+              <span className="mt-[7px] w-1 h-1 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+              <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal flex-1">{example}</span>
             </li>
           ))}
         </ul>
@@ -95,21 +95,21 @@ export const Framework: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="relative bg-[#F5F5F7] py-20 md:py-24 lg:py-28">
+    <section id="methodology" className="relative bg-[#F5F5F7] py-24 md:py-28 lg:py-32">
       {/* Container */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-semibold text-[#0B0B0D] mb-4 tracking-[-0.015em] leading-[1.07]">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-semibold text-[#1D1D1F] mb-4 tracking-[-0.015em] leading-[1.07]">
             Valores Fundamentales
           </h2>
-          <p className="text-[19px] md:text-[21px] text-[#4A4A50] max-w-[600px] mx-auto leading-[1.38] font-normal">
+          <p className="text-[19px] md:text-[21px] text-[#86868B] max-w-[600px] mx-auto leading-[1.38] font-normal">
             Mandamientos, no eslóganes
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 mb-20 md:mb-24 max-w-[1200px] mx-auto">
           {frameworks.map((framework, index) => (
             <FrameworkCard key={index} {...framework} />
           ))}

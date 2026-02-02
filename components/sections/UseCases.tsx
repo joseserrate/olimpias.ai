@@ -78,21 +78,21 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <section id="use-cases" className="relative bg-white py-20 md:py-24 lg:py-28">
+    <section id="use-cases" className="relative bg-white py-24 md:py-28 lg:py-32">
       {/* Container */}
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-semibold text-[#0B0B0D] mb-4 tracking-[-0.015em] leading-[1.07]">
+        <div className="text-center mb-16 md:mb-20 lg:mb-24">
+          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-semibold text-[#1D1D1F] mb-4 tracking-[-0.015em] leading-[1.07]">
             Casos de Uso Empresariales
           </h2>
-          <p className="text-[19px] md:text-[21px] text-[#4A4A50] max-w-[600px] mx-auto leading-[1.38] font-normal">
+          <p className="text-[19px] md:text-[21px] text-[#86868B] max-w-[600px] mx-auto leading-[1.38] font-normal">
             Flujos reales, resultados medibles, impacto operacional
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 mb-20 md:mb-24 max-w-[1200px] mx-auto">
           {useCases.map((useCase, index) => (
             <UseCaseCard key={index} {...useCase} />
           ))}
