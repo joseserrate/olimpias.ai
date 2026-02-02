@@ -30,11 +30,11 @@ export const AppleHero: React.FC = () => {
           
           {/* Subheadline - Larger, more confident */}
           <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-12 max-w-[900px] mx-auto leading-[1.3] font-normal text-[#1D1D1F]">
-            <span className="text-[#1D1D1F]/70">Diseñamos y gobernamos </span>
-            <span className="font-medium text-[#1D1D1F]">operaciones agénticas</span>
-            <span className="text-[#1D1D1F]/70"> que entregan </span>
-            <span className="font-medium text-[#1D1D1F]">rendimiento empresarial medible</span>
-            <span className="text-[#1D1D1F]/70">—desde su primera transacción hasta su billonésima.</span>
+            <span className="text-[#1D1D1F]/70">Olimpias AI es el centro donde Bolivia </span>
+            <span className="font-medium text-[#1D1D1F]">diseña y gobierna agentes</span>
+            <span className="text-[#1D1D1F]/70"> de inteligencia artificial para </span>
+            <span className="font-medium text-[#1D1D1F]">rendimiento empresarial</span>
+            <span className="text-[#1D1D1F]/70">.</span>
           </p>
           
           {/* CTA Buttons - Larger, more prominent */}
@@ -65,10 +65,10 @@ export const AppleHero: React.FC = () => {
           {/* Supporting Line */}
           <div className="relative inline-block mb-20">
             <p className="text-[19px] md:text-[21px] max-w-[720px] mx-auto leading-[1.4] font-normal">
-              <span className="text-[#1D1D1F]/60">Donde Bolivia </span>
-              <span className="text-[#1D1D1F]">diseña y gobierna agentes</span>
-              <span className="text-[#1D1D1F]/60"> de inteligencia artificial para </span>
-              <span className="font-medium text-[#1D1D1F]">rendimiento empresarial</span>
+              <span className="text-[#1D1D1F]/60">Diseñamos y gobernamos </span>
+              <span className="font-medium text-[#1D1D1F]">operaciones agénticas</span>
+              <span className="text-[#1D1D1F]/60"> que entregan </span>
+              <span className="font-medium text-[#1D1D1F]">rendimiento empresarial medible</span>
               <span className="text-[#1D1D1F]/60">.</span>
             </p>
           </div>
