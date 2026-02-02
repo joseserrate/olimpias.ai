@@ -75,7 +75,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased bg-white`}>
         <AppleHeader />
-        <main className="pt-[52px]">
+        <main className="pt-[68px] md:pt-[76px]">
           {children}
         </main>
         <AppleFooter />

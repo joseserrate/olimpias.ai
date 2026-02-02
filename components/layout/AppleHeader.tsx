@@ -34,7 +34,7 @@ export const AppleHeader: React.FC = () => {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        <nav className="flex items-center justify-between h-[52px]">
+        <nav className="flex items-center justify-between h-[68px] md:h-[76px]">
           {/* Logo */}
           <Link
             href="/"
@@ -43,10 +43,10 @@ export const AppleHeader: React.FC = () => {
             <Image
               src="/olimpias-ai-logo.png"
               alt="Olimpias AI"
-              width={180}
-              height={36}
+              width={280}
+              height={56}
               priority
-              className="h-[36px] w-auto"
+              className="h-[48px] md:h-[56px] w-auto"
             />
           </Link>
 
