@@ -15,13 +15,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   subheadline,
   alignment = 'center' 
 }) => {
-  const [marginBottom, setMarginBottom] = useState('64px');
+  const [marginBottom, setMarginBottom] = useState('32px');
   
   useEffect(() => {
     const updateMargin = () => {
       const width = window.innerWidth;
-      if (width >= 640) setMarginBottom('80px');  // sm: 80px
-      else setMarginBottom('64px');                // mobile: 64px
+      if (width >= 640) setMarginBottom('40px');  // sm: 40px
+      else setMarginBottom('32px');                // mobile: 32px
     };
     
     updateMargin();

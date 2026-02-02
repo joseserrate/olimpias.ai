@@ -18,7 +18,7 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
   divider = false
 }) => {
   const [horizontalPadding, setHorizontalPadding] = useState('24px');
-  const [verticalPadding, setVerticalPadding] = useState('128px');
+  const [verticalPadding, setVerticalPadding] = useState('64px');
   
   useEffect(() => {
     const updatePadding = () => {
@@ -32,10 +32,10 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
       else if (width >= 640) setHorizontalPadding('32px');
       else setHorizontalPadding('24px');
       
-      // Vertical padding - MASSIVE for premium feel
-      if (width >= 1024) setVerticalPadding('192px');      // lg: desktop
-      else if (width >= 640) setVerticalPadding('160px');  // sm: tablet
-      else setVerticalPadding('128px');                     // mobile
+      // Vertical padding - balanced for premium feel
+      if (width >= 1024) setVerticalPadding('96px');      // lg: desktop
+      else if (width >= 640) setVerticalPadding('80px');  // sm: tablet
+      else setVerticalPadding('64px');                     // mobile
     };
     
     updatePadding();
