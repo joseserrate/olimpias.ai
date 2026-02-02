@@ -40,7 +40,7 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
         <ul className="space-y-2">
           {examples.map((example, index) => (
             <li key={index} className="flex items-start gap-3">
-              <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+              <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
               <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">{example}</span>
             </li>
           ))}
