@@ -3,11 +3,11 @@ import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-white py-20">
+    <section className="relative min-h-[100vh] flex flex-col overflow-hidden bg-white pt-32 pb-20">
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10 flex-1 flex flex-col justify-center">
         <div className="max-w-[1120px] mx-auto text-center">
           {/* Main Headline - Premium breathing room */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-12 md:mb-16 lg:mb-20 leading-[1.05] tracking-[-0.025em]">
@@ -26,7 +26,7 @@ export const AppleHero: React.FC = () => {
           </h1>
           
           {/* Subheadline - HUGE spacing before CTA */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-20 md:mb-28 lg:mb-36 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80 bg-yellow-300">
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-20 md:mb-28 lg:mb-36 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
