@@ -31,7 +31,7 @@ export const AppleHero: React.FC = () => {
           </p>
           
           {/* SPACER - Equal spacing to above */}
-          <div className="h-10 md:h-12 lg:h-14"></div>
+          <div className="h-10 md:h-12 lg:h-14 bg-red-500"></div>
           
           {/* CTA Buttons - EXPLICIT STRIPE HEIGHT */}
           <div className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center items-center">
