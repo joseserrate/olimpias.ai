@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8" style={{ marginRight: '20px' }}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -50,9 +50,9 @@ export const Header: React.FC = () => {
             ))}
             <Link
               href="/contact"
-              className="btn btn-primary"
+              className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center justify-center gap-2 min-w-[180px]"
             >
-              Book a Call
+              Agendar Consulta
             </Link>
           </div>
 
@@ -96,10 +96,10 @@ export const Header: React.FC = () => {
               ))}
               <Link
                 href="/contact"
-                className="btn btn-primary w-full mt-2"
+                className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center justify-center gap-2 w-full mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Book a Call
+                Agendar Consulta
               </Link>
             </div>
           </div>
