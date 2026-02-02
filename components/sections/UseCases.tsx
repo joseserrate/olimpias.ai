@@ -46,14 +46,14 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <Section id="use-cases" background="subtle">
+    <Section id="use-cases" background="subtle" divider>
       <SectionHeader 
         headline="Casos de Uso Empresariales"
         subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
       />
 
-      {/* 2-up grid with DRAMATIC gaps for breathing room */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
+      {/* 2-up grid with generous gaps */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {useCases.map((useCase, index) => (
           <UseCaseCard key={index} {...useCase} />
         ))}

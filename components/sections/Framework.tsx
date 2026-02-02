@@ -36,14 +36,14 @@ export const Framework: React.FC = () => {
   ];
 
   return (
-    <Section id="methodology" background="white">
+    <Section id="methodology" background="white" divider>
       <SectionHeader 
         headline="Valores Fundamentales"
         subheadline="Mandamientos, no eslóganes. Así diseñamos, gobernamos y elevamos sistemas de IA empresarial."
       />
 
-      {/* 3-up grid with DRAMATIC gaps for breathing room */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+      {/* 3-up grid with generous gaps */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {valores.map((valor, index) => (
           <ValueCard key={index} {...valor} />
         ))}
