@@ -1,63 +1,29 @@
 import React from 'react';
-import { Container, Section } from '@/components/ui';
+import { AppleButton } from '@/components/ui';
 
 interface UseCaseProps {
   lane: string;
   title: string;
-  targetFunction: string;
-  inputs: string[];
-  outputs: string[];
-  success: string;
+  outcome: string;
 }
 
-const UseCaseCard: React.FC<UseCaseProps> = ({
-  lane,
-  title,
-  targetFunction,
-  inputs,
-  outputs,
-  success,
-}) => {
+const UseCaseCard: React.FC<UseCaseProps> = ({ lane, title, outcome }) => {
   return (
-    <div className="bg-white p-6 rounded-lg border-2 border-gray-100 hover:border-primary/50 transition-all duration-300">
-      <div className="text-sm font-semibold text-primary mb-2">{lane}</div>
-      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-      <p className="text-gray-700 mb-4">{targetFunction}</p>
-      
-      <div className="space-y-4 mb-4">
-        <div>
-          <h4 className="text-sm font-semibold text-gray-900 mb-2">Inputs:</h4>
-          <div className="flex flex-wrap gap-2">
-            {inputs.map((input, index) => (
-              <span
-                key={index}
-                className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
-              >
-                {input}
-              </span>
-            ))}
-          </div>
-        </div>
-        
-        <div>
-          <h4 className="text-sm font-semibold text-gray-900 mb-2">Outputs:</h4>
-          <div className="flex flex-wrap gap-2">
-            {outputs.map((output, index) => (
-              <span
-                key={index}
-                className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full"
-              >
-                {output}
-              </span>
-            ))}
-          </div>
-        </div>
+    <div className="group relative bg-white/80 backdrop-blur-xl p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)] shadow-[0_8px_32px_rgba(0,0,0,0.04)] border border-[#E6E6EA]/50">
+      {/* Lane label */}
+      <div className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-4">
+        {lane}
       </div>
       
-      <div className="pt-4 border-t border-gray-100">
-        <h4 className="text-sm font-semibold text-gray-900 mb-1">Success Looks Like:</h4>
-        <p className="text-sm text-gray-700">{success}</p>
-      </div>
+      {/* Title */}
+      <h3 className="text-[22px] font-semibold text-[#0B0B0D] mb-3 tracking-tight leading-[1.3]">
+        {title}
+      </h3>
+      
+      {/* Outcome */}
+      <p className="text-[15px] text-[#4A4A50] leading-[1.6]">
+        {outcome}
+      </p>
     </div>
   );
 };
@@ -66,108 +32,82 @@ export const UseCases: React.FC = () => {
   const useCases: UseCaseProps[] = [
     {
       lane: 'Trade & Export',
-      title: 'Export Documentation Automation',
-      targetFunction: 'Streamline customs and export documentation workflows',
-      inputs: ['Shipping docs', 'Invoices', 'Certificates', 'WhatsApp msgs'],
-      outputs: ['Auto-filled forms', 'Compliance checks', 'Status dashboard'],
-      success: '80% reduction in document preparation time, zero compliance errors',
+      title: 'Export Documentation',
+      outcome: '80% faster processing, zero compliance errors',
     },
     {
       lane: 'Trade & Export',
       title: 'Supply Chain Intelligence',
-      targetFunction: 'Monitor and optimize cross-border supply chain operations',
-      inputs: ['Shipping data', 'Vendor emails', 'PDFs', 'Systems data'],
-      outputs: ['Delay predictions', 'Risk alerts', 'Performance reports'],
-      success: '30% improvement in on-time delivery, proactive issue resolution',
+      outcome: '30% improvement in on-time delivery',
     },
     {
       lane: 'Finance & Revenue',
-      title: 'Revenue Operations Hub',
-      targetFunction: 'Automate invoicing, collections, and revenue forecasting',
-      inputs: ['Sales data', 'Payment records', 'Customer comms', 'Spreadsheets'],
-      outputs: ['Auto invoices', 'Collection alerts', 'Forecast dashboard'],
-      success: '40% faster cash collection, accurate revenue predictions',
+      title: 'Revenue Operations',
+      outcome: '40% faster cash collection',
     },
     {
       lane: 'Finance & Revenue',
       title: 'Expense Intelligence',
-      targetFunction: 'Automated expense categorization and approval workflows',
-      inputs: ['Receipts', 'Credit card data', 'Employee submissions', 'PDFs'],
-      outputs: ['Categorized expenses', 'Approval workflows', 'Budget alerts'],
-      success: '70% reduction in processing time, real-time budget visibility',
+      outcome: '70% reduction in processing time',
     },
     {
       lane: 'Compliance & Risk',
-      title: 'Regulatory Monitoring System',
-      targetFunction: 'Track compliance requirements and automate reporting',
-      inputs: ['Regulations', 'Internal docs', 'Audit trails', 'Systems logs'],
-      outputs: ['Compliance alerts', 'Auto reports', 'Risk dashboard'],
-      success: 'Zero missed deadlines, audit-ready documentation always available',
+      title: 'Regulatory Monitoring',
+      outcome: 'Zero missed deadlines, always audit-ready',
     },
     {
       lane: 'Customer Operations',
-      title: 'Customer Support Intelligence',
-      targetFunction: 'Scale support operations with AI-assisted workflows',
-      inputs: ['WhatsApp', 'Emails', 'Chat logs', 'Knowledge base'],
-      outputs: ['Response automation', 'Agent assist', 'Satisfaction tracking'],
-      success: '3x support capacity with maintained quality scores',
+      title: 'Support Intelligence',
+      outcome: '3x capacity with maintained quality',
     },
     {
       lane: 'Internal Productivity',
-      title: 'Document Processing Pipeline',
-      targetFunction: 'Extract, classify, and route documents automatically',
-      inputs: ['Scanned docs', 'PDFs', 'Emails', 'Forms'],
-      outputs: ['Extracted data', 'Auto-routing', 'Search interface'],
-      success: '90% reduction in manual data entry, instant document retrieval',
+      title: 'Document Processing',
+      outcome: '90% reduction in manual data entry',
     },
     {
       lane: 'Internal Productivity',
-      title: 'Meeting Intelligence System',
-      targetFunction: 'Capture decisions, track actions, and maintain institutional memory',
-      inputs: ['Meeting recordings', 'Notes', 'Shared docs', 'Calendar data'],
-      outputs: ['Action items', 'Decision log', 'Knowledge graph'],
-      success: '100% action item completion rate, searchable decision history',
+      title: 'Meeting Intelligence',
+      outcome: '100% action item completion rate',
     },
     {
-      lane: 'Government & Education',
+      lane: 'Government',
       title: 'Public Service Automation',
-      targetFunction: 'Scale government service delivery with digital AI assistants',
-      inputs: ['Citizen requests', 'Forms', 'ID documents', 'Service records'],
-      outputs: ['Status tracking', 'Auto-responses', 'Service analytics'],
-      success: '10x service capacity, 95% citizen satisfaction scores',
+      outcome: '10x service capacity, 95% satisfaction',
     },
   ];
 
   return (
-    <Section id="use-cases" className="bg-white">
-      <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Enterprise AI Use Cases
+    <section id="use-cases" className="relative bg-white py-28 md:py-36">
+      {/* Breathing room container */}
+      <div className="apple-container">
+        {/* Header with generous spacing */}
+        <div className="text-center mb-20 md:mb-28">
+          <h2 className="text-[44px] md:text-[56px] font-semibold text-[#0B0B0D] mb-5 tracking-tight leading-[1.05]">
+            Enterprise Use Cases
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            IA empresarial, not consumer AI. Real workflows, measurable outcomes, operational impact.
+          <p className="text-[20px] md:text-[22px] text-[#4A4A50] max-w-3xl mx-auto leading-[1.5]">
+            Real workflows, measurable outcomes, operational impact
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid with generous gaps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 max-w-[1280px] mx-auto px-4 md:px-6 mb-20">
           {useCases.map((useCase, index) => (
             <UseCaseCard key={index} {...useCase} />
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-700 mb-6">
+        {/* CTA with breathing room */}
+        <div className="text-center mt-16 md:mt-20">
+          <p className="text-[17px] text-[#4A4A50] mb-8 leading-[1.6]">
             Don't see your use case? Every enterprise has unique workflows.
           </p>
-          <a
-            href="/contact"
-            className="btn btn-primary btn-lg"
-          >
+          <AppleButton variant="primary" href="/contact">
             Discuss Your Needs
-          </a>
+          </AppleButton>
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
 };

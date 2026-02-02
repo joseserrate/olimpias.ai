@@ -1,119 +1,127 @@
 import React from 'react';
-import { Container, Section } from '@/components/ui';
 
 interface FrameworkCardProps {
+  number: string;
   title: string;
   definition: string;
   examples: string[];
-  artifact: string;
-  icon: React.ReactNode;
+  deliverable: string;
 }
 
 const FrameworkCard: React.FC<FrameworkCardProps> = ({ 
+  number,
   title, 
   definition, 
   examples, 
-  artifact,
-  icon 
+  deliverable,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg border-2 border-gray-100 hover:border-primary transition-all duration-300">
-      <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-        {icon}
+    <div className="group relative bg-white/80 backdrop-blur-xl p-10 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] shadow-[0_12px_40px_rgba(0,0,0,0.04)] border border-[#E6E6EA]/50">
+      {/* Eyebrow number */}
+      <div className="text-[11px] font-mono tracking-[0.2em] text-[#7A7A82] mb-6">
+        {number}
       </div>
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
-      <p className="text-gray-700 mb-6 leading-relaxed">{definition}</p>
       
-      <div className="mb-6">
-        <h4 className="font-semibold text-gray-900 mb-3">Examples:</h4>
-        <ul className="space-y-2">
+      {/* Title */}
+      <h3 className="text-[28px] font-semibold text-[#0B0B0D] mb-4 tracking-tight">
+        {title}
+      </h3>
+      
+      {/* Definition */}
+      <p className="text-[17px] text-[#4A4A50] leading-[1.6] mb-8">
+        {definition}
+      </p>
+      
+      {/* Examples */}
+      <div className="mb-8 pt-6 border-t border-[#E6E6EA]">
+        <div className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-4">
+          Examples
+        </div>
+        <ul className="space-y-3">
           {examples.map((example, index) => (
-            <li key={index} className="flex items-start">
-              <span className="text-primary mr-2">•</span>
-              <span className="text-gray-700">{example}</span>
+            <li key={index} className="flex items-start text-[15px] text-[#4A4A50] leading-[1.65]">
+              <span className="mr-3 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+              <span>{example}</span>
             </li>
           ))}
         </ul>
       </div>
       
-      <div className="pt-6 border-t border-gray-100">
-        <h4 className="font-semibold text-gray-900 mb-2">You Get:</h4>
-        <p className="text-primary font-medium">{artifact}</p>
+      {/* Deliverable */}
+      <div className="pt-6 border-t border-[#E6E6EA]">
+        <div className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-3">
+          Deliverable
+        </div>
+        <p className="text-[15px] text-[#0B0B0D] font-medium leading-[1.5]">
+          {deliverable}
+        </p>
       </div>
     </div>
   );
 };
 
 export const Framework: React.FC = () => {
-  const frameworks = [
+  const frameworks: FrameworkCardProps[] = [
     {
+      number: '01',
       title: 'Design',
-      definition: 'We map your workflows, define roles, decompose complex tasks, and architect the system shape that fits your operations.',
+      definition: 'Map workflows, define roles, and shape the system.',
       examples: [
-        'Task decomposition: Breaking down customer service into agent-ready steps',
-        'Role mapping: Defining human oversight points in automated workflows'
+        'Decompose tasks into agent-ready steps',
+        'Define human oversight points'
       ],
-      artifact: 'System Architecture Document & Workflow Maps',
-      icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-        </svg>
-      ),
+      deliverable: 'System Architecture & Workflow Maps',
     },
     {
+      number: '02',
       title: 'Govern',
-      definition: 'We establish clear boundaries, appropriate autonomy levels, escalation protocols, and responsible adoption frameworks.',
+      definition: 'Set boundaries, approvals, and escalation.',
       examples: [
-        'Boundary setting: Defining when AI decides vs. when humans must approve',
-        'Escalation protocols: Automated alerts for edge cases requiring human review'
+        'Define when AI decides vs. human approval',
+        'Automate alerts for edge cases'
       ],
-      artifact: 'Governance Framework & Control Playbooks',
-      icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
+      deliverable: 'Governance Framework & Control Playbooks',
     },
     {
+      number: '03',
       title: 'Elevate',
-      definition: 'We implement measurable performance tracking, continuous improvement loops, and operational excellence metrics.',
+      definition: 'Measure performance and improve continuously.',
       examples: [
-        'Performance metrics: Real-time dashboards tracking task completion and accuracy',
-        'Improvement loops: Monthly reviews identifying optimization opportunities'
+        'Real-time dashboards track accuracy',
+        'Monthly reviews identify optimizations'
       ],
-      artifact: 'Performance Dashboard & Optimization Reports',
-      icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-      ),
+      deliverable: 'Performance Dashboard & Reports',
     },
   ];
 
   return (
-    <Section id="methodology" className="bg-gray-50">
-      <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+    <section id="methodology" className="relative bg-[#FAFAFA] py-28 md:py-36">
+      {/* Breathing room container */}
+      <div className="apple-container">
+        {/* Header with generous spacing */}
+        <div className="text-center mb-20 md:mb-28">
+          <h2 className="text-[44px] md:text-[56px] font-semibold text-[#0B0B0D] mb-5 tracking-tight leading-[1.05]">
             How We Work
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A systematic approach to Enterprise AI that delivers capability, not just tools
+          <p className="text-[20px] md:text-[22px] text-[#4A4A50] max-w-2xl mx-auto leading-[1.5]">
+            A systematic approach that delivers capability, not just tools
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cards Grid with generous gaps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-[1280px] mx-auto px-4 md:px-6">
           {frameworks.map((framework, index) => (
             <FrameworkCard key={index} {...framework} />
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            From tool use to systems that run. Architecture first, governance always, performance measured.
+        {/* Doctrine Footer with breathing room */}
+        <div className="mt-24 md:mt-32 text-center">
+          <p className="text-[14px] text-[#7A7A82] tracking-wide leading-[1.7] max-w-3xl mx-auto">
+            From tools to systems that run. Architecture first. Governance always. Performance measured.
           </p>
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
 };
