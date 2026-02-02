@@ -40,14 +40,14 @@ export const AppleCredibility: React.FC = () => {
                 EXPERIENCIA
               </h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Sistemas de escala global en Apple Business Solutions
                   </span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Arquitectura empresarial y diseño de sistemas
                   </span>
@@ -60,20 +60,20 @@ export const AppleCredibility: React.FC = () => {
                 FORMACIÓN
               </h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Maestría en Comercialización de Tecnología (MSTC), UT Austin
                   </span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Programa Intensivo en IA Agéntica, Harvard
                   </span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Finanzas y Medios Digitales
                   </span>
@@ -86,20 +86,20 @@ export const AppleCredibility: React.FC = () => {
                 COMPROMISOS
               </h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Resultados medibles
                   </span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Arquitectura disciplinada
                   </span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-[0.4em] w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
                   <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">
                     Gobernanza responsable
                   </span>
