@@ -46,8 +46,9 @@ export const AppleFooter: React.FC = () => {
         {/* Main Grid - cleaner, more spacious */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
           {/* Brand - 5 columns */}
-          <div className="lg:col-span-5 flex flex-col items-start" style={{ marginTop: '-4px' }}>
-            <div style={{ marginLeft: '-14px', marginBottom: '12px', paddingLeft: 0 }}>
+          <div className="lg:col-span-5 flex flex-col items-start">
+            {/* Logo - aligned with NAVEGACIÓN header */}
+            <div style={{ marginLeft: '-14px', marginTop: '-16px', marginBottom: '0px', paddingLeft: 0 }}>
               <Image
                 src="/olimpias-ai-logo.png"
                 alt="Olimpias AI"
@@ -57,7 +58,8 @@ export const AppleFooter: React.FC = () => {
                 style={{ margin: 0, padding: 0, display: 'block' }}
               />
             </div>
-            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ margin: 0, padding: 0, textAlign: 'left' }}>
+            {/* Tagline - aligned with Valores link */}
+            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs" style={{ marginTop: '-24px', marginLeft: 0, padding: 0, textAlign: 'left' }}>
               El Centro de IA Empresarial de Bolivia
             </p>
           </div>
