@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8" style={{ marginRight: '20px' }}>
+          <div className="hidden md:flex items-center gap-8" style={{ marginRight: '40px' }}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -50,7 +50,32 @@ export const Header: React.FC = () => {
             ))}
             <Link
               href="/contact"
-              className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center justify-center gap-2 min-w-[180px]"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '50px',
+                paddingLeft: '40px',
+                paddingRight: '40px',
+                fontSize: '15px',
+                fontWeight: 600,
+                color: '#FFFFFF',
+                backgroundColor: '#5B3DF5',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                minWidth: '180px',
+                gap: '8px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#4A2FD5';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(91, 61, 245, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#5B3DF5';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
               Agendar Consulta
             </Link>
@@ -96,8 +121,31 @@ export const Header: React.FC = () => {
               ))}
               <Link
                 href="/contact"
-                className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center justify-center gap-2 w-full mt-2"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '50px',
+                  paddingLeft: '40px',
+                  paddingRight: '40px',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  backgroundColor: '#5B3DF5',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  width: '100%',
+                  marginTop: '8px'
+                }}
                 onClick={() => setIsMobileMenuOpen(false)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#4A2FD5';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#5B3DF5';
+                }}
               >
                 Agendar Consulta
               </Link>
