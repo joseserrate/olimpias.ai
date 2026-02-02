@@ -30,17 +30,17 @@ export const AppleHero: React.FC = () => {
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
-          {/* CTA Buttons - Stripe-style: TALL & SUBSTANTIAL */}
+          {/* CTA Buttons - Stripe-style: MAXIMUM HEIGHT */}
           <div className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center items-center">
-            <button className="px-14 py-7 text-[18px] font-semibold text-white bg-[#5B3DF5] rounded-lg hover:bg-[#4A2FD5] transition-colors shadow-sm hover:shadow-md flex items-center gap-2.5 min-w-[220px] justify-center">
+            <button className="px-16 py-8 text-[19px] font-bold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors shadow-md hover:shadow-lg flex items-center gap-3 min-w-[240px] justify-center">
               Agendar Consulta
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>
             <a 
               href="#methodology" 
-              className="px-14 py-7 text-[18px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-lg hover:border-[#5B3DF5] transition-colors min-w-[260px] text-center flex items-center justify-center"
+              className="px-16 py-8 text-[19px] font-bold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-md hover:border-[#5B3DF5] transition-colors min-w-[280px] text-center flex items-center justify-center"
             >
               Conocer Metodología
             </a>
