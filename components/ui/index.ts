@@ -6,6 +6,7 @@ export { NeuralNetworkBackground } from './NeuralNetworkBackground';
 export type { AppleButtonProps } from './AppleButton';
 
 export { Section } from './Section';
+export { ResponsiveSection } from './ResponsiveSection';
 export type { SectionProps } from './Section';
 
 export { Container } from './Container';

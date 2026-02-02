@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, SectionHeader, ValueCard } from '@/components/ui';
+import { ResponsiveSection as Section, SectionHeader, ValueCard } from '@/components/ui';
 
 export const Framework: React.FC = () => {
   const valores = [

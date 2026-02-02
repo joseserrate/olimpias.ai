@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, SectionHeader, UseCaseCard } from '@/components/ui';
+import { ResponsiveSection as Section, SectionHeader, UseCaseCard } from '@/components/ui';
 
 export const UseCases: React.FC = () => {
   const useCases = [

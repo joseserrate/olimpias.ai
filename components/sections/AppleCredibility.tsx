@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, SectionHeader, Card, BulletList } from '@/components/ui';
+import { ResponsiveSection as Section, SectionHeader, Card, BulletList } from '@/components/ui';
 
 export const AppleCredibility: React.FC = () => {
   const keyPoints = [
