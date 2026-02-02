@@ -16,7 +16,7 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
   deliverable,
 }) => {
   return (
-    <div className="group relative bg-white rounded-[24px] p-14 md:p-16 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
+    <div className="group relative bg-white rounded-[18px] p-10 md:p-12 transition-all duration-200 hover:shadow-md border border-[#E0E0E6]">
       {/* Eyebrow number */}
       <div className="text-[14px] font-semibold tracking-[0.02em] text-[#86868B] mb-10">
         {number}
@@ -95,31 +95,25 @@ export const Framework: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="relative bg-white py-40 md:py-48 lg:py-56">
+    <section id="methodology" className="relative bg-white py-24 md:py-32">
       {/* Container */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        {/* Header - Stripe-style: massive and bold */}
-        <div className="text-center mb-32 md:mb-40">
-          <h2 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[80px] font-semibold text-[#1D1D1F] mb-8 tracking-[-0.025em] leading-[1.05]">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
+        {/* Header - Match hero */}
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-[1.05]">
             Valores Fundamentales
           </h2>
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] text-[#86868B] max-w-[720px] mx-auto leading-[1.3] font-normal">
+          <div className="h-3"></div>
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] text-[#86868B] max-w-[720px] mx-auto leading-[1.45] font-normal">
             Mandamientos, no eslóganes
           </p>
         </div>
 
-        {/* Cards Grid - More spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 lg:gap-16 mb-32 max-w-[1300px] mx-auto">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-[1100px] mx-auto">
           {frameworks.map((framework, index) => (
             <FrameworkCard key={index} {...framework} />
           ))}
-        </div>
-
-        {/* Doctrine Footer */}
-        <div className="text-center pt-20 border-t border-[#D2D2D7] max-w-[900px] mx-auto">
-          <p className="text-[19px] text-[#86868B] leading-[1.4] font-normal">
-            Diseñar con precisión. Gobernar con responsabilidad. Elevar el rendimiento.
-          </p>
         </div>
       </div>
     </section>
