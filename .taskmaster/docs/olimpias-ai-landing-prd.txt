@@ -1,0 +1,348 @@
+Overview
+
+Product
+
+Olimpias AI Landing Page
+A high-credibility, conversion-oriented website that positions Olimpias AI as the center for Enterprise AI and AI system architecture in Bolivia and the region.
+
+Problem
+
+Bolivian enterprise and government leaders are:
+	•	curious about AI but unclear what "serious AI" means beyond consumer tools
+	•	skeptical of hype and pilots that don't translate into operational results
+	•	missing a clear "capability layer" vendor that can design, govern, and deploy AI systems end-to-end
+
+They need a trusted front door that:
+	•	explains what Olimpias does in crisp, operational language
+	•	signals legitimacy and rigor immediately
+	•	converts interest into a call, intake, or pilot conversation
+
+Target users
+	•	CEOs and COOs of Bolivian and regional companies
+	•	Heads of Ops, Finance, Compliance, Export, Supply Chain
+	•	Government directors responsible for digital transformation, education, trade, productivity
+	•	Potential partners and talent (engineers, operators, advisors)
+
+Value
+
+The landing page turns your messaging into:
+	•	a clear positioning statement
+	•	a standards-grade aesthetic (institutional)
+	•	a lead capture machine for pilots and advisory engagements
+
+⸻
+
+Core Features
+
+1) Positioning Hero
+
+What it does
+	•	Communicates Olimpias' core promise in 8 seconds.
+	•	Anchors "Enterprise AI as infrastructure" with a strong visual identity.
+
+Why it's important
+	•	Most visitors decide credibility immediately.
+	•	Sets you apart from "tool users" and "AI hype" providers.
+
+How it works
+	•	Above-the-fold: name, one-line doctrine, CTA.
+	•	Supporting line: "Architecture + governance + performance."
+
+Content requirements:
+	•	Headline: "Enterprise AI Architecture for measurable performance."
+	•	Subhead: "We design and govern AI systems that turn complexity into capability."
+
+CTA requirements:
+	•	Primary CTA: "Book a call"
+	•	Secondary CTA: "See how it works" (scroll to methodology)
+
+⸻
+
+2) "What we do" as a System (not services list)
+
+What it does
+	•	Converts the abstract concept into a concrete operating model.
+
+Why it's important
+	•	You're selling capability, not deliverables.
+	•	Leaders need to know what they are buying.
+
+How it works
+A 3-part framework section:
+	1.	Design: workflows, roles, task decomposition, system shape
+	2.	Govern: boundaries, autonomy, escalation, responsible adoption
+	3.	Elevate: measurable performance, continuous improvement
+
+Each part includes:
+	•	1 sentence definition
+	•	2 bullet examples
+	•	one "output artifact" (what client gets)
+
+⸻
+
+3) Proof of seriousness (without bragging)
+
+What it does
+	•	Builds trust quickly with "signals of rigor."
+
+Why it's important
+	•	Bolivia is trust-sensitive: reputation precedes adoption.
+
+How it works
+	•	"Built on global-scale systems experience" (Apple Business Solutions experience phrased carefully)
+	•	Education credentials (Finance + Digital Media + MSTC + Harvard Agentic Intensive)
+	•	"How we work" commitments (3–5 short principles)
+	•	measured outcomes
+	•	disciplined architecture
+	•	responsible governance
+
+⸻
+
+4) Use cases and outcomes (IA empresarial, not consumer AI)
+
+What it does
+	•	Shows applicability across enterprise operations and institutions.
+
+Why it's important
+	•	Leaders don't buy "AI." They buy outcomes.
+
+How it works
+A curated list of 6–9 use cases, grouped into "lanes," each with:
+	•	target function
+	•	typical inputs (documents, WhatsApp, PDFs, systems)
+	•	outputs (decisions, workflows, automation, dashboards)
+	•	what "success" looks like (measurable)
+
+Example lanes:
+	•	Trade/export operations
+	•	Finance and revenue operations
+	•	Compliance and risk
+	•	Customer operations
+	•	Internal productivity and workflow automation
+	•	Government and education programs
+
+⸻
+
+5) Lead capture
+
+What it does
+	•	Converts interest into contact.
+
+Why it's important
+	•	The landing page is an instrument, not a brochure.
+
+How it works
+	•	CTA buttons: Book call, Request pilot intake
+	•	Intake form (short, high signal)
+	•	role, org, problem category
+	•	what they want to improve
+	•	timeframe (optional)
+	•	contact
+
+Optional:
+	•	"Send a message on WhatsApp" link for Bolivia-first reality
+
+⸻
+
+6) SEO and credibility basics
+
+What it does
+	•	Makes the site discoverable and professional.
+
+Why it's important
+	•	This is a center. It must look official and be easy to verify.
+
+How it works
+	•	Metadata, OpenGraph, basic schema
+	•	/about and /contact pages
+	•	Clear legal footer and privacy policy
+	•	Simple analytics
+
+⸻
+
+User Experience
+
+Personas
+	1.	Bolivian CEO
+
+	•	wants ROI, certainty, confidence
+	•	skeptical of hype
+	•	needs a clear "what are we buying?"
+
+	2.	Ops/Finance leader
+
+	•	wants workflow impact
+	•	cares about controls and repeatability (but not compliance jargon)
+	•	wants a first pilot quickly
+
+	3.	Government director
+
+	•	wants safety, governance, scale, legitimacy
+	•	wants a partner who speaks institutions
+	•	sensitive to "political" signaling
+
+	4.	Partner/engineer
+
+	•	assessing sophistication and seriousness
+	•	wants to know your methodology and stack credibility
+
+Key user flows
+
+Flow A: CEO trust → call
+
+Landing → Hero → System framework (Design/Govern/Elevate) → Use cases → Proof → Book call
+
+Flow B: Ops leader pain → pilot intake
+
+Landing → Use case lane → "How we work" → Intake form → confirmation page
+
+Flow C: Government director credibility check
+
+Landing → About → Principles → Contact → optionally download a short capability brief
+
+UI/UX considerations
+	•	Minimal, institutional, crisp
+	•	No heavy animations, no hype visuals
+	•	Teal + white system with strong whitespace
+	•	Iconography is geometric, consistent, not "AI sparkle"
+	•	Mobile-first since many Bolivian users will read from phone
+	•	Must feel authoritative in both English and Spanish contexts
+
+⸻
+
+Technical Architecture
+
+System components
+	•	Marketing site frontend (static-first)
+	•	Content management (lightweight)
+	•	Form handling + notifications
+	•	Analytics
+	•	Hosting + CDN
+	•	Optional WhatsApp deep link
+
+Recommended stack (pragmatic)
+	•	Next.js (static site generation + routing)
+	•	Tailwind CSS for consistent design system
+	•	Content:
+	•	MVP: markdown or JSON config
+	•	Later: headless CMS (Sanity, Contentful) or Notion-based pipeline
+	•	Forms:
+	•	Formspree / Basin / custom API route
+	•	Send to email + store in Airtable/Google Sheet for MVP
+	•	Analytics:
+	•	Plausible or GA4 (choose one)
+
+Data models (minimal)
+	•	Lead
+	•	name, email, org, role
+	•	problem category
+	•	message
+	•	source and timestamp
+	•	Content blocks (if CMS later)
+	•	page sections, use cases, principles, proof points
+
+APIs and integrations
+	•	Email notification (SMTP or SendGrid)
+	•	Calendar booking (Calendly)
+	•	CRM later (HubSpot) optional
+	•	WhatsApp link generator for Bolivia (no API needed)
+
+Infrastructure requirements
+	•	Static hosting (Vercel recommended)
+	•	Domain + SSL
+	•	Basic security headers
+	•	Sitemap + robots.txt
+
+⸻
+
+Development Roadmap
+
+MVP scope (ship the front door)
+	•	Landing page (single page)
+	•	Hero + CTA
+	•	Design/Govern/Elevate framework section
+	•	Use cases (6–9)
+	•	Proof of seriousness section
+	•	Contact CTA + form
+	•	Footer with privacy basics
+	•	About page (short)
+	•	Contact page (form + WhatsApp link)
+	•	Responsive layout
+	•	Basic analytics
+	•	SEO basics (title, meta, OG tags, sitemap)
+
+Phase 2 enhancements (build the "center" feel)
+	•	Spanish/English toggle (start with Spanish-first if needed)
+	•	Downloadable capability brief (PDF) as gated or ungated
+	•	"How we work" expanded page (methodology)
+	•	Case studies page with 2–3 "pilot narratives" (even if early)
+	•	Newsletter signup (optional)
+	•	Brand asset system (logo usage rules, colors, typography page)
+
+Phase 3 enhancements (convert and compound)
+	•	Content engine: blog/insights
+	•	Structured "intake flow" with problem selection and recommended next step
+	•	Mini "mindware" explainer page (ties to your post)
+	•	Integration into CRM
+	•	A/B testing for hero + CTA
+	•	Testimonials and partner logos when available
+
+⸻
+
+Logical Dependency Chain
+
+Foundation first (needed for everything)
+	1.	Design system: typography, spacing, color tokens, button styles
+	2.	Landing page skeleton and routing (home/about/contact)
+	3.	Core copy and content blocks
+	4.	Hosting + domain + SSL
+
+Fastest usable front end
+	5.	Hero + CTA + scroll navigation
+	6.	Framework section (Design/Govern/Elevate)
+	7.	Use cases section
+	8.	Contact form + thank you state
+	9.	Analytics + basic SEO
+
+Build the "center" layer
+	10.	About page expansion + credibility signals
+	11.	Capability brief (PDF) and distribution
+	12.	Language toggle and content structure
+	13.	Case studies and methodology pages
+
+⸻
+
+Risks and Mitigations
+
+Technical risks
+	•	Overbuilding too early (CMS, animations, heavy features)
+	•	Mitigation: ship static MVP, keep content in repo, upgrade later
+	•	Low-quality mobile experience
+	•	Mitigation: design mobile-first, test on iPhone and mid-tier Android
+	•	Form spam
+	•	Mitigation: honeypot field, rate limit, basic CAPTCHA only if needed
+
+MVP definition risk
+	•	MVP becomes too "brochure"
+	•	Mitigation: force the framework section to be operational, not descriptive
+	•	make the CTA intake problem-driven, not generic "contact"
+
+Resource constraints (solo builder)
+	•	Too many pages and features
+	•	Mitigation: single-page home + about/contact only, then expand
+	•	Need visuals and credibility without "claims"
+	•	Mitigation: focus on method, principles, and clear positioning, not logos and numbers
+
+⸻
+
+Appendix
+
+Copy pillars (doctrine)
+	•	Enterprise AI is infrastructure.
+	•	Architecture first, governance always, performance measured.
+	•	From tool use to systems that run.
+
+Visual system notes
+	•	Dark teal + white as primary brand
+	•	Secondary neutral palette for typography and backgrounds
+	•	Avoid AI sparkle/gradient tropes on the landing page itself
