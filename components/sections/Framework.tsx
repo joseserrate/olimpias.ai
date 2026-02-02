@@ -39,8 +39,8 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
         </div>
         <ul className="space-y-2">
           {examples.map((example, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
+            <li key={index} className="flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1D1D1F] flex-shrink-0"></span>
               <span className="text-[14px] text-[#1D1D1F] leading-[1.57] font-normal">{example}</span>
             </li>
           ))}
