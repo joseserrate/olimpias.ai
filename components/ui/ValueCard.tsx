@@ -18,33 +18,33 @@ export const ValueCard: React.FC<ValueCardProps> = ({
   deliverable,
 }) => {
   return (
-    <Card className="h-full flex flex-col">
-      {/* Number eyebrow */}
-      <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-5">
+    <Card className="h-full flex flex-col" hover={false}>
+      {/* Number eyebrow - more space below */}
+      <div className="text-[11px] font-medium tracking-[0.15em] text-slate-400 uppercase mb-8">
         {number}
       </div>
       
-      {/* Title */}
-      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 tracking-tight leading-tight mb-3">
+      {/* Title - larger, more prominent */}
+      <h3 className="text-2xl sm:text-[28px] font-semibold text-slate-900 tracking-tight leading-tight mb-4">
         {title}
       </h3>
       
-      {/* Keywords */}
-      <p className="text-sm text-slate-500 font-normal mb-6">
+      {/* Keywords - more subtle, more space */}
+      <p className="text-[13px] text-slate-500 font-normal mb-10 tracking-wide">
         {keywords.join(' · ')}
       </p>
       
-      {/* Bullets - flex-grow pushes deliverable to bottom */}
-      <div className="flex-grow mb-8">
+      {/* Bullets - generous space around */}
+      <div className="flex-grow mb-12">
         <BulletList items={bullets} />
       </div>
       
-      {/* Deliverable - visually separated with consistent spacing */}
-      <div className="pt-6 border-t border-slate-200/60 mt-auto">
-        <div className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-2">
+      {/* Deliverable - clear separation, premium treatment */}
+      <div className="pt-8 border-t border-slate-200/50">
+        <div className="text-[11px] font-medium tracking-[0.15em] text-slate-400 uppercase mb-3">
           Entregable
         </div>
-        <p className="text-[15px] text-slate-900 font-medium leading-[1.7]">
+        <p className="text-[15px] text-slate-900 font-medium leading-[1.6]">
           {deliverable}
         </p>
       </div>
