@@ -46,7 +46,7 @@ export const UseCases: React.FC = () => {
   ];
 
   return (
-    <Section id="use-cases" background="subtle" divider>
+    <Section id="use-cases" background="white" divider>
       <SectionHeader 
         headline="Casos de Uso Empresariales"
         subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
