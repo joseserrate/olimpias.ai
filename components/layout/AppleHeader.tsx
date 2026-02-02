@@ -43,10 +43,10 @@ export const AppleHeader: React.FC = () => {
             <Image
               src="/olimpias-ai-logo.png"
               alt="Olimpias AI"
-              width={336}
-              height={67}
+              width={370}
+              height={74}
               priority
-              className="h-[58px] md:h-[67px] w-auto"
+              className="h-[64px] md:h-[74px] w-auto"
             />
           </Link>
 
