@@ -1,29 +1,20 @@
 @import "tailwindcss";
 
-/* Olimpias AI Design System */
+/* Olimpias AI Design System - Apple-grade */
 :root {
-  /* Brand Colors */
-  --primary-teal: #0f766e;
-  --primary-teal-light: #14b8a6;
-  --primary-teal-dark: #0d5c54;
-  
-  /* Neutrals */
-  --white: #ffffff;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  /* Apple-grade Grayscale Palette */
+  --apple-bg: #FFFFFF;
+  --apple-bg-subtle: #FAFAFA;
+  --apple-text-primary: #0B0B0D;
+  --apple-text-secondary: #4A4A50;
+  --apple-text-tertiary: #7A7A82;
+  --apple-divider: #E6E6EA;
+  --apple-shadow: rgba(0, 0, 0, 0.06);
+  --apple-shadow-hover: rgba(0, 0, 0, 0.08);
   
   /* Semantic Colors */
-  --background: var(--white);
-  --foreground: var(--gray-900);
-  --muted: var(--gray-500);
+  --background: var(--apple-bg);
+  --foreground: var(--apple-text-primary);
   
   /* Spacing (4px base) */
   --spacing-xs: 0.25rem;   /* 4px */
@@ -49,28 +40,9 @@
 }
 
 @theme inline {
-  /* Map theme tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary-teal);
-  --color-primary-light: var(--primary-teal-light);
-  --color-primary-dark: var(--primary-teal-dark);
-  --color-muted: var(--muted);
-  
-  /* Extend default colors */
-  --color-teal-600: var(--primary-teal);
-  --color-teal-500: var(--primary-teal-light);
-  --color-teal-700: var(--primary-teal-dark);
-  
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  
-  /* Breakpoints */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
 }
 
 * {
@@ -86,72 +58,94 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", var(--font-sans), sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utility Classes */
-.section-padding {
-  padding: var(--spacing-3xl) var(--spacing-lg);
+/* Apple-grade Utility Classes */
+.apple-section {
+  padding: 5rem 1.5rem;
 }
 
-.container-max-width {
-  max-width: 1280px;
+@media (min-width: 768px) {
+  .apple-section {
+    padding: 7rem 2rem;
+  }
+}
+
+.apple-container {
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.text-balance {
-  text-wrap: balance;
+.apple-card {
+  background: var(--apple-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px var(--apple-shadow);
+  transition: all 200ms ease;
 }
 
-/* Button Base Styles */
-.btn {
+.apple-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--apple-shadow-hover);
+}
+
+.apple-divider {
+  height: 1px;
+  background: var(--apple-divider);
+  border: none;
+}
+
+/* Apple-grade Button Styles */
+.apple-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-size: var(--text-base);
-  font-weight: 600;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.5;
-  border-radius: 0.375rem;
-  transition: all 0.2s ease;
   text-decoration: none;
   border: none;
   cursor: pointer;
   white-space: nowrap;
+  transition: all 150ms ease;
 }
 
-.btn-primary {
-  background-color: var(--primary-teal);
-  color: var(--white);
+.apple-btn-primary {
+  background: var(--apple-text-primary);
+  color: var(--apple-bg);
+  border-radius: 9999px;
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-teal-dark);
+.apple-btn-primary:hover {
+  opacity: 0.85;
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: var(--primary-teal);
-  border: 2px solid var(--primary-teal);
+.apple-btn-secondary {
+  background: transparent;
+  color: var(--apple-text-primary);
+  border: 1px solid var(--apple-divider);
+  border-radius: 9999px;
 }
 
-.btn-secondary:hover {
-  background-color: var(--primary-teal);
-  color: var(--white);
+.apple-btn-secondary:hover {
+  border-color: var(--apple-text-primary);
 }
 
-.btn-lg {
-  padding: var(--spacing-lg) var(--spacing-2xl);
-  font-size: var(--text-lg);
+.apple-btn-link {
+  background: transparent;
+  color: var(--apple-text-primary);
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
 }
 
-/* Responsive Typography */
-@media (min-width: 768px) {
-  .section-padding {
-    padding: var(--spacing-4xl) var(--spacing-2xl);
-  }
+.apple-btn-link:hover {
+  text-decoration-color: var(--apple-text-primary);
 }

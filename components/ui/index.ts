@@ -1,6 +1,9 @@
 export { Button } from './Button';
 export type { ButtonProps } from './Button';
 
+export { AppleButton } from './AppleButton';
+export type { AppleButtonProps } from './AppleButton';
+
 export { Section } from './Section';
 export type { SectionProps } from './Section';
 

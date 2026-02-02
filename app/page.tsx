@@ -1,9 +1,9 @@
-import { Hero, Framework, UseCases, Credibility } from '@/components/sections';
+import { AppleHero, Framework, UseCases, Credibility } from '@/components/sections';
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <AppleHero />
       <Framework />
       <UseCases />
       <Credibility />

@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { Header, Footer } from '@/components/layout';
+import { AppleHeader, Footer } from '@/components/layout';
 
 export default function RootLayout({
   children,
@@ -74,8 +74,8 @@ export default function RootLayout({
         {/* <script defer data-domain="olimpiasai.com" src="https://plausible.io/js/script.js"></script> */}
       </head>
       <body className={`${inter.variable} antialiased`}>
-        <Header />
-        <main className="pt-20">
+        <AppleHeader />
+        <main className="pt-16">
           {children}
         </main>
         <Footer />
