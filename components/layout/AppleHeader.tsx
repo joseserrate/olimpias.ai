@@ -64,8 +64,8 @@ export const AppleHeader: React.FC = () => {
           </div>
 
           {/* CTA Button - Always visible on desktop */}
-          <div className="hidden lg:block flex-shrink-0">
-            <AppleButton variant="primary" href="/contact" className="text-[14px] px-4 py-2">
+          <div className="hidden lg:block flex-shrink-0" style={{ marginRight: '40px' }}>
+            <AppleButton variant="primary" href="/contact">
               Agendar Consulta
             </AppleButton>
           </div>
