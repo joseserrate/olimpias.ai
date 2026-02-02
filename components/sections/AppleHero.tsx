@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppleButton } from '@/components/ui';
+import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
@@ -7,7 +7,10 @@ export const AppleHero: React.FC = () => {
       {/* Subtle background gradient for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] via-white to-white opacity-60"></div>
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-28 pb-24 md:pt-36 md:pb-32 lg:pt-40 lg:pb-36">
+      {/* Neural Network Animation */}
+      <NeuralNetworkBackground />
+      
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-28 pb-24 md:pt-36 md:pb-32 lg:pt-40 lg:pb-36 z-10">
         <div className="max-w-[980px] mx-auto text-center">
           {/* Main Headline - Apple refined size */}
           <h1 className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-semibold text-[#0B0B0D] mb-5 leading-[1.07] tracking-[-0.015em]">
