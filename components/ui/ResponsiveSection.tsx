@@ -17,17 +17,25 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
   background = 'white',
   divider = false
 }) => {
-  const [padding, setPadding] = useState('24px');
+  const [horizontalPadding, setHorizontalPadding] = useState('24px');
+  const [verticalPadding, setVerticalPadding] = useState('128px');
   
   useEffect(() => {
     const updatePadding = () => {
       const width = window.innerWidth;
-      if (width >= 1536) setPadding('80px');      // 2xl
-      else if (width >= 1280) setPadding('64px'); // xl
-      else if (width >= 1024) setPadding('56px'); // lg
-      else if (width >= 768) setPadding('40px');  // md
-      else if (width >= 640) setPadding('32px');  // sm
-      else setPadding('24px');                     // default
+      
+      // Horizontal padding
+      if (width >= 1536) setHorizontalPadding('80px');
+      else if (width >= 1280) setHorizontalPadding('64px');
+      else if (width >= 1024) setHorizontalPadding('56px');
+      else if (width >= 768) setHorizontalPadding('40px');
+      else if (width >= 640) setHorizontalPadding('32px');
+      else setHorizontalPadding('24px');
+      
+      // Vertical padding - MASSIVE for premium feel
+      if (width >= 1024) setVerticalPadding('192px');      // lg: desktop
+      else if (width >= 640) setVerticalPadding('160px');  // sm: tablet
+      else setVerticalPadding('128px');                     // mobile
     };
     
     updatePadding();
@@ -36,20 +44,26 @@ export const ResponsiveSection: React.FC<ResponsiveSectionProps> = ({
   }, []);
 
   const bgClass = background === 'subtle' ? 'bg-slate-50/40' : 'bg-white';
-  // PREMIUM vertical spacing: massive padding for clear section separation
-  const classes = `relative ${bgClass} py-32 sm:py-40 lg:py-48 ${className}`.trim();
+  const classes = `relative ${bgClass} ${className}`.trim();
 
   return (
     <>
       {divider && (
         <div className="border-t border-slate-200/40" />
       )}
-      <section id={id} className={classes}>
+      <section 
+        id={id} 
+        className={classes}
+        style={{
+          paddingTop: verticalPadding,
+          paddingBottom: verticalPadding
+        }}
+      >
         <div 
           className="max-w-[1040px] mx-auto w-full"
           style={{
-            paddingLeft: padding,
-            paddingRight: padding
+            paddingLeft: horizontalPadding,
+            paddingRight: horizontalPadding
           }}
         >
           {children}
