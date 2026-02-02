@@ -3,11 +3,11 @@ import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="relative min-h-[100vh] flex flex-col overflow-hidden bg-white pt-32 pb-20">
+    <section className="relative min-h-[100vh] overflow-hidden bg-white">
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10 flex-1 flex flex-col justify-center">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10 pt-[25vh] pb-20">
         <div className="max-w-[1120px] mx-auto text-center">
           {/* Main Headline - Premium breathing room */}
           <h1 className="text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold mb-12 md:mb-16 lg:mb-20 leading-[1.05] tracking-[-0.025em]">
