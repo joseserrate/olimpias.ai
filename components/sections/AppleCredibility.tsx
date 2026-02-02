@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ResponsiveSection as Section, SectionHeader, Card, BulletList } from '@/components/ui';
 
@@ -50,24 +52,39 @@ export const AppleCredibility: React.FC = () => {
         {/* Right Column - Credentials Card */}
         <Card hover={false}>
           {/* Experience */}
-          <div className="mb-10">
-            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
+          <div style={{ marginBottom: '40px' }}>
+            <h4 
+              className="text-xs font-medium tracking-widest text-slate-500 uppercase"
+              style={{ marginBottom: '16px' }}
+            >
               Experiencia
             </h4>
             <BulletList items={experience} />
           </div>
 
           {/* Education */}
-          <div className="mb-10 pt-10 border-t border-slate-200/60">
-            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4 mt-10">
+          <div 
+            className="border-t border-slate-200/60"
+            style={{ paddingTop: '40px', marginBottom: '40px' }}
+          >
+            <h4 
+              className="text-xs font-medium tracking-widest text-slate-500 uppercase"
+              style={{ marginTop: '40px', marginBottom: '16px' }}
+            >
               Formación
             </h4>
             <BulletList items={education} />
           </div>
 
           {/* Commitments */}
-          <div className="pt-10 border-t border-slate-200/60">
-            <h4 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4 mt-10">
+          <div 
+            className="border-t border-slate-200/60"
+            style={{ paddingTop: '40px' }}
+          >
+            <h4 
+              className="text-xs font-medium tracking-widest text-slate-500 uppercase"
+              style={{ marginTop: '40px', marginBottom: '16px' }}
+            >
               Compromisos
             </h4>
             <BulletList items={commitments} />
