@@ -3,7 +3,7 @@ import { AppleButton, NeuralNetworkBackground } from '@/components/ui';
 
 export const AppleHero: React.FC = () => {
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-white">
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-white border-8 border-red-500">
       {/* Neural Network Animation */}
       <NeuralNetworkBackground />
       
