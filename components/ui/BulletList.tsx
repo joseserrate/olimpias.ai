@@ -22,7 +22,7 @@ export const BulletList: React.FC<BulletListProps> = ({
           {/* Bullet dot - aligned with text baseline */}
           <span 
             className="inline-block w-[6px] h-[6px] rounded-full bg-[#5B3DF5] flex-shrink-0"
-            style={{ marginTop: '8px' }}
+            style={{ marginTop: '11px' }}
             aria-hidden="true"
           ></span>
           {/* Text - larger, better leading */}
