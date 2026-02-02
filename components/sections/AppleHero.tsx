@@ -26,7 +26,7 @@ export const AppleHero: React.FC = () => {
           </h1>
           
           {/* Subheadline - Premium spacing and breathing room */}
-          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-14 md:mb-16 lg:mb-20 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
+          <p className="text-[21px] md:text-[24px] lg:text-[28px] mb-16 md:mb-20 lg:mb-24 max-w-[940px] mx-auto leading-[1.45] font-normal text-[#1D1D1F]/80">
             Olimpias AI es el centro donde Bolivia diseña y gobierna agentes de inteligencia artificial para rendimiento empresarial.
           </p>
           
