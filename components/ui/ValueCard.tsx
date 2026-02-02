@@ -21,32 +21,32 @@ export const ValueCard: React.FC<ValueCardProps> = ({
 }) => {
   return (
     <Card className="h-full flex flex-col" hover={false}>
-      {/* Number eyebrow - more space below */}
+      {/* Number eyebrow */}
       <div 
         className="text-[11px] font-medium tracking-[0.15em] text-slate-400 uppercase"
-        style={{ marginBottom: '32px' }}
+        style={{ marginBottom: '12px' }}
       >
         {number}
       </div>
       
-      {/* Title - larger, more prominent */}
+      {/* Title */}
       <h3 
         className="text-2xl sm:text-[28px] font-semibold text-slate-900 tracking-tight leading-tight"
-        style={{ marginBottom: '16px' }}
+        style={{ marginBottom: '8px' }}
       >
         {title}
       </h3>
       
-      {/* Keywords - more subtle, more space */}
+      {/* Keywords */}
       <p 
         className="text-[13px] text-slate-500 font-normal tracking-wide"
-        style={{ marginBottom: '40px' }}
+        style={{ marginBottom: '16px' }}
       >
         {keywords.join(' · ')}
       </p>
       
-      {/* Bullets - generous space around */}
-      <div className="flex-grow" style={{ marginBottom: '48px' }}>
+      {/* Bullets */}
+      <div className="flex-grow" style={{ marginBottom: '24px' }}>
         <BulletList items={bullets} />
       </div>
       
