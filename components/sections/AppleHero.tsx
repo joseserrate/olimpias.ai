@@ -9,8 +9,8 @@ export const AppleHero: React.FC = () => {
       
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-8 pt-28 pb-24 md:pt-36 md:pb-32 lg:pt-40 lg:pb-36 z-10">
         <div className="max-w-[980px] mx-auto text-center">
-          {/* Main Headline with Stripe-style gradient text effects */}
-          <h1 className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[72px] font-semibold mb-5 leading-[1.05] tracking-[-0.02em]">
+          {/* Main Headline with glass effect */}
+          <h1 className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[72px] font-semibold mb-5 leading-[1.05] tracking-[-0.02em] opacity-75 backdrop-blur-sm">
             <span className="block">
               <span className="text-[#0B0B0D]">El Centro de </span>
               <span className="relative inline-block">
