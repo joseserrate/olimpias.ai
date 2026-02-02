@@ -47,16 +47,16 @@ export const AppleFooter: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
           {/* Brand - 5 columns */}
           <div className="lg:col-span-5">
-            <div className="mb-5">
+            <div className="mb-5 flex items-start">
               <Image
                 src="/olimpias-ai-logo.png"
                 alt="Olimpias AI"
-                width={160}
-                height={32}
-                className="h-[28px] w-auto opacity-90"
+                width={220}
+                height={44}
+                className="h-[40px] w-auto"
               />
             </div>
-            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs">
+            <p className="text-[14px] text-slate-500 leading-[1.6] max-w-xs text-left">
               El Centro de IA Empresarial de Bolivia
             </p>
           </div>
