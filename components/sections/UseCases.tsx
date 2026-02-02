@@ -104,7 +104,7 @@ export const UseCases: React.FC = () => {
           </p>
           <a 
             href="/contact" 
-            className="text-[15px] font-medium text-[#1D1D1F] hover:text-purple-700 transition-colors inline-flex items-center gap-2 group"
+            className="text-[15px] font-medium text-[#1D1D1F] hover:text-[#5B3DF5] transition-colors inline-flex items-center gap-2 group"
           >
             <span>Agendar Consulta</span>
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

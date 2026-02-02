@@ -14,11 +14,11 @@ export const AppleHero: React.FC = () => {
             <span className="block">
               <span className="text-[#0B0B0D]">El Centro de </span>
               <span className="relative inline-block opacity-75 backdrop-blur-sm">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5]">
                   IA Empresarial
                 </span>
                 {/* Subtle glow effect */}
-                <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700 blur-sm opacity-30">
+                <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-[#5B3DF5] to-[#5B3DF5] blur-sm opacity-30">
                   IA Empresarial
                 </span>
               </span>
@@ -39,9 +39,9 @@ export const AppleHero: React.FC = () => {
           
           {/* CTA Buttons - Larger, more prominent */}
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">
-            <button className="group relative px-8 py-4 text-[16px] font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/25">
+            <button className="group relative px-8 py-4 text-[16px] font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#5B3DF5]/25">
               {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 transition-transform duration-300 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-[#5B3DF5] transition-transform duration-300 group-hover:scale-105"></div>
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               <span className="relative flex items-center gap-2">
@@ -53,7 +53,7 @@ export const AppleHero: React.FC = () => {
             </button>
             <a 
               href="#methodology" 
-              className="text-[16px] font-medium text-[#1D1D1F] hover:text-purple-700 transition-colors flex items-center gap-2 group"
+              className="text-[16px] font-medium text-[#1D1D1F] hover:text-[#5B3DF5] transition-colors flex items-center gap-2 group"
             >
               <span>Conocer Metodología</span>
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

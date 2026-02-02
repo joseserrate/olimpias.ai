@@ -207,7 +207,7 @@ export const NeuralNetworkBackground: React.FC = () => {
               ctx.beginPath();
               ctx.moveTo(node.projectedX, node.projectedY);
               ctx.lineTo(target.projectedX, target.projectedY);
-              ctx.strokeStyle = `rgba(147, 51, 234, ${opacity})`;
+              ctx.strokeStyle = `rgba(91, 61, 245, ${opacity})`;
               ctx.lineWidth = lineWidth;
               ctx.stroke();
             }
@@ -229,7 +229,7 @@ export const NeuralNetworkBackground: React.FC = () => {
           if (node.activation > 0.3) {
             ctx.beginPath();
             ctx.arc(node.projectedX, node.projectedY, size * 3, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(147, 51, 234, ${node.activation * 0.2})`;
+            ctx.fillStyle = `rgba(91, 61, 245, ${node.activation * 0.2})`;
             ctx.fill();
           }
 

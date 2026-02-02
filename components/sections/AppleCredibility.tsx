@@ -112,7 +112,7 @@ export const AppleCredibility: React.FC = () => {
         <div className="text-center mt-24 md:mt-28">
           <a 
             href="/about" 
-            className="text-[15px] font-medium text-[#1D1D1F] hover:text-purple-700 transition-colors inline-flex items-center gap-2 group"
+            className="text-[15px] font-medium text-[#1D1D1F] hover:text-[#5B3DF5] transition-colors inline-flex items-center gap-2 group"
           >
             <span>Conocer Más</span>
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

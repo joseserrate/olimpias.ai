@@ -187,8 +187,8 @@ export default function AppleAboutPage() {
           <p className="text-[17px] text-[#86868B] mb-8 max-w-[640px] mx-auto leading-[1.47] font-normal">
             Conversemos sobre cómo la arquitectura de IA empresarial puede entregar rendimiento medible para su organización.
           </p>
-          <button className="group relative px-6 py-3 text-[15px] font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/25">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 transition-transform duration-300 group-hover:scale-105"></div>
+          <button className="group relative px-6 py-3 text-[15px] font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#5B3DF5]/25">
+            <div className="absolute inset-0 bg-[#5B3DF5] transition-transform duration-300 group-hover:scale-105"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             <a href="/contact" className="relative flex items-center gap-2">
               Agendar Consulta
