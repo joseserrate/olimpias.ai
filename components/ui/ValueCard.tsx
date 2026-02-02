@@ -53,11 +53,11 @@ export const ValueCard: React.FC<ValueCardProps> = ({
       {/* Deliverable - clear separation, premium treatment */}
       <div 
         className="border-t border-slate-200/50"
-        style={{ paddingTop: '32px' }}
+        style={{ paddingTop: 0 }}
       >
         <div 
           className="text-[11px] font-medium tracking-[0.15em] text-slate-400 uppercase"
-          style={{ marginTop: '32px', marginBottom: '12px' }}
+          style={{ marginTop: 0, marginBottom: '12px' }}
         >
           Entregable
         </div>
