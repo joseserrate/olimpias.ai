@@ -18,10 +18,10 @@ export const AppleHeader: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: '/#methodology', label: 'How We Work' },
-    { href: '/#use-cases', label: 'Use Cases' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/#methodology', label: 'Valores' },
+    { href: '/#use-cases', label: 'Casos de Uso' },
+    { href: '/about', label: 'El Centro' },
+    { href: '/contact', label: 'Contacto' },
   ];
 
   return (
@@ -54,7 +54,7 @@ export const AppleHeader: React.FC = () => {
               </Link>
             ))}
             <AppleButton variant="primary" href="/contact">
-              Book a Call
+              Agendar Consulta
             </AppleButton>
           </div>
 
@@ -101,7 +101,7 @@ export const AppleHeader: React.FC = () => {
                 href="/contact"
                 className="w-full mt-4"
               >
-                Book a Call
+                Agendar Consulta
               </AppleButton>
             </div>
           </div>

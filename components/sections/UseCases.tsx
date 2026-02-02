@@ -31,49 +31,49 @@ const UseCaseCard: React.FC<UseCaseProps> = ({ lane, title, outcome }) => {
 export const UseCases: React.FC = () => {
   const useCases: UseCaseProps[] = [
     {
-      lane: 'Trade & Export',
-      title: 'Export Documentation',
-      outcome: '80% faster processing, zero compliance errors',
+      lane: 'Comercio y Exportación',
+      title: 'Documentación de Exportación',
+      outcome: '80% más rápido, cero errores de cumplimiento',
     },
     {
-      lane: 'Trade & Export',
-      title: 'Supply Chain Intelligence',
-      outcome: '30% improvement in on-time delivery',
+      lane: 'Comercio y Exportación',
+      title: 'Inteligencia de Cadena de Suministro',
+      outcome: '30% mejora en entregas a tiempo',
     },
     {
-      lane: 'Finance & Revenue',
-      title: 'Revenue Operations',
-      outcome: '40% faster cash collection',
+      lane: 'Finanzas e Ingresos',
+      title: 'Operaciones de Ingresos',
+      outcome: '40% más rápida cobranza',
     },
     {
-      lane: 'Finance & Revenue',
-      title: 'Expense Intelligence',
-      outcome: '70% reduction in processing time',
+      lane: 'Finanzas e Ingresos',
+      title: 'Inteligencia de Gastos',
+      outcome: '70% reducción en tiempo de procesamiento',
     },
     {
-      lane: 'Compliance & Risk',
-      title: 'Regulatory Monitoring',
-      outcome: 'Zero missed deadlines, always audit-ready',
+      lane: 'Cumplimiento y Riesgo',
+      title: 'Monitoreo Regulatorio',
+      outcome: 'Cero plazos perdidos, siempre listo para auditoría',
     },
     {
-      lane: 'Customer Operations',
-      title: 'Support Intelligence',
-      outcome: '3x capacity with maintained quality',
+      lane: 'Operaciones de Cliente',
+      title: 'Inteligencia de Soporte',
+      outcome: '3x capacidad manteniendo calidad',
     },
     {
-      lane: 'Internal Productivity',
-      title: 'Document Processing',
-      outcome: '90% reduction in manual data entry',
+      lane: 'Productividad Interna',
+      title: 'Procesamiento de Documentos',
+      outcome: '90% reducción en ingreso manual de datos',
     },
     {
-      lane: 'Internal Productivity',
-      title: 'Meeting Intelligence',
-      outcome: '100% action item completion rate',
+      lane: 'Productividad Interna',
+      title: 'Inteligencia de Reuniones',
+      outcome: '100% tasa de cumplimiento de acciones',
     },
     {
-      lane: 'Government',
-      title: 'Public Service Automation',
-      outcome: '10x service capacity, 95% satisfaction',
+      lane: 'Gobierno',
+      title: 'Automatización de Servicio Público',
+      outcome: '10x capacidad, 95% satisfacción',
     },
   ];
 
@@ -84,10 +84,10 @@ export const UseCases: React.FC = () => {
         {/* Header with generous spacing */}
         <div className="text-center mb-24 md:mb-32">
           <h2 className="text-[48px] md:text-[64px] font-semibold text-[#0B0B0D] mb-6 tracking-tight leading-[1.05]">
-            Enterprise Use Cases
+            Casos de Uso Empresariales
           </h2>
           <p className="text-[21px] md:text-[24px] text-[#4A4A50] max-w-3xl mx-auto leading-[1.5]">
-            Real workflows, measurable outcomes, operational impact
+            Flujos reales, resultados medibles, impacto operacional
           </p>
         </div>
 
@@ -101,10 +101,10 @@ export const UseCases: React.FC = () => {
         {/* CTA with breathing room */}
         <div className="text-center pt-12 border-t border-[#E6E6EA]">
           <p className="text-[18px] text-[#4A4A50] mb-10 leading-[1.65]">
-            Don't see your use case? Every enterprise has unique workflows.
+            ¿No ve su caso? Cada empresa tiene flujos únicos.
           </p>
           <AppleButton variant="primary" href="/contact">
-            Discuss Your Needs
+            Agendar Consulta
           </AppleButton>
         </div>
       </div>

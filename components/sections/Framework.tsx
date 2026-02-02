@@ -64,33 +64,33 @@ export const Framework: React.FC = () => {
   const frameworks: FrameworkCardProps[] = [
     {
       number: '01',
-      title: 'Design',
-      definition: 'Map workflows, define roles, and shape the system.',
+      title: 'Diseñar',
+      definition: 'Precisión · Arquitectura · Métrica',
       examples: [
-        'Decompose tasks into agent-ready steps',
-        'Define human oversight points'
+        'Diseñamos sistemas intencionalmente antes de construir',
+        'Cada capacidad tiene límites, interfaces y criterios de éxito definidos'
       ],
-      deliverable: 'System Architecture & Workflow Maps',
+      deliverable: 'Arquitectura de Sistema y Mapas de Flujo',
     },
     {
       number: '02',
-      title: 'Govern',
-      definition: 'Set boundaries, approvals, and escalation.',
+      title: 'Gobernar',
+      definition: 'Seguridad · Responsabilidad · Ética',
       examples: [
-        'Define when AI decides vs. human approval',
-        'Automate alerts for edge cases'
+        'No desplegamos poder sin control',
+        'Cada sistema tiene propiedad, trazabilidad y límites éticos integrados'
       ],
-      deliverable: 'Governance Framework & Control Playbooks',
+      deliverable: 'Marco de Gobernanza y Protocolos de Control',
     },
     {
       number: '03',
-      title: 'Elevate',
-      definition: 'Measure performance and improve continuously.',
+      title: 'Elevar',
+      definition: 'Rendimiento · Colaboración · Aprendizaje',
       examples: [
-        'Real-time dashboards track accuracy',
-        'Monthly reviews identify optimizations'
+        'Elevamos el rendimiento mejorando cómo humanos y agentes trabajan juntos',
+        'Aprendemos y mejoramos en cada ciclo'
       ],
-      deliverable: 'Performance Dashboard & Reports',
+      deliverable: 'Panel de Rendimiento y Reportes de Optimización',
     },
   ];
 
@@ -101,10 +101,10 @@ export const Framework: React.FC = () => {
         {/* Header with generous spacing */}
         <div className="text-center mb-24 md:mb-32">
           <h2 className="text-[48px] md:text-[64px] font-semibold text-[#0B0B0D] mb-6 tracking-tight leading-[1.05]">
-            How We Work
+            Valores Fundamentales
           </h2>
           <p className="text-[21px] md:text-[24px] text-[#4A4A50] max-w-2xl mx-auto leading-[1.5]">
-            A systematic approach that delivers capability, not just tools
+            Mandamientos, no eslóganes
           </p>
         </div>
 
@@ -118,7 +118,7 @@ export const Framework: React.FC = () => {
         {/* Doctrine Footer with breathing room */}
         <div className="text-center pt-12 border-t border-[#E6E6EA]">
           <p className="text-[15px] text-[#7A7A82] tracking-wide leading-[1.8] max-w-3xl mx-auto">
-            From tools to systems that run. Architecture first. Governance always. Performance measured.
+            Diseñar con precisión. Gobernar con responsabilidad. Elevar el rendimiento.
           </p>
         </div>
       </div>

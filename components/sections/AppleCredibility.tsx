@@ -8,10 +8,10 @@ export const AppleCredibility: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
           <h2 className="text-[44px] md:text-[56px] font-semibold text-[#0B0B0D] mb-5 tracking-tight leading-[1.05]">
-            Built on Rigorous Foundations
+            Fundamentos Institucionales
           </h2>
           <p className="text-[20px] md:text-[22px] text-[#4A4A50] max-w-2xl mx-auto leading-[1.5]">
-            Experience and education that ensure serious results
+            Experiencia y formación que aseguran resultados serios
           </p>
         </div>
 
@@ -20,18 +20,18 @@ export const AppleCredibility: React.FC = () => {
           {/* Left Column - Summary */}
           <div>
             <h3 className="text-[28px] font-semibold text-[#0B0B0D] mb-6 tracking-tight">
-              From Global Systems to
+              De Sistemas Globales a
               <br />
-              Bolivian Enterprise
+              Empresa Boliviana
             </h3>
             <p className="text-[17px] text-[#4A4A50] leading-[1.7] mb-8">
-              We bring enterprise-grade AI system architecture to Bolivia and the region. 
-              Our approach combines global-scale systems experience with deep understanding 
-              of local operational realities.
+              Traemos arquitectura de sistemas de IA de nivel empresarial a Bolivia y la región. 
+              Nuestro enfoque combina experiencia en sistemas de escala global con comprensión 
+              profunda de realidades operativas locales.
             </p>
             <p className="text-[17px] text-[#4A4A50] leading-[1.7]">
-              Every system is designed for measurable performance, governed for responsible 
-              adoption, and optimized for continuous improvement.
+              Cada sistema se diseña para rendimiento medible, se gobierna para adopción 
+              responsable, y se optimiza para mejora continua.
             </p>
           </div>
 
@@ -39,19 +39,19 @@ export const AppleCredibility: React.FC = () => {
           <div>
             <div className="mb-12">
               <h4 className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-6">
-                Experience
+                Experiencia
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Global-scale systems at Apple Business Solutions
+                    Sistemas de escala global en Apple Business Solutions
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Enterprise architecture and system design
+                    Arquitectura empresarial y diseño de sistemas
                   </span>
                 </li>
               </ul>
@@ -59,25 +59,25 @@ export const AppleCredibility: React.FC = () => {
 
             <div className="mb-12">
               <h4 className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-6">
-                Education
+                Formación
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Master of Science in Technology Commercialization (MSTC), UT Austin
+                    Maestría en Comercialización de Tecnología (MSTC), UT Austin
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Harvard Agentic AI Intensive Program
+                    Programa Intensivo en IA Agéntica, Harvard
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Finance and Digital Media
+                    Finanzas y Medios Digitales
                   </span>
                 </li>
               </ul>
@@ -85,25 +85,25 @@ export const AppleCredibility: React.FC = () => {
 
             <div>
               <h4 className="text-[11px] font-medium tracking-[0.15em] uppercase text-[#7A7A82] mb-6">
-                Commitments
+                Compromisos
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Measured outcomes
+                    Resultados medibles
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Disciplined architecture
+                    Arquitectura disciplinada
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-4 mt-2 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0 opacity-40"></span>
+                  <span className="mr-4 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0B0B0D] flex-shrink-0"></span>
                   <span className="text-[17px] text-[#4A4A50] leading-[1.65]">
-                    Responsible governance
+                    Gobernanza responsable
                   </span>
                 </li>
               </ul>
@@ -114,7 +114,7 @@ export const AppleCredibility: React.FC = () => {
         {/* CTA */}
         <div className="text-center mt-20 md:mt-28">
           <AppleButton variant="primary" href="/about">
-            Learn More About Us
+            Conocer Más
           </AppleButton>
         </div>
       </div>
