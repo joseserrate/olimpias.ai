@@ -29,9 +29,14 @@ export const AppleHeader: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-2xl border-b border-[#E6E6EA]' 
-          : 'bg-white/95 backdrop-blur-2xl'
+          ? 'bg-white/80 backdrop-blur-3xl border-b border-white/20' 
+          : 'bg-white/72 backdrop-blur-3xl'
       }`}
+      style={{
+        WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+        backdropFilter: 'saturate(180%) blur(20px)',
+        boxShadow: isScrolled ? '0 1px 0 0 rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.03)' : 'none'
+      }}
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <nav className="flex items-center justify-between h-[68px] md:h-[76px]">
