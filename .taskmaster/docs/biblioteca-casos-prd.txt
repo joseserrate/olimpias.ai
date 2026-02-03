@@ -1,0 +1,367 @@
+# Biblioteca de Casos (Use Case Library) - Product Requirements Document
+
+## Overview
+Olimpias AI will add a **Biblioteca de Casos**: a curated library of enterprise AI use cases that serves as both:
+1) **Proof of capability** (serious, structured, enterprise-grade), and
+2) **Lead funnel** (companies can submit use cases; Olimpias can turn them into consultations and pilots).
+
+Problem it solves:
+- Bolivian companies and institutions struggle to translate "AI hype" into concrete, high-value, low-risk starting points.
+- Buyers need credible examples, structure, and confidence that the work will be governed and production-minded.
+
+Who it's for:
+- Decision makers in Bolivian businesses and institutions evaluating AI projects
+- Operators and managers who can articulate workflows and pain points
+- Olimpias AI as the curator and executor (Design, Govern, Elevate)
+
+Why it's valuable:
+- Converts a marketing site into an "institutional intelligence" artifact: a living catalog of real flows and measurable outcomes.
+- Provides a low-friction onramp: public browsing, but contribution requires login.
+- Creates a reusable dataset of demand signals (categories, volume, comment patterns).
+
+Success criteria (qualitative + functional):
+- Public visitors can browse published cases and read details without login.
+- Authenticated users can create and manage their own cases.
+- Authenticated users can comment on published cases.
+- Admin can publish/unpublish cases and moderate via simple allowlist.
+- The "Casos de Uso Empresariales" landing section becomes "Featured cases" pointing to /casos.
+- UI feels consistent with hero (calm whitespace, strong typography, premium card rhythm).
+
+## Core Features
+
+### 1) Public Case Library (Read)
+What it does:
+- A `/casos` page listing published use cases with category filters and clean cards.
+- A `/casos/[id]` detail page with structured sections (Problem, Current Flow, Sources, Desired Outcome, Constraints, Notes) and comments.
+
+Why it's important:
+- Low-friction proof and education for skeptical enterprise buyers.
+- Makes "enterprise AI" concrete: workflows, documents, compliance, metrics.
+
+How it works (high level):
+- Fetch cases with `status = 'published'` from Supabase.
+- Render as cards using existing Card/Section system.
+- Use query parameters for category/tag filtering.
+
+### 2) Auth (Sign up / Login / Logout)
+What it does:
+- Users can create accounts and sign in to submit cases and comment.
+- A minimal account menu appears after login with "Panel", "Nuevo Caso", "Cerrar sesión".
+
+Why it's important:
+- Enables secure authorship, moderation, and future expansion.
+- Creates a controlled channel for contributions (prevents spam).
+
+How it works (high level):
+- Supabase Auth with email/password (MVP) and optional magic link.
+- Session stored client-side via Supabase client; protect write routes.
+
+### 3) Case Submission + CRUD (Create/Update/Delete by author)
+What it does:
+- `/casos/nuevo` form to create a new case.
+- `/panel` lists user's cases (draft/submitted/published/archived) with edit/delete.
+- Editing via `/casos/[id]/editar` (or modal within panel).
+
+Why it's important:
+- This is the core CRUD learning objective and the MVP upgrade.
+- Creates a pipeline: draft → submitted → published.
+
+How it works (high level):
+- Cases are stored with `owner_id = auth.user.id`.
+- Default new cases: `status = 'draft'`.
+- Users can submit (status → submitted) but cannot publish.
+- RLS restricts edits/deletes to the owner (except admin).
+
+### 4) Comments on Published Cases
+What it does:
+- On `/casos/[id]`, logged-in users can add comments.
+- Comments are readable publicly (for published cases only), but posting requires login.
+
+Why it's important:
+- Adds community signal and engagement without making the site "social media".
+- Lets prospects ask questions and creates visible activity.
+
+How it works (high level):
+- Comments table references case_id and user_id.
+- RLS: insert only if authenticated; select only if case is published.
+
+### 5) Admin Publishing + Lightweight Moderation (MVP)
+What it does:
+- Admin can set case status from submitted → published, and unpublish/archived.
+- Admin can delete abusive comments if needed.
+- Admin is determined by allowlisted email(s) in env or Supabase table.
+
+Why it's important:
+- Keeps library enterprise-grade and curated.
+- Avoids brand damage from low-quality content.
+
+How it works (high level):
+- MVP: `ADMIN_EMAIL_ALLOWLIST` env var checked server-side.
+- Admin actions via server route handlers or server actions that validate admin.
+- RLS can support admin via `profiles.role = 'admin'` (phase 2) or service role on server for admin endpoints.
+
+### 6) Landing Page Integration (Featured Slice)
+What it does:
+- Existing "Casos de Uso Empresariales" section becomes curated featured cards (4–6) with "Ver la biblioteca completa".
+- Hero CTA links directly to /casos ("Explorar Casos").
+
+Why it's important:
+- Landing remains marketing-first.
+- Product area feels like proof, not a detour.
+
+How it works (high level):
+- Featured slice is just a query for top N published cases (or hardcoded IDs initially for control).
+- Cards link to detail pages.
+
+## User Experience
+
+### User personas
+1) **Executive Buyer (Bolivia)**
+- Needs legitimacy, clarity, risk containment.
+- Browses /casos; reads a few; clicks "Agendar Consulta".
+
+2) **Ops/Compliance Manager**
+- Wants to confirm "this matches my workflow".
+- Reads detail pages; comments with a question; submits a similar case.
+
+3) **Contributor (Prospect)**
+- Creates an account to submit their case.
+- Writes a draft, submits, waits for review.
+
+4) **Olimpias Admin (You)**
+- Reviews submissions; publishes best ones; keeps quality high.
+
+### Key user flows
+1) Public browse:
+- Landing → click "Explorar Casos" → `/casos` → filter category → open detail → read.
+
+2) Submit a case:
+- Landing or /casos → "Iniciar sesión" → `/casos/nuevo` → create draft → save → submit.
+
+3) Comment:
+- `/casos/[id]` → login prompt → add comment → comment appears.
+
+4) Admin publish:
+- `/admin` or admin controls in `/panel` (admin-only) → review "submitted" → publish.
+
+### UI/UX considerations (Stripe/Apple calm)
+- Preserve hero typography and whitespace.
+- Cards: soft borders, subtle shadow, generous padding, consistent rhythm.
+- Case detail: use a structured layout with clear section headings and max line length.
+- Avoid noisy badges. Use quiet status chips (Draft, Submitted, Published) only in Panel.
+- Ensure accessibility: focus states, keyboard navigation, readable contrast.
+- Do not overwhelm: keep filters simple (Category + Tag search in later phase).
+
+## Technical Architecture
+
+### System components
+- **Next.js App Router** pages/routes:
+  - `/casos` (public list)
+  - `/casos/[id]` (public detail)
+  - `/casos/nuevo` (auth required)
+  - `/panel` (auth required)
+  - Optional: `/casos/[id]/editar` (auth required and owner check)
+  - Optional: `/admin` (admin-only review queue)
+
+- **Supabase**:
+  - Auth: email/password (MVP), optional magic link.
+  - Database: Postgres tables for cases, comments, profiles, tags.
+  - Storage: optional future for attachments/screenshots.
+
+- **UI components**:
+  - Reuse existing Card/Section/Container typography system.
+  - Add "AuthButton / AccountMenu" in header.
+  - Add "CaseCard", "CaseDetail", "CaseForm", "CommentList", "CommentForm", "StatusBadge".
+
+### Data models (minimum)
+#### profiles
+- id (uuid, pk, = auth.users.id)
+- email (text)
+- display_name (text, nullable)
+- role (text: 'user'|'admin', default 'user') [phase 2 if not MVP]
+- created_at (timestamp)
+
+#### cases
+- id (uuid, pk)
+- owner_id (uuid, fk -> profiles.id)
+- title (text)
+- category (text enum-ish: 'exportacion'|'cumplimiento'|'finanzas'|'operaciones'|'camaras'|'educacion'|'gobierno' etc.)
+- summary (text) 1–2 lines outcome statement
+- problem (text)
+- current_flow (text)
+- sources (text) (e.g., "PDFs, WhatsApp, Email, Portal")
+- desired_outcome (text)
+- constraints (text)
+- sensitivity (text: 'publicable'|'anonimizado'|'privado')
+- status (text: 'draft'|'submitted'|'published'|'archived')
+- featured_rank (int, nullable) [MVP or phase 2]
+- created_at, updated_at (timestamp)
+
+#### comments
+- id (uuid, pk)
+- case_id (uuid, fk -> cases.id)
+- user_id (uuid, fk -> profiles.id)
+- body (text)
+- created_at (timestamp)
+
+#### tags (phase 2)
+- id, name, slug
+#### case_tags (phase 2)
+- case_id, tag_id
+
+### APIs and integrations
+- Supabase client initialization:
+  - `lib/supabase/client.ts` for browser usage
+  - `lib/supabase/server.ts` for server actions / route handlers
+
+- Server actions or route handlers:
+  - createCase(data)
+  - updateCase(id, data)
+  - deleteCase(id)
+  - submitCase(id)
+  - adminPublishCase(id) (admin-only)
+  - createComment(caseId, body)
+
+- Auth helpers:
+  - getSessionUser() (server)
+  - requireUser() / requireAdmin() wrappers for protected routes/actions
+
+### Infrastructure requirements
+- Environment variables:
+  - NEXT_PUBLIC_SUPABASE_URL
+  - NEXT_PUBLIC_SUPABASE_ANON_KEY
+  - SUPABASE_SERVICE_ROLE_KEY (server-only, for admin operations if needed)
+  - ADMIN_EMAIL_ALLOWLIST (comma-separated) (MVP admin gating)
+
+- Supabase RLS enabled on all tables:
+  - profiles: user can select/update own (limited fields)
+  - cases: public select only published; user select own; user insert; user update/delete own drafts/submitted; admin can update status/publish
+  - comments: public select if parent case is published; user insert if authenticated; user delete own (optional); admin delete any
+
+## Development Roadmap
+
+### Phase 1: MVP (Usable, visible, enterprise-grade core)
+1) Supabase setup
+- Create Supabase project
+- Configure env vars in Next.js
+- Add supabase client/server helpers
+- Implement auth (sign up, login, logout) UI in header
+
+2) Database schema + RLS
+- Create tables: profiles, cases, comments
+- Create RLS policies for read/write rules
+- Create trigger or function to auto-create profiles on signup (or handle in app)
+
+3) Public library UI
+- `/casos` list page: fetch published cases, render CaseCard grid
+- `/casos/[id]` detail page: fetch case by id (published only), structured layout
+- Comments list visible on detail page (public read)
+
+4) Auth-gated authoring
+- `/casos/nuevo` create form (draft by default)
+- `/panel` page listing user's cases with statuses and actions: edit, delete, submit
+- Edit flow: `/casos/[id]/editar` or edit within panel
+
+5) Commenting
+- On case detail page: if logged-in show comment form; else show "Inicia sesión para comentar"
+- Insert comment to Supabase, refresh list
+
+6) Landing page integration
+- Replace hero CTA: "Conocer Metodología" → "Explorar Casos" linking `/casos`
+- Update "Casos de Uso Empresariales" section to show featured cases (controlled)
+  - MVP approach: use `featured_rank` or hardcoded IDs in code
+  - Add "Ver la biblioteca completa" CTA
+
+7) Admin MVP
+- Admin review queue: simplest is a tab in `/panel` visible only to admin allowlist:
+  - Shows submitted cases
+  - Allows publish/unpublish (status updates)
+- Admin check via allowlist env var in server actions
+
+### Phase 2: Enhancements (Build upon MVP)
+- Tags + filtering/search
+- Voting/upvotes/bookmarking
+- Attachments (Supabase storage) for anonymized screenshots/docs
+- Better moderation tools (report comment/case)
+- Profiles: organization field, role-based permissions
+- Analytics dashboard: top categories, most viewed cases, conversion to consultations
+
+### Phase 3: Enterprise expansion (Optional)
+- Multi-tenant org accounts
+- Private cases per org
+- Exportable "Blueprint-lite" PDF for a case
+- Intake flow linking a submitted case to paid discovery process
+
+## Logical Dependency Chain
+
+1) Foundation: Supabase connectivity + auth primitives
+- Configure env
+- supabase client/server helpers
+- minimal auth UI that proves login state (visible quickly)
+
+2) Visible front end fast: public `/casos` with placeholder data
+- Stub UI first (static sample cases) so layout is visible immediately
+- Then wire to Supabase published cases query
+
+3) Schema + RLS
+- Create tables and policies
+- Confirm public reads work without auth for published
+
+4) Case CRUD (drafts)
+- Create case form writes draft
+- Panel lists cases
+- Edit/delete for owner only
+
+5) Status flow + admin publish
+- Submit action (draft → submitted)
+- Admin publish (submitted → published)
+- Confirm public now sees published items
+
+6) Comments
+- Public read comments for published cases
+- Auth insert comments
+
+7) Landing integration
+- Update hero CTA and featured slice
+- Ensure navigation and CTAs are coherent
+
+## Risks and Mitigations
+
+### Technical challenges
+- RLS complexity can block development
+  Mitigation: implement policies incrementally; start with permissive dev policy in a branch, then tighten.
+
+- Auth state mismatch between server/client in App Router
+  Mitigation: standardize on Supabase SSR helpers; keep auth gating at page level via server checks.
+
+- "Featured cases" control
+  Mitigation: MVP uses explicit `featured_rank` or hardcoded curated IDs in code.
+
+### MVP scope risk
+- Overbuilding moderation, tags, analytics too early
+  Mitigation: ship Phase 1 with minimal fields and simple admin allowlist.
+
+### Resource constraints (AI credits, iteration cost)
+- Too many UI iterations with AI tooling
+  Mitigation: lock a design system and implement changes by inspection and small diffs; use browser DevTools for spacing fixes instead of repeated AI guesses.
+
+## Appendix
+
+### Case categories (initial)
+- Exportación y Comercio
+- Cámaras y Asociaciones
+- Cumplimiento y Riesgo
+- Finanzas e Ingresos
+- Operaciones Internas
+- Gobierno / Servicio público (optional)
+
+### Featured example cases (copy aligned with Olimpias wedge)
+- Asistente RAG de Normativa de Exportación (PDFs internos + portales) para consultas rápidas y trazables
+- Expediente de Embarque: generación de "Shipment Packet" desde PDFs, emails y WhatsApp con validaciones
+- Chatbot institucional para cámaras: responde desde reglamentos, circulares y guías internas con analítica de preguntas
+- Soporte de Cumplimiento: respuestas auditables a preguntas frecuentes de políticas y controles internos
+- Minutas + Acciones: captura de reuniones, seguimiento y reportes de cumplimiento de acuerdos
+
+### Design constraints
+- Keep calm luxury rhythm: whitespace, max line length, consistent padding, consistent bullets.
+- Avoid dense layouts; prefer structured sections with controlled width and generous spacing.

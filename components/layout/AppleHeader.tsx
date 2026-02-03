@@ -29,14 +29,9 @@ export const AppleHeader: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-3xl border-b border-white/20' 
-          : 'bg-white/72 backdrop-blur-3xl'
+          ? 'bg-white/95 backdrop-blur-2xl border-b border-[#E6E6EA]' 
+          : 'bg-white/95 backdrop-blur-2xl'
       }`}
-      style={{
-        WebkitBackdropFilter: 'saturate(180%) blur(20px)',
-        backdropFilter: 'saturate(180%) blur(20px)',
-        boxShadow: isScrolled ? '0 1px 0 0 rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.03)' : 'none'
-      }}
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <nav className="flex items-center justify-between h-[68px] md:h-[76px]">
@@ -46,12 +41,12 @@ export const AppleHeader: React.FC = () => {
             className="hover:opacity-70 transition-opacity flex-shrink-0"
           >
             <Image
-              src="/olimpias-logo-icon.png"
+              src="/olimpias-ai-logo.png"
               alt="Olimpias AI"
-              width={74}
+              width={370}
               height={74}
               priority
-              className="h-[64px] md:h-[74px] w-[64px] md:w-[74px]"
+              className="h-[64px] md:h-[74px] w-auto"
             />
           </Link>
 
