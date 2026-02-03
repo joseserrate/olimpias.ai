@@ -1,62 +1,36 @@
+'use client';
+
 import React from 'react';
-import { ResponsiveSection as Section, SectionHeader, UseCaseCard } from '@/components/ui';
+import Link from 'next/link';
+import { ResponsiveSection as Section, SectionHeader } from '@/components/ui';
+import { CaseCard } from '@/components/casos';
+import { getFeaturedCases } from '@/lib/mock-data/casos';
 
 export const UseCases: React.FC = () => {
-  const useCases = [
-    {
-      category: 'Comercio y Exportación',
-      title: 'Documentación de Exportación',
-      outcome: '80% más rápido, cero errores de cumplimiento',
-    },
-    {
-      category: 'Comercio y Exportación',
-      title: 'Inteligencia de Cadena de Suministro',
-      outcome: '30% mejora en entregas a tiempo',
-    },
-    {
-      category: 'Finanzas e Ingresos',
-      title: 'Operaciones de Ingresos',
-      outcome: '40% más rápida cobranza',
-    },
-    {
-      category: 'Finanzas e Ingresos',
-      title: 'Inteligencia de Gastos',
-      outcome: '70% reducción en tiempo de procesamiento',
-    },
-    {
-      category: 'Cumplimiento y Riesgo',
-      title: 'Monitoreo Regulatorio',
-      outcome: 'Cero plazos perdidos, siempre listo para auditoría',
-    },
-    {
-      category: 'Operaciones de Cliente',
-      title: 'Inteligencia de Soporte',
-      outcome: '3x capacidad manteniendo calidad',
-    },
-    {
-      category: 'Productividad Interna',
-      title: 'Procesamiento de Documentos',
-      outcome: '90% reducción en ingreso manual de datos',
-    },
-    {
-      category: 'Productividad Interna',
-      title: 'Inteligencia de Reuniones',
-      outcome: '100% tasa de cumplimiento de acciones',
-    },
-  ];
+  const featuredCases = getFeaturedCases().slice(0, 6); // Top 6 featured cases
 
   return (
     <Section id="use-cases" background="white" divider>
       <SectionHeader 
-        headline="Casos de Uso Empresariales"
-        subheadline="Flujos reales. Resultados medibles. Impacto operacional verificable."
+        headline="Casos Destacados"
+        subheadline="Implementaciones reales de IA empresarial en Bolivia. Flujos documentados, resultados medibles, y lecciones aprendidas."
       />
 
-      {/* 2-up grid with PREMIUM spacing - generous gaps for breathing room */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-        {useCases.map((useCase, index) => (
-          <UseCaseCard key={index} {...useCase} />
+      {/* Featured cases grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {featuredCases.map((caseData) => (
+          <CaseCard key={caseData.id} case={caseData} />
         ))}
+      </div>
+
+      {/* CTA to full library */}
+      <div className="text-center pt-4">
+        <Link
+          href="/casos"
+          className="inline-flex items-center justify-center h-[50px] px-8 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors"
+        >
+          Ver la biblioteca completa
+        </Link>
       </div>
     </Section>
   );

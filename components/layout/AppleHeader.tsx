@@ -8,6 +8,8 @@ import { AppleButton } from '@/components/ui';
 export const AppleHeader: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
+  const [isAuthenticated] = useState(false); // Mock auth state - will be real later
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,7 @@ export const AppleHeader: React.FC = () => {
   const navLinks = [
     { href: '/#methodology', label: 'Valores' },
     { href: '/#use-cases', label: 'Casos de Uso' },
+    { href: '/casos', label: 'Biblioteca' },
     { href: '/about', label: 'El Centro' },
     { href: '/contact', label: 'Contacto' },
   ];
@@ -63,11 +66,61 @@ export const AppleHeader: React.FC = () => {
             ))}
           </div>
 
-          {/* CTA Button - Always visible on desktop */}
-          <div className="hidden lg:block flex-shrink-0" style={{ marginRight: '40px' }}>
+          {/* Right side: CTA + Auth */}
+          <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
             <AppleButton variant="primary" href="/contact">
               Agendar Consulta
             </AppleButton>
+
+            {/* Auth UI */}
+            {isAuthenticated ? (
+              <div className="relative">
+                <button
+                  onClick={() => setIsAccountMenuOpen(!isAccountMenuOpen)}
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-[#5B3DF5] text-white font-medium text-sm hover:bg-[#4A2FD5] transition-colors"
+                  aria-label="Account menu"
+                >
+                  M
+                </button>
+
+                {/* Account menu dropdown */}
+                {isAccountMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-50">
+                    <Link
+                      href="/panel"
+                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
+                      onClick={() => setIsAccountMenuOpen(false)}
+                    >
+                      Panel
+                    </Link>
+                    <Link
+                      href="/casos/nuevo"
+                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
+                      onClick={() => setIsAccountMenuOpen(false)}
+                    >
+                      Nuevo caso
+                    </Link>
+                    <div className="border-t border-slate-200 my-2" />
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                      onClick={() => {
+                        setIsAccountMenuOpen(false);
+                        alert('Cerrar sesión (mock)');
+                      }}
+                    >
+                      Cerrar sesión
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                href="/login"
+                className="text-[14px] text-[#5B3DF5] hover:opacity-70 transition-opacity whitespace-nowrap font-medium"
+              >
+                Iniciar sesión
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -115,6 +168,44 @@ export const AppleHeader: React.FC = () => {
               >
                 Agendar Consulta
               </AppleButton>
+
+              {/* Mobile auth */}
+              {isAuthenticated ? (
+                <>
+                  <div className="border-t border-[#E6E6EA] my-2" />
+                  <Link
+                    href="/panel"
+                    className="text-[17px] text-[#0B0B0D] hover:opacity-70 transition-opacity py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Panel
+                  </Link>
+                  <Link
+                    href="/casos/nuevo"
+                    className="text-[17px] text-[#0B0B0D] hover:opacity-70 transition-opacity py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Nuevo caso
+                  </Link>
+                  <button
+                    className="text-[17px] text-red-600 hover:opacity-70 transition-opacity py-2 text-left"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      alert('Cerrar sesión (mock)');
+                    }}
+                  >
+                    Cerrar sesión
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="text-[17px] text-[#5B3DF5] hover:opacity-70 transition-opacity py-2 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Iniciar sesión
+                </Link>
+              )}
             </div>
           </div>
         )}

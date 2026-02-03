@@ -52,10 +52,10 @@ export const AppleHero: React.FC = () => {
               </svg>
             </button>
             <a 
-              href="#methodology" 
+              href="/casos" 
               className="h-[50px] px-10 text-[15px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-md hover:border-[#5B3DF5] transition-all duration-200 hover:shadow-md min-w-[180px] text-center flex items-center justify-center"
             >
-              Conocer Metodología
+              Explorar Casos
             </a>
           </div>
         </div>
