@@ -46,12 +46,12 @@ export const AppleHeader: React.FC = () => {
             className="hover:opacity-70 transition-opacity flex-shrink-0"
           >
             <Image
-              src="/olimpias-ai-logo.png"
+              src="/olimpias-logo-icon.png"
               alt="Olimpias AI"
-              width={370}
+              width={74}
               height={74}
               priority
-              className="h-[64px] md:h-[74px] w-auto"
+              className="h-[64px] md:h-[74px] w-[64px] md:w-[74px]"
             />
           </Link>
 
