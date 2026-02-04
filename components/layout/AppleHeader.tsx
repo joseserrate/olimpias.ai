@@ -50,18 +50,15 @@ export const AppleHeader: React.FC = () => {
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href="#auth-signin"
-              className="h-[42px] px-6 text-[13px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-md hover:border-[#5B3DF5] transition-all duration-200 hover:shadow-sm min-w-[140px] text-center flex items-center justify-center"
+              className="h-10 px-5 text-sm font-medium rounded-lg border border-slate-200 text-[#5B3DF5] bg-transparent hover:bg-slate-50 transition flex items-center justify-center"
             >
               Iniciar sesión
             </a>
             <a
               href="#auth-signup"
-              className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center gap-2 min-w-[180px] justify-center"
+              className="h-10 px-5 text-sm font-semibold rounded-lg bg-[#5B3DF5] text-white hover:bg-[#4A2FD5] transition flex items-center justify-center"
             >
               Crear cuenta
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
             </a>
           </div>
 

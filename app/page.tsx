@@ -129,76 +129,73 @@ export default function Home() {
     <>
       <AppleHero />
       
-      <main className="bg-white">
-        {/* Casos Section */}
-        <section id="casos" className="py-16 bg-white">
+      <main className="min-h-screen bg-white pt-28">
+        <section id="casos" className="py-16">
           <div className="max-w-5xl mx-auto px-6 sm:px-8">
-            {/* Header */}
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-4xl font-semibold text-slate-900 mb-4">
+            <header className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl sm:text-5xl font-semibold text-slate-900 tracking-tight">
                 Biblioteca de Casos
-              </h2>
-              <p className="text-lg text-slate-600">
+              </h1>
+              <p className="mt-4 text-lg text-slate-600">
                 Casos reales de IA empresarial en Bolivia. Implementaciones documentadas con métricas y stack técnico.
               </p>
-            </div>
+            </header>
 
-            {/* Search */}
-            <div className="mt-8 flex justify-center">
-              <input
-                type="text"
-                placeholder="Buscar casos..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full max-w-2xl h-11 border border-slate-300 rounded-lg px-4 focus:ring-2 focus:ring-[#5B3DF5]/20 focus:border-[#5B3DF5] outline-none text-slate-900 placeholder:text-slate-400"
-              />
-            </div>
+            <div className="mt-10">
+              <div className="max-w-2xl mx-auto">
+                <input
+                  type="text"
+                  placeholder="Buscar casos..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full h-11 px-4 rounded-lg border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#5B3DF5]/20 focus:border-[#5B3DF5] transition"
+                />
+              </div>
 
-            {/* Category Chips */}
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              <button
-                onClick={() => setSelectedCategory('all')}
-                className={`text-sm px-3 py-1.5 rounded-full transition-colors ${
-                  selectedCategory === 'all'
-                    ? 'bg-[#5B3DF5] text-white'
-                    : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                Todos
-              </button>
-              {Object.entries(categoryLabels).map(([key, label]) => (
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
                 <button
-                  key={key}
-                  onClick={() => setSelectedCategory(key as CaseCategory)}
-                  className={`text-sm px-3 py-1.5 rounded-full transition-colors ${
-                    selectedCategory === key
-                      ? 'bg-[#5B3DF5] text-white'
-                      : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                  onClick={() => setSelectedCategory('all')}
+                  className={`text-sm px-3 py-1.5 rounded-full border transition ${
+                    selectedCategory === 'all'
+                      ? 'bg-[#5B3DF5] text-white border-transparent'
+                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
-                  {label}
+                  Todos
                 </button>
-              ))}
+                {Object.entries(categoryLabels).map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedCategory(key as CaseCategory)}
+                    className={`text-sm px-3 py-1.5 rounded-full border transition ${
+                      selectedCategory === key
+                        ? 'bg-[#5B3DF5] text-white border-transparent'
+                        : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* Cases Grid */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCases.map((caso) => (
                 <button
                   key={caso.id}
                   onClick={() => setSelectedCase(caso)}
                   className="text-left rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition"
                 >
-                  <div className="text-xs tracking-widest uppercase text-slate-400 mb-3">
+                  <div className="text-xs tracking-widest uppercase text-slate-400">
                     {categoryLabels[caso.category]}
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 leading-snug mb-2">
+                  <h3 className="mt-2 text-lg font-semibold text-slate-900 leading-snug">
                     {caso.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-4">
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-3">
                     {caso.summary}
                   </p>
-                  <div className="text-xs text-slate-400">
+                  <div className="mt-4 text-xs text-slate-400">
                     {new Date(caso.created_at).toLocaleDateString('es-BO')}
                   </div>
                 </button>
@@ -206,7 +203,7 @@ export default function Home() {
             </div>
 
             {filteredCases.length === 0 && (
-              <div className="mt-10 text-center py-12 text-slate-500">
+              <div className="mt-12 text-center py-12 text-slate-500">
                 No se encontraron casos.
               </div>
             )}
