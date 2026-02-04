@@ -59,20 +59,16 @@ export const AppleHeader: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[14px] text-[#0B0B0D] hover:opacity-70 transition-opacity whitespace-nowrap"
+                className="text-[13px] text-[#0B0B0D] hover:opacity-70 transition-opacity whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Right side: CTA + Auth */}
-          <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-            <AppleButton variant="primary" href="/contact">
-              Agendar Consulta
-            </AppleButton>
-
-            {/* Auth UI */}
+          {/* Right side: Auth + CTA (flipped order) */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+            {/* Auth UI - COMES FIRST */}
             {isAuthenticated ? (
               <div className="relative">
                 <button
@@ -114,13 +110,24 @@ export const AppleHeader: React.FC = () => {
                 )}
               </div>
             ) : (
-              <Link
+              <a
                 href="/login"
-                className="text-[14px] text-[#5B3DF5] hover:opacity-70 transition-opacity whitespace-nowrap font-medium"
+                className="h-[42px] px-6 text-[13px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-md hover:border-[#5B3DF5] transition-all duration-200 hover:shadow-sm min-w-[140px] text-center flex items-center justify-center"
               >
                 Iniciar sesión
-              </Link>
+              </a>
             )}
+
+            {/* Primary CTA - matches hero exactly */}
+            <a
+              href="/contact"
+              className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center gap-2 min-w-[180px] justify-center"
+            >
+              Agendar Consulta
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

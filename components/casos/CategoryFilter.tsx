@@ -25,15 +25,15 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   ];
 
   return (
-    <div className={`flex flex-wrap gap-2 ${className}`}>
+    <div className={`flex flex-wrap gap-3 ${className}`}>
       {categories.map((cat) => (
         <button
           key={cat.value}
           onClick={() => onCategoryChange(cat.value)}
-          className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+          className={`px-6 py-3 text-[15px] font-semibold rounded-md transition-all duration-200 min-w-[140px] ${
             selectedCategory === cat.value
               ? 'bg-[#5B3DF5] text-white shadow-sm'
-              : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+              : 'bg-white text-slate-600 border-2 border-[#E0E0E6] hover:border-[#5B3DF5] hover:bg-slate-50'
           }`}
         >
           {cat.label}

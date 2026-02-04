@@ -17,17 +17,17 @@ export const UseCases: React.FC = () => {
       />
 
       {/* Featured cases grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {featuredCases.map((caseData) => (
           <CaseCard key={caseData.id} case={caseData} />
         ))}
       </div>
 
       {/* CTA to full library */}
-      <div className="text-center pt-4">
+      <div className="mt-12 flex justify-center">
         <Link
           href="/casos"
-          className="inline-flex items-center justify-center h-[50px] px-8 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors"
+          className="inline-flex items-center justify-center h-[50px] px-12 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors"
         >
           Ver la biblioteca completa
         </Link>
