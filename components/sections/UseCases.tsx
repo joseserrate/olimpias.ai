@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ResponsiveSection as Section, SectionHeader } from '@/components/ui';
+import { Section, SectionHeader } from '@/components/ui';
 import { CaseCard } from '@/components/casos';
 import { getFeaturedCases } from '@/lib/mock-data/casos';
 

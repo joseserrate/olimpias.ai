@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AppleButton } from '@/components/ui';
+import { AppleButton, Container } from '@/components/ui';
 
 export const AppleHeader: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +36,7 @@ export const AppleHeader: React.FC = () => {
           : 'bg-white/95 backdrop-blur-2xl'
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+      <Container>
         <nav className="flex items-center justify-between h-[68px] md:h-[76px]">
           {/* Logo */}
           <Link
@@ -216,7 +216,7 @@ export const AppleHeader: React.FC = () => {
             </div>
           </div>
         )}
-      </div>
+      </Container>
     </header>
   );
 };
