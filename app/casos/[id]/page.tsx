@@ -1,211 +1,117 @@
 'use client';
 
-import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { Container } from '@/components/ui';
-import { CommentList, CommentForm } from '@/components/casos';
-import { getCaseById, getCommentsByCase, categoryLabels } from '@/lib/mock-data/casos';
+import { getCaseById, categoryLabels } from '@/lib/mock-data/casos';
 
 export default function CaseDetailPage() {
   const params = useParams();
   const caseId = params.id as string;
+  
+  // TODO: Replace with Supabase query
+  // const { data: caseData } = await supabase.from('cases').select('*').eq('id', caseId).single()
   const caseData = getCaseById(caseId);
-  const [comments] = useState(() => getCommentsByCase(caseId));
-  const [isAuthenticated] = useState(false); // Mock auth state
 
   if (!caseData) {
     return (
-      <main className="min-h-screen bg-white pt-32">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center py-20">
-            <h1 className="text-3xl font-semibold text-slate-900 mb-4">
-              Caso no encontrado
-            </h1>
-            <p className="text-slate-600 mb-8">
-              El caso que buscas no existe o ha sido removido.
-            </p>
-            <Link
-              href="/casos"
-              className="inline-flex items-center justify-center h-[50px] px-8 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors"
-            >
-              Ver todos los casos
-            </Link>
-          </div>
-        </Container>
+      <main className="min-h-screen bg-white pt-32 pb-20">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h1 className="text-2xl font-semibold text-slate-900 mb-4">
+            Caso no encontrado
+          </h1>
+          <Link href="/casos" className="text-[#5B3DF5] hover:underline">
+            ← Volver a casos
+          </Link>
+        </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Header with back link */}
-      <section className="bg-white pt-32 pb-8 border-b border-slate-200/40">
-        <Container>
-          <Link
-            href="/casos"
-            className="inline-flex items-center text-sm text-slate-500 hover:text-[#5B3DF5] transition-colors mb-8"
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+    <main className="min-h-screen bg-white pt-32 pb-20">
+      <div className="max-w-3xl mx-auto px-6">
+        <Link href="/casos" className="text-sm text-slate-500 hover:text-[#5B3DF5] mb-6 inline-block">
+          ← Volver
+        </Link>
+
+        {/* Header */}
+        <div className="mb-10">
+          <span className="text-xs text-slate-500 uppercase tracking-wide">
+            {categoryLabels[caseData.category]}
+          </span>
+          <h1 className="text-4xl font-bold text-slate-900 mt-2 mb-3">
+            {caseData.title}
+          </h1>
+          <p className="text-sm text-slate-500 mb-6">
+            {new Date(caseData.created_at).toLocaleDateString('es-BO')} • {caseData.owner.display_name}
+          </p>
+          
+          {/* Action buttons */}
+          <div className="flex gap-3">
+            <button 
+              onClick={() => alert('TODO: Edit with Supabase')}
+              className="px-4 py-2 text-sm border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Volver a casos
-          </Link>
-
-          <div className="max-w-3xl">
-            {/* Category */}
-            <div className="text-[11px] font-medium tracking-[0.15em] text-slate-400 uppercase mb-4">
-              {categoryLabels[caseData.category]}
-            </div>
-
-            {/* Title */}
-            <h1 className="text-[40px] sm:text-[48px] font-semibold leading-[1.05] tracking-[-0.025em] text-slate-900 mb-6">
-              {caseData.title}
-            </h1>
-
-            {/* Meta */}
-            <div className="flex items-center gap-4 text-sm text-slate-500">
-              <span>Por {caseData.owner.display_name}</span>
-              <span>·</span>
-              <span>
-                {new Date(caseData.created_at).toLocaleDateString('es-BO', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </span>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Content */}
-      <section className="bg-white py-16">
-        <Container>
-          <div className="max-w-3xl mx-auto space-y-12">
-            {/* Summary */}
-            <div>
-              <p className="text-[21px] text-slate-700 leading-[1.6] font-medium">
-                {caseData.summary}
-              </p>
-            </div>
-
-            {/* Problem */}
-            <div>
-              <h2 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Problema
-              </h2>
-              <p className="text-[17px] text-slate-700 leading-[1.7]">
-                {caseData.problem}
-              </p>
-            </div>
-
-            {/* Current Flow */}
-            <div>
-              <h2 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Flujo Actual
-              </h2>
-              <p className="text-[17px] text-slate-700 leading-[1.7]">
-                {caseData.current_flow}
-              </p>
-            </div>
-
-            {/* Sources */}
-            <div>
-              <h2 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Fuentes de Datos
-              </h2>
-              <p className="text-[17px] text-slate-700 leading-[1.7]">
-                {caseData.sources}
-              </p>
-            </div>
-
-            {/* Desired Outcome */}
-            <div>
-              <h2 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Resultado Deseado
-              </h2>
-              <p className="text-[17px] text-slate-700 leading-[1.7]">
-                {caseData.desired_outcome}
-              </p>
-            </div>
-
-            {/* Constraints */}
-            <div>
-              <h2 className="text-xs font-medium tracking-widest text-slate-500 uppercase mb-4">
-                Restricciones y Consideraciones
-              </h2>
-              <p className="text-[17px] text-slate-700 leading-[1.7]">
-                {caseData.constraints}
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Comments section */}
-      <section className="bg-slate-50/40 py-16 border-t border-slate-200/40">
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-semibold text-slate-900 mb-8">
-              Comentarios ({comments.length})
-            </h2>
-
-            {/* Comment form or login prompt */}
-            {isAuthenticated ? (
-              <div className="mb-12">
-                <CommentForm caseId={caseId} />
-              </div>
-            ) : (
-              <div className="mb-12 p-6 bg-white border border-slate-200 rounded-xl text-center">
-                <p className="text-slate-600 mb-4">
-                  Inicia sesión para comentar en este caso
-                </p>
-                <a
-                  href="/login"
-                  className="inline-flex items-center justify-center h-[44px] px-6 text-[14px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors"
-                >
-                  Iniciar sesión
-                </a>
-              </div>
-            )}
-
-            {/* Comments list */}
-            <CommentList comments={comments} />
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-white py-16 border-t border-slate-200/40">
-        <Container>
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold text-slate-900 mb-4">
-              ¿Listo para implementar?
-            </h2>
-            <p className="text-[17px] text-slate-600 leading-[1.6] mb-8">
-              Agenda una consulta para discutir cómo podemos ayudarte a implementar 
-              un sistema similar en tu organización.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center h-[50px] px-8 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-colors"
+              Editar
+            </button>
+            <button 
+              onClick={() => alert('TODO: Delete with Supabase')}
+              className="px-4 py-2 text-sm text-red-600 border border-red-200 rounded-md hover:bg-red-50 transition-colors"
             >
-              Agendar consulta
-            </a>
+              Eliminar
+            </button>
           </div>
-        </Container>
-      </section>
+        </div>
+
+        {/* Content */}
+        <div className="prose prose-slate max-w-none space-y-8">
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">Resumen</h2>
+            <p className="text-slate-700 leading-relaxed">{caseData.summary}</p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">Problema</h2>
+            <p className="text-slate-700 leading-relaxed">{caseData.problem}</p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">Enfoque</h2>
+            <p className="text-slate-700 leading-relaxed">{caseData.current_flow}</p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">Resultado</h2>
+            <p className="text-slate-700 leading-relaxed">{caseData.desired_outcome}</p>
+          </div>
+        </div>
+
+        {/* Comments section */}
+        <div className="mt-16 pt-8 border-t">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-6">Comentarios</h2>
+          
+          {/* TODO: Replace with Supabase comments query */}
+          {/* const { data: comments } = await supabase.from('comments').select('*').eq('case_id', caseId) */}
+          
+          <div className="mb-6">
+            <textarea
+              placeholder="Escribe un comentario..."
+              rows={4}
+              className="w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5B3DF5] focus:border-transparent"
+            />
+            <button 
+              onClick={() => alert('TODO: Submit comment with Supabase')}
+              className="mt-3 px-6 py-2 bg-[#5B3DF5] text-white rounded-md hover:bg-[#4A2FD5] transition-colors font-medium"
+            >
+              Comentar
+            </button>
+          </div>
+
+          <p className="text-sm text-slate-500 italic">
+            Sistema de comentarios se integrará con Supabase próximamente.
+          </p>
+        </div>
+      </div>
     </main>
   );
 }
