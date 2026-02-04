@@ -131,73 +131,74 @@ export default function Home() {
       
       <main className="bg-white">
         {/* Casos Section */}
-        <section id="casos" className="py-16">
+        <section id="casos" className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-6 sm:px-8">
             {/* Header */}
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-4xl font-semibold text-slate-900 mb-4">
                 Biblioteca de Casos
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-600">
                 Casos reales de IA empresarial en Bolivia. Implementaciones documentadas con métricas y stack técnico.
               </p>
             </div>
 
-            {/* Filters */}
-            <div className="mb-8 space-y-4">
+            {/* Search */}
+            <div className="mt-8 flex justify-center">
               <input
                 type="text"
                 placeholder="Buscar casos..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full border border-slate-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-[#5B3DF5]/20 focus:border-[#5B3DF5] outline-none"
+                className="w-full max-w-2xl h-11 border border-slate-300 rounded-lg px-4 focus:ring-2 focus:ring-[#5B3DF5]/20 focus:border-[#5B3DF5] outline-none text-slate-900 placeholder:text-slate-400"
               />
-              
-              <div className="flex flex-wrap gap-2">
+            </div>
+
+            {/* Category Chips */}
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`text-sm px-3 py-1.5 rounded-full transition-colors ${
+                  selectedCategory === 'all'
+                    ? 'bg-[#5B3DF5] text-white'
+                    : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                }`}
+              >
+                Todos
+              </button>
+              {Object.entries(categoryLabels).map(([key, label]) => (
                 <button
-                  onClick={() => setSelectedCategory('all')}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    selectedCategory === 'all'
+                  key={key}
+                  onClick={() => setSelectedCategory(key as CaseCategory)}
+                  className={`text-sm px-3 py-1.5 rounded-full transition-colors ${
+                    selectedCategory === key
                       ? 'bg-[#5B3DF5] text-white'
-                      : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
+                      : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >
-                  Todos
+                  {label}
                 </button>
-                {Object.entries(categoryLabels).map(([key, label]) => (
-                  <button
-                    key={key}
-                    onClick={() => setSelectedCategory(key as CaseCategory)}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                      selectedCategory === key
-                        ? 'bg-[#5B3DF5] text-white'
-                        : 'border border-slate-300 text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
+              ))}
             </div>
 
             {/* Cases Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCases.map((caso) => (
                 <button
                   key={caso.id}
                   onClick={() => setSelectedCase(caso)}
-                  className="text-left border border-slate-200 rounded-xl p-6 bg-white hover:bg-slate-50 transition-colors"
+                  className="text-left rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition"
                 >
-                  <span className="text-xs font-medium text-[#5B3DF5] uppercase tracking-wide">
+                  <div className="text-xs tracking-widest uppercase text-slate-400 mb-3">
                     {categoryLabels[caso.category]}
-                  </span>
-                  <h3 className="text-lg font-semibold text-slate-900 mt-2 mb-2">
+                  </div>
+                  <h3 className="text-lg font-semibold text-slate-900 leading-snug mb-2">
                     {caso.title}
                   </h3>
-                  <p className="text-sm text-slate-600 line-clamp-3">
+                  <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-4">
                     {caso.summary}
                   </p>
-                  <div className="mt-4 text-xs text-slate-500">
+                  <div className="text-xs text-slate-400">
                     {new Date(caso.created_at).toLocaleDateString('es-BO')}
                   </div>
                 </button>
@@ -205,7 +206,7 @@ export default function Home() {
             </div>
 
             {filteredCases.length === 0 && (
-              <div className="text-center py-12 text-slate-500">
+              <div className="mt-10 text-center py-12 text-slate-500">
                 No se encontraron casos.
               </div>
             )}

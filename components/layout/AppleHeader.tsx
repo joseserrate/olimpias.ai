@@ -18,10 +18,6 @@ export const AppleHeader: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '/#casos', label: 'Casos' },
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -47,27 +43,22 @@ export const AppleHeader: React.FC = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Apple spacing */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-[13px] text-[#0B0B0D] hover:opacity-70 transition-opacity whitespace-nowrap"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+          {/* Spacer */}
+          <div className="flex-1" />
 
-          {/* Right side: CTA */}
+          {/* Right side: Auth buttons */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            {/* Primary CTA - matches hero exactly */}
             <a
-              href="/#casos"
+              href="#auth-signin"
+              className="h-[42px] px-6 text-[13px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-md hover:border-[#5B3DF5] transition-all duration-200 hover:shadow-sm min-w-[140px] text-center flex items-center justify-center"
+            >
+              Iniciar sesión
+            </a>
+            <a
+              href="#auth-signup"
               className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center gap-2 min-w-[180px] justify-center"
             >
-              Ver Casos
+              Crear cuenta
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
@@ -102,22 +93,19 @@ export const AppleHeader: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden py-6 border-t border-[#E6E6EA]">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-[17px] text-[#0B0B0D] hover:opacity-70 transition-opacity py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <AppleButton
+                variant="secondary"
+                href="#auth-signin"
+                className="w-full"
+              >
+                Iniciar sesión
+              </AppleButton>
               <AppleButton
                 variant="primary"
-                href="/#casos"
-                className="w-full mt-2"
+                href="#auth-signup"
+                className="w-full"
               >
-                Ver Casos
+                Crear cuenta
               </AppleButton>
             </div>
           </div>
