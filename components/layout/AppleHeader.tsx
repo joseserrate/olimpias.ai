@@ -8,8 +8,6 @@ import { AppleButton, Container } from '@/components/ui';
 export const AppleHeader: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
-  const [isAuthenticated] = useState(false); // Mock auth state - will be real later
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,11 +19,7 @@ export const AppleHeader: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: '/#methodology', label: 'Valores' },
-    { href: '/#use-cases', label: 'Casos de Uso' },
-    { href: '/casos', label: 'Biblioteca' },
-    { href: '/about', label: 'El Centro' },
-    { href: '/contact', label: 'Contacto' },
+    { href: '/#casos', label: 'Casos' },
   ];
 
   return (
@@ -66,64 +60,14 @@ export const AppleHeader: React.FC = () => {
             ))}
           </div>
 
-          {/* Right side: Auth + CTA (flipped order) */}
+          {/* Right side: CTA */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            {/* Auth UI - COMES FIRST */}
-            {isAuthenticated ? (
-              <div className="relative">
-                <button
-                  onClick={() => setIsAccountMenuOpen(!isAccountMenuOpen)}
-                  className="flex items-center justify-center w-9 h-9 rounded-full bg-[#5B3DF5] text-white font-medium text-sm hover:bg-[#4A2FD5] transition-colors"
-                  aria-label="Account menu"
-                >
-                  M
-                </button>
-
-                {/* Account menu dropdown */}
-                {isAccountMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-50">
-                    <Link
-                      href="/panel"
-                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
-                      onClick={() => setIsAccountMenuOpen(false)}
-                    >
-                      Panel
-                    </Link>
-                    <Link
-                      href="/casos/nuevo"
-                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
-                      onClick={() => setIsAccountMenuOpen(false)}
-                    >
-                      Nuevo caso
-                    </Link>
-                    <div className="border-t border-slate-200 my-2" />
-                    <button
-                      className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
-                      onClick={() => {
-                        setIsAccountMenuOpen(false);
-                        alert('Cerrar sesión (mock)');
-                      }}
-                    >
-                      Cerrar sesión
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <a
-                href="/login"
-                className="h-[42px] px-6 text-[13px] font-semibold text-[#5B3DF5] bg-white border-2 border-[#E0E0E6] rounded-md hover:border-[#5B3DF5] transition-all duration-200 hover:shadow-sm min-w-[140px] text-center flex items-center justify-center"
-              >
-                Iniciar sesión
-              </a>
-            )}
-
             {/* Primary CTA - matches hero exactly */}
             <a
-              href="/contact"
+              href="/#casos"
               className="cursor-pointer h-[50px] px-10 text-[15px] font-semibold text-white bg-[#5B3DF5] rounded-md hover:bg-[#4A2FD5] transition-all duration-200 hover:shadow-md flex items-center gap-2 min-w-[180px] justify-center"
             >
-              Agendar Consulta
+              Ver Casos
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
@@ -170,49 +114,11 @@ export const AppleHeader: React.FC = () => {
               ))}
               <AppleButton
                 variant="primary"
-                href="/contact"
+                href="/#casos"
                 className="w-full mt-2"
               >
-                Agendar Consulta
+                Ver Casos
               </AppleButton>
-
-              {/* Mobile auth */}
-              {isAuthenticated ? (
-                <>
-                  <div className="border-t border-[#E6E6EA] my-2" />
-                  <Link
-                    href="/panel"
-                    className="text-[17px] text-[#0B0B0D] hover:opacity-70 transition-opacity py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Panel
-                  </Link>
-                  <Link
-                    href="/casos/nuevo"
-                    className="text-[17px] text-[#0B0B0D] hover:opacity-70 transition-opacity py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Nuevo caso
-                  </Link>
-                  <button
-                    className="text-[17px] text-red-600 hover:opacity-70 transition-opacity py-2 text-left"
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      alert('Cerrar sesión (mock)');
-                    }}
-                  >
-                    Cerrar sesión
-                  </button>
-                </>
-              ) : (
-                <Link
-                  href="/login"
-                  className="text-[17px] text-[#5B3DF5] hover:opacity-70 transition-opacity py-2 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Iniciar sesión
-                </Link>
-              )}
             </div>
           </div>
         )}

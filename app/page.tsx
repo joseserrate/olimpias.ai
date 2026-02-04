@@ -269,41 +269,6 @@ export default function Home() {
           )}
         </div>
       </main>
-
-      {/* Simplified Navbar Overlay */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/40">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
-          <div className="font-semibold text-slate-900">Olimpias AI</div>
-          <div className="flex items-center gap-4">
-            <a href="#casos" className="text-sm text-slate-700 hover:text-slate-900">
-              Casos
-            </a>
-            {isAuthenticated ? (
-              <button
-                onClick={handleSignOut}
-                className="text-sm text-slate-700 hover:text-slate-900"
-              >
-                Cerrar sesión
-              </button>
-            ) : (
-              <button
-                onClick={() => setShowAuthModal(true)}
-                className="text-sm text-slate-700 hover:text-slate-900"
-              >
-                Iniciar sesión
-              </button>
-            )}
-            {isAuthenticated && (
-              <button
-                onClick={() => setShowCreateModal(true)}
-                className="bg-[#5B3DF5] text-white rounded-md px-5 py-2.5 text-sm font-medium hover:bg-[#4A2FD5] transition-colors"
-              >
-                Crear caso
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
     </>
   );
 }

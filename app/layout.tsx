@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema, ServiceSchema } from '@/components/seo';
+import { AppleHeader, AppleFooter } from '@/components/layout';
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -72,7 +73,11 @@ export default function RootLayout({
         {/* <script defer data-domain="olimpiasai.com" src="https://plausible.io/js/script.js"></script> */}
       </head>
       <body className={`${inter.variable} antialiased bg-white`}>
-        {children}
+        <AppleHeader />
+        <main className="pt-[68px] md:pt-[76px]">
+          {children}
+        </main>
+        <AppleFooter />
       </body>
     </html>
   );
