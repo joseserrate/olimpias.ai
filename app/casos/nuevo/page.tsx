@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Container } from '@/components/ui';
 import { CaseCategory, categoryLabels } from '@/lib/mock-data/casos';
 
 export default function NewCasePage() {
@@ -46,10 +45,9 @@ export default function NewCasePage() {
   };
 
   return (
-    <main className="min-h-screen bg-white pt-32">
-      <Container>
-        <div className="max-w-2xl mx-auto">
-          <div className="mb-8">
+    <main className="min-h-screen bg-white pt-32 pb-20">
+      <div className="max-w-2xl mx-auto px-6">
+        <div className="mb-8">
             <Link
               href="/casos"
               className="text-sm text-slate-500 hover:text-[#5B3DF5] mb-4 inline-block"
@@ -135,20 +133,19 @@ export default function NewCasePage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-6 py-3 bg-[#5B3DF5] text-white rounded-md hover:bg-[#4A2FD5] transition-colors disabled:opacity-50"
+                className="px-6 py-3 bg-[#5B3DF5] text-white rounded-md hover:bg-[#4A2FD5] transition-colors disabled:opacity-50 font-medium"
               >
                 {isSubmitting ? 'Guardando...' : 'Crear caso'}
               </button>
               <Link
                 href="/casos"
-                className="px-6 py-3 border border-slate-300 rounded-md hover:bg-slate-50 transition-colors"
+                className="px-6 py-3 border border-slate-300 rounded-md hover:bg-slate-50 transition-colors font-medium"
               >
                 Cancelar
               </Link>
             </div>
           </form>
         </div>
-      </Container>
     </main>
   );
 }

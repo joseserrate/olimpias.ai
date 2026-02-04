@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Container } from '@/components/ui';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -27,20 +26,19 @@ export default function LoginPage() {
     //   setIsSubmitting(false)
     //   return
     // }
-    // router.push('/panel')
+    // router.push('/casos')
 
     console.log('Login attempt:', formData);
     
     setTimeout(() => {
       alert('Login mock - Supabase auth próximamente');
-      setIsSubmitting(false);
+      router.push('/casos');
     }, 500);
   };
 
   return (
-    <main className="min-h-screen bg-white pt-32">
-      <Container>
-        <div className="max-w-md mx-auto">
+    <main className="min-h-screen bg-white pt-32 pb-20">
+      <div className="max-w-md mx-auto px-6">
           <div className="mb-8 text-center">
             <h1 className="text-3xl font-bold text-slate-900 mb-2">
               Iniciar sesión
@@ -83,7 +81,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 bg-[#5B3DF5] text-white rounded-md hover:bg-[#4A2FD5] transition-colors disabled:opacity-50"
+                className="w-full px-6 py-3 bg-[#5B3DF5] text-white rounded-md hover:bg-[#4A2FD5] transition-colors disabled:opacity-50 font-medium"
               >
                 {isSubmitting ? 'Ingresando...' : 'Iniciar sesión'}
               </button>
@@ -92,14 +90,13 @@ export default function LoginPage() {
             <div className="mt-6 text-center">
               <p className="text-sm text-slate-600">
                 ¿No tienes cuenta?{' '}
-                <Link href="/signup" className="text-[#5B3DF5] hover:underline">
+                <Link href="/signup" className="text-[#5B3DF5] hover:underline font-medium">
                   Crear cuenta
                 </Link>
               </p>
             </div>
           </div>
         </div>
-      </Container>
     </main>
   );
 }

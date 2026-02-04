@@ -1,9 +1,7 @@
 'use client';
 
-import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { Container } from '@/components/ui';
 import { getCaseById, categoryLabels } from '@/lib/mock-data/casos';
 
 export default function CaseDetailPage() {
@@ -16,25 +14,22 @@ export default function CaseDetailPage() {
 
   if (!caseData) {
     return (
-      <main className="min-h-screen bg-white pt-32">
-        <Container>
-          <div className="max-w-2xl mx-auto text-center py-20">
-            <h1 className="text-2xl font-semibold text-slate-900 mb-4">
-              Caso no encontrado
-            </h1>
-            <Link href="/casos" className="text-[#5B3DF5] hover:underline">
-              ← Volver a casos
-            </Link>
-          </div>
-        </Container>
+      <main className="min-h-screen bg-white pt-32 pb-20">
+        <div className="max-w-2xl mx-auto px-6 text-center py-20">
+          <h1 className="text-2xl font-semibold text-slate-900 mb-4">
+            Caso no encontrado
+          </h1>
+          <Link href="/casos" className="text-[#5B3DF5] hover:underline">
+            ← Volver a casos
+          </Link>
+        </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-white pt-32">
-      <Container>
-        <div className="max-w-3xl mx-auto">
+    <main className="min-h-screen bg-white pt-32 pb-20">
+      <div className="max-w-3xl mx-auto px-6">
           <Link
             href="/casos"
             className="text-sm text-slate-500 hover:text-[#5B3DF5] mb-4 inline-block"
@@ -81,14 +76,13 @@ export default function CaseDetailPage() {
               </p>
               <Link
                 href="/login"
-                className="inline-block mt-3 px-4 py-2 bg-[#5B3DF5] text-white text-sm rounded-md hover:bg-[#4A2FD5]"
+                className="inline-block mt-3 px-4 py-2 bg-[#5B3DF5] text-white text-sm rounded-md hover:bg-[#4A2FD5] font-medium"
               >
                 Iniciar sesión
               </Link>
             </div>
           </div>
         </div>
-      </Container>
     </main>
   );
 }
